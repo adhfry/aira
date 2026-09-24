@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitur AIRA - Artificial Intelligence Response Banjir</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0F62FE',
+                        darkbg: '#0B1120',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for specific elements */
+        .image-grayscale {
+            filter: grayscale(100%);
+        }
+        .hero-bg-light {
+            background: linear-gradient(to bottom, #f8fafc 0%, #e2e8f0 100%);
+        }
+        .cta-bg {
+            background-image: linear-gradient(rgba(11, 17, 32, 0.85), rgba(11, 17, 32, 0.95)), url('https://images.unsplash.com/photo-1468581264429-2548ef9eb732?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(100%);
+        }
+        /* Custom Scrollbar for mockups */
+        .custom-scroll::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-white antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="bg-white/90 backdrop-blur-md fixed w-full z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl tracking-tight text-slate-900 block leading-none">AIRA</span>
+                        <span class="text-[10px] text-slate-500 font-medium tracking-wide">Artificial Intelligence<br>Response Banjir</span>
+                    </div>
+                </div>
+                <!-- Nav Links -->
+                <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
+                    <a href="index.html" class="hover:text-primary transition">Beranda</a>
+                    <a href="tentang-aira.html" class="hover:text-primary transition">Tentang</a>
+                    <a href="fitur-aira.html" class="text-primary border-b-2 border-primary pb-1">Fitur</a>
+                    <a href="#" class="hover:text-primary transition">Teknologi</a>
+                    <a href="#" class="hover:text-primary transition">Manfaat</a>
+                    <a href="#" class="hover:text-primary transition">Kontak</a>
+                </div>
+                <!-- CTA -->
+                <div>
+                    <a href="#" class="bg-primary hover:bg-blue-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition shadow-md shadow-blue-500/30 flex items-center gap-2">
+                        Akses Dashboard <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 lg:pt-40 lg:pb-24 hero-bg-light relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div>
+                    <div class="inline-block bg-blue-100 text-primary text-xs font-bold px-3 py-1 rounded-full mb-6 tracking-wider">FITUR AIRA</div>
+                    <h1 class="text-4xl md:text-5xl lg:text-5xl font-extrabold text-slate-900 leading-tight mb-6">
+                        Fitur Lengkap untuk<br>Pemantauan dan<br><span class="text-primary">Peringatan Dini Banjir</span>
+                    </h1>
+                    <p class="text-slate-600 text-lg mb-8 max-w-lg leading-relaxed">
+                        AIRA menghadirkan berbagai fitur terintegrasi berbasis Artificial Intelligence, IoT, data cuaca, dan GIS untuk memberikan informasi kondisi banjir secara cepat, akurat, dan dapat ditindaklanjuti.
+                    </p>
+                </div>
+
+                <!-- Right Dashboard Mockup -->
+                <div class="relative">
+                    <div class="bg-slate-900 rounded-2xl shadow-2xl p-2 w-full max-w-xl ml-auto border border-slate-700">
+                        <!-- Header -->
+                        <div class="flex items-center justify-between px-4 py-2 border-b border-slate-700">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-water text-blue-500 text-sm"></i>
+                                <span class="font-bold text-xs text-white">AIRA Monitoring Dashboard</span>
+                            </div>
+                            <div class="flex gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                                <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
+                                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            </div>
+                        </div>
+                        <!-- Content -->
+                        <div class="flex h-80 relative">
+                            <!-- Sidebar -->
+                            <div class="w-16 border-r border-slate-700 flex flex-col items-center py-4 gap-5 text-slate-500">
+                                <i class="fa-solid fa-chart-pie text-blue-500 text-sm cursor-pointer"></i>
+                                <i class="fa-solid fa-map hover:text-white text-sm cursor-pointer transition"></i>
+                                <i class="fa-solid fa-video hover:text-white text-sm cursor-pointer transition"></i>
+                                <i class="fa-solid fa-wifi hover:text-white text-sm cursor-pointer transition"></i>
+                                <i class="fa-solid fa-cloud-sun hover:text-white text-sm cursor-pointer transition"></i>
+                                <i class="fa-solid fa-file-alt hover:text-white text-sm cursor-pointer transition"></i>
+                            </div>
+                            
+                            <!-- Map Area -->
+                            <div class="flex-1 relative bg-slate-800 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800&auto=format&fit=crop" alt="Map" class="w-full h-full object-cover opacity-40 image-grayscale">
+                                
+                                <!-- Map Pins -->
+                                <div class="absolute top-1/4 left-1/3 w-3 h-3 bg-red-500 rounded-full border-2 border-white animate-pulse z-10"></div>
+                                <div class="absolute top-1/2 left-1/2 w-3 h-3 bg-orange-500 rounded-full border-2 border-white z-10"></div>
+                                <div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-green-500 rounded-full border-2 border-white z-10"></div>
+                                
+                                <!-- Map Tooltip -->
+                                <div class="absolute top-1/3 left-1/3 mt-2 -ml-16 bg-white text-slate-800 p-2 rounded shadow-lg text-[10px] w-32 z-20">
+                                    <div class="font-bold mb-1">Kali Surnenep</div>
+                                    <div class="text-slate-500">Tinggi Air: 285 cm</div>
+                                    <div class="text-red-500 font-bold">Status: Siaga</div>
+                                </div>
+
+                                <!-- Bottom Legend -->
+                                <div class="absolute bottom-2 left-2 bg-slate-900/80 backdrop-blur-sm px-3 py-1.5 rounded text-[9px] flex gap-3 text-slate-300 z-10">
+                                    <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Normal</span>
+                                    <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-yellow-500"></span> Waspada</span>
+                                    <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span> Siaga</span>
+                                    <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> Awas</span>
+                                </div>
+                            </div>
+
+                            <!-- Right Panel (CCTV & Water Level) -->
+                            <div class="w-56 border-l border-slate-700 p-3 bg-slate-900 flex flex-col gap-3 z-20">
+                                <!-- CCTV Feed -->
+                                <div class="relative rounded-lg overflow-hidden h-28 bg-slate-800">
+                                    <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=400&auto=format&fit=crop" alt="CCTV" class="w-full h-full object-cover image-grayscale">
+                                    <div class="absolute top-1 left-1 bg-black/60 backdrop-blur-md text-white text-[8px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1">
+                                        <i class="fa-solid fa-video text-red-500"></i> CCTV - Jembatan Kali
+                                    </div>
+                                    <div class="absolute top-1 right-1 bg-green-500 text-white text-[8px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1">
+                                        <span class="w-1 h-1 bg-white rounded-full animate-pulse"></span> Live
+                                    </div>
+                                </div>
+                                <!-- Water Level Card -->
+                                <div class="bg-slate-800 rounded-lg p-2 border border-slate-700">
+                                    <div class="text-[9px] text-slate-400 mb-1">Tinggi Muka Air</div>
+                                    <div class="flex justify-between items-end mb-2">
+                                        <div class="text-lg font-extrabold text-white">285 cm</div>
+                                        <div class="bg-orange-500 text-white text-[8px] font-bold px-1.5 py-0.5 rounded">Siaga</div>
+                                    </div>
+                                    <div class="text-[9px] text-red-400 font-medium mb-2 flex items-center gap-1">
+                                        <i class="fa-solid fa-arrow-up"></i> +45 cm (1 jam terakhir)
+                                    </div>
+                                    <!-- Chart Mockup -->
+                                    <div class="h-8 w-full flex items-end gap-0.5">
+                                        <div class="w-full bg-slate-600 rounded-t h-1/4"></div>
+                                        <div class="w-full bg-slate-600 rounded-t h-2/4"></div>
+                                        <div class="w-full bg-slate-600 rounded-t h-1/4"></div>
+                                        <div class="w-full bg-slate-600 rounded-t h-3/4"></div>
+                                        <div class="w-full bg-red-500 rounded-t h-full"></div>
+                                        <div class="w-full bg-red-500 rounded-t h-5/6"></div>
+                                        <div class="w-full bg-red-500 rounded-t h-full"></div>
+                                    </div>
+                                    <div class="flex justify-between text-[7px] text-slate-500 mt-1">
+                                        <span>08:00</span>
+                                        <span>10:00</span>
+                                        <span>12:00</span>
+                                        <span>14:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fitur Utama Header -->
+    <section class="pt-20 pb-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-end">
+                <div>
+                    <div class="inline-block bg-blue-50 text-primary text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-wider">FITUR UTAMA</div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
+                        Solusi End-to-End<br>untuk Penanganan Banjir
+                    </h2>
+                </div>
+                <div>
+                    <p class="text-slate-600 leading-relaxed">
+                        Dari pemantauan kondisi lapangan hingga respons, semua terintegrasi dalam satu platform. Setiap fitur dirancang untuk saling terhubung sehingga menghasilkan informasi yang lebih akurat dan bermanfaat bagi pemerintah, petugas, dan masyarakat.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 1: CCTV Berbasis AI -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Text -->
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">01</div>
+                        <h3 class="text-2xl font-bold text-slate-900">Pemantauan CCTV Berbasis AI</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Analisis kondisi visual secara real-time menggunakan teknologi Computer Vision untuk mendeteksi genangan, kenaikan muka air, dan perubahan kondisi lingkungan.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Deteksi genangan secara otomatis
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Analisis tinggi muka air dari video
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Monitoring multi-titik CCTV
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Snapshot & video rekaman kejadian
+                        </li>
+                    </ul>
+                    <a href="#" class="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition">
+                        Lihat Contoh Deteksi <i class="fa-solid fa-plus text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Right Mockup -->
+                <div class="bg-slate-100 rounded-2xl p-4 border border-slate-200">
+                    <div class="flex gap-4">
+                        <!-- Main CCTV View -->
+                        <div class="flex-1 relative rounded-xl overflow-hidden h-64 bg-slate-300">
+                            <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop" alt="CCTV Main" class="w-full h-full object-cover image-grayscale">
+                            <!-- Overlay Box -->
+                            <div class="absolute top-1/2 left-1/4 w-1/3 h-1/3 border-2 border-red-500 bg-red-500/20 rounded flex items-end p-1">
+                                <span class="text-[10px] font-bold text-red-600 bg-white/80 px-1 rounded">Genangan Terdeteksi</span>
+                            </div>
+                            <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
+                                <i class="fa-solid fa-video text-red-500"></i> CCTV - Jembatan Kali Surnenep
+                            </div>
+                            <div class="absolute top-3 right-3 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> Live
+                            </div>
+                            <div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded">
+                                Tinggi Air: 285 cm
+                            </div>
+                        </div>
+                        <!-- Thumbnails -->
+                        <div class="w-24 flex flex-col gap-2">
+                            <div class="relative rounded-lg overflow-hidden h-20 bg-slate-300 border-2 border-transparent hover:border-primary cursor-pointer">
+                                <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover image-grayscale" alt="Thumb">
+                                <div class="absolute top-1 left-1 bg-red-500 text-white text-[8px] font-bold px-1 py-0.5 rounded">14:30</div>
+                                <div class="absolute bottom-1 left-1 bg-red-500 text-white text-[8px] font-bold px-1 py-0.5 rounded">Siaga</div>
+                            </div>
+                            <div class="relative rounded-lg overflow-hidden h-20 bg-slate-300 border-2 border-transparent hover:border-primary cursor-pointer">
+                                <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover image-grayscale" alt="Thumb">
+                                <div class="absolute top-1 left-1 bg-orange-500 text-white text-[8px] font-bold px-1 py-0.5 rounded">12:30</div>
+                                <div class="absolute bottom-1 left-1 bg-orange-500 text-white text-[8px] font-bold px-1 py-0.5 rounded">Waspada</div>
+                            </div>
+                            <div class="relative rounded-lg overflow-hidden h-20 bg-slate-300 border-2 border-transparent hover:border-primary cursor-pointer">
+                                <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover image-grayscale" alt="Thumb">
+                                <div class="absolute top-1 left-1 bg-green-500 text-white text-[8px] font-bold px-1 py-0.5 rounded">10:30</div>
+                                <div class="absolute bottom-1 left-1 bg-green-500 text-white text-[8px] font-bold px-1 py-0.5 rounded">Normal</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 2: Integrasi Sensor IoT -->
+    <section class="py-12 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Mockup -->
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" alt="IoT Sensor" class="rounded-2xl shadow-xl w-full h-80 object-cover image-grayscale">
+                    
+                    <!-- Floating Card -->
+                    <div class="absolute top-8 -right-8 bg-white p-5 rounded-2xl shadow-xl border border-slate-100 w-64">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                            <span class="text-xs font-bold text-green-600">Sensor Aktif</span>
+                            <span class="text-[10px] text-slate-400 ml-auto">Mengirim data setiap 5 menit</span>
+                        </div>
+                        <div class="text-xs text-slate-500 font-semibold mb-1">Tinggi Muka Air</div>
+                        <div class="text-2xl font-extrabold text-slate-900 mb-1">285 cm</div>
+                        <div class="text-[10px] text-red-500 font-medium mb-3 flex items-center gap-1">
+                            <i class="fa-solid fa-arrow-up"></i> +45 cm (1 jam terakhir)
+                        </div>
+                        <!-- Mini Chart -->
+                        <div class="h-10 w-full flex items-end gap-1">
+                            <div class="w-full bg-slate-200 rounded-t h-1/4"></div>
+                            <div class="w-full bg-slate-200 rounded-t h-2/4"></div>
+                            <div class="w-full bg-slate-200 rounded-t h-1/4"></div>
+                            <div class="w-full bg-slate-200 rounded-t h-3/4"></div>
+                            <div class="w-full bg-red-400 rounded-t h-full"></div>
+                            <div class="w-full bg-red-500 rounded-t h-5/6"></div>
+                        </div>
+                        <div class="flex justify-between text-[8px] text-slate-400 mt-1">
+                            <span>08:00</span>
+                            <span>10:00</span>
+                            <span>12:00</span>
+                            <span>14:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Text -->
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">02</div>
+                        <h3 class="text-2xl font-bold text-slate-900">Integrasi Sensor IoT</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Terhubung dengan sensor tinggi muka air, sensor curah hujan, dan perangkat IoT lainnya untuk memoleh data lapangan secara real-time.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Tinggi muka air (water level sensor)
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Curah hujan (rain gauge)
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Monitoring kondisi perangkat
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Peringatan saat terjadi anomali data
+                        </li>
+                    </ul>
+                    <a href="#" class="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition">
+                        Lihat Data Sensor <i class="fa-solid fa-plus text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 3: Data Cuaca dan Analisis Prediksi -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Text -->
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">03</div>
+                        <h3 class="text-2xl font-bold text-slate-900">Data Cuaca dan Analisis Prediksi</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Mengintegrasikan data cuaca dari sumber terpercaya dan menggunakan model AI untuk memprediksi potensi risiko banjir beberapa jam ke depan.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Data cuaca real-time
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Prediksi curah hujan
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Analisis risiko berbasis AI
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Visualisasi tren dan historis
+                        </li>
+                    </ul>
+                    <a href="#" class="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition">
+                        Lihat Prediksi Cuaca <i class="fa-solid fa-plus text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Right Mockup -->
+                <div class="bg-slate-900 rounded-2xl p-4 border border-slate-700 relative overflow-hidden">
+                    <div class="relative rounded-xl overflow-hidden h-64 bg-slate-800">
+                        <img src="https://images.unsplash.com/photo-1561484930-998b6a7b22e8?q=80&w=800&auto=format&fit=crop" alt="Weather Map" class="w-full h-full object-cover opacity-60 image-grayscale">
+                        <!-- Overlay Label -->
+                        <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded">
+                            Prediksi Curah Hujan
+                        </div>
+                        
+                        <!-- Floating Info Card -->
+                        <div class="absolute top-1/2 right-4 -translate-y-1/2 bg-white rounded-xl shadow-2xl p-4 w-56 border border-slate-200">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="w-8 h-8 rounded-full bg-blue-100 text-primary flex items-center justify-center">
+                                    <i class="fa-solid fa-cloud-showers-heavy"></i>
+                                </div>
+                                <div>
+                                    <div class="text-[10px] text-slate-500 font-semibold">Kecamatan Kota Surnenep</div>
+                                    <div class="text-xs font-bold text-slate-900">Potensi Hujan Tinggi</div>
+                                </div>
+                            </div>
+                            <div class="text-[10px] text-slate-500 mb-3">2-6 jam ke depan</div>
+                            
+                            <div class="grid grid-cols-2 gap-2 mb-3">
+                                <div class="bg-slate-50 p-2 rounded">
+                                    <div class="text-[9px] text-slate-500">Intensitas</div>
+                                    <div class="text-xs font-bold text-slate-800">45 mm/jam</div>
+                                </div>
+                                <div class="bg-slate-50 p-2 rounded">
+                                    <div class="text-[9px] text-slate-500">Probabilitas</div>
+                                    <div class="text-xs font-bold text-slate-800">78%</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 bg-red-50 p-2 rounded border border-red-100">
+                                <i class="fa-solid fa-triangle-exclamation text-red-500 text-xs"></i>
+                                <div>
+                                    <div class="text-[9px] text-red-500 font-semibold">Tingkat Risiko</div>
+                                    <div class="text-xs font-bold text-red-600">Siaga</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 4: Peta Interaktif dan Analisis Risiko -->
+    <section class="py-12 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Mockup -->
+                <div class="bg-slate-200 rounded-2xl p-4 border border-slate-300 relative h-80 overflow-hidden">
+                    <!-- Map Background -->
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800&auto=format&fit=crop" alt="Map" class="absolute inset-0 w-full h-full object-cover opacity-50 image-grayscale">
+                    
+                    <!-- Search Bar -->
+                    <div class="absolute top-4 left-4 bg-white rounded-lg shadow-md px-3 py-2 flex items-center gap-2 w-48 z-10">
+                        <i class="fa-solid fa-magnifying-glass text-slate-400 text-xs"></i>
+                        <input type="text" placeholder="Cari lokasi..." class="text-xs outline-none w-full text-slate-600">
+                    </div>
+
+                    <!-- Layer Control Panel -->
+                    <div class="absolute top-4 right-4 bg-white rounded-lg shadow-md p-3 w-44 z-10">
+                        <div class="text-[10px] font-bold text-slate-800 mb-2 border-b pb-1">Layer Peta</div>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-2 text-[10px] text-slate-600 cursor-pointer">
+                                <input type="checkbox" checked class="rounded text-primary focus:ring-primary h-3 w-3"> Titik CCTV
+                            </label>
+                            <label class="flex items-center gap-2 text-[10px] text-slate-600 cursor-pointer">
+                                <input type="checkbox" checked class="rounded text-primary focus:ring-primary h-3 w-3"> Sensor Air
+                            </label>
+                            <label class="flex items-center gap-2 text-[10px] text-slate-600 cursor-pointer">
+                                <input type="checkbox" checked class="rounded text-primary focus:ring-primary h-3 w-3"> Curah Hujan
+                            </label>
+                            <label class="flex items-center gap-2 text-[10px] text-slate-600 cursor-pointer">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary h-3 w-3"> Daerah Rawan Banjir
+                            </label>
+                            <label class="flex items-center gap-2 text-[10px] text-slate-600 cursor-pointer">
+                                <input type="checkbox" checked class="rounded text-primary focus:ring-primary h-3 w-3"> Batas Kecamatan
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Location Popup -->
+                    <div class="absolute bottom-1/3 left-1/3 bg-white rounded-lg shadow-lg p-3 w-40 z-10 border-l-4 border-red-500">
+                        <div class="text-xs font-bold text-slate-800 mb-1">Kali Surnenep</div>
+                        <div class="text-[10px] text-slate-500 mb-2">Status: Siaga</div>
+                        <div class="text-[10px] text-slate-500 mb-1">Tinggi Air: 285 cm</div>
+                        <div class="text-[10px] text-red-500 font-bold">Risiko: Tinggi</div>
+                    </div>
+                </div>
+
+                <!-- Right Text -->
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">04</div>
+                        <h3 class="text-2xl font-bold text-slate-900">Peta Interaktif dan Analisis Risiko</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Visualisasi kondisi wilayah, titik pemantauan, dan tingkat risiko banjir dalam peta interaktif berbasis GIS.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Peta sebaran titik CCTV & sensor
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Layer daerah rawan banjir
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Analisis risiko multi-sumber data
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Informasi detail setiap lokasi
+                        </li>
+                    </ul>
+                    <a href="#" class="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition">
+                        Lihat Peta Interaktif <i class="fa-solid fa-plus text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 5: Peringatan Dini dan Notifikasi -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Text -->
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">05</div>
+                        <h3 class="text-2xl font-bold text-slate-900">Peringatan Dini dan Notifikasi</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Sistem peringatan otomatis yang mengirimkan notifikasi kepada petugas dan masyarakat melalui berbagai kanal.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Notifikasi Dashboard
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> WhatsApp Gateway
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Email Notifikasi
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Integrasi Siren/Publik
+                        </li>
+                    </ul>
+                    <a href="#" class="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition">
+                        Lihat Mekanisme Peringatan <i class="fa-solid fa-plus text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Right Mockup -->
+                <div class="relative flex items-center justify-center">
+                    <!-- Popup Card -->
+                    <div class="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-xl shadow-2xl p-4 w-64 border border-slate-200 z-20">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-red-100 text-red-500 flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <h4 class="font-bold text-slate-900 text-sm">Peringatan Dini Banjir</h4>
+                                    <i class="fa-solid fa-xmark text-slate-400 text-xs cursor-pointer"></i>
+                                </div>
+                                <div class="text-[10px] text-slate-500 mb-2">Hari ini, 14:30</div>
+                                <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                                    Terjadi kenaikan tinggi muka air di Kali Surnenep. Status SIAGA. Segera lakukan pengecekan lapangan.
+                                </p>
+                                <button class="w-full bg-red-50 hover:bg-red-100 text-red-600 text-xs font-semibold py-1.5 rounded transition border border-red-200">Lihat Detail</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Smartphone Mockup -->
+                    <div class="relative w-64 h-80 bg-slate-900 rounded-[2.5rem] border-8 border-slate-800 shadow-2xl overflow-hidden ml-auto z-10">
+                        <!-- Notch -->
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-800 rounded-b-xl z-30"></div>
+                        
+                        <!-- Screen Content -->
+                        <div class="bg-slate-50 w-full h-full pt-8 px-4 pb-4 flex flex-col">
+                            <!-- Status Bar -->
+                            <div class="flex justify-between text-[10px] text-slate-800 font-semibold mb-4 px-2">
+                                <span>14:30</span>
+                                <div class="flex gap-1">
+                                    <i class="fa-solid fa-signal"></i>
+                                    <i class="fa-solid fa-wifi"></i>
+                                    <i class="fa-solid fa-battery-full"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- App Header -->
+                            <div class="flex items-center gap-2 mb-4">
+                                <div class="w-6 h-6 bg-primary rounded flex items-center justify-center text-white text-[10px] font-bold">
+                                    <i class="fa-solid fa-water"></i>
+                                </div>
+                                <span class="font-bold text-slate-800 text-xs">AIRA</span>
+                            </div>
+
+                            <!-- Notification Card -->
+                            <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-200 flex-1">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <div class="w-4 h-4 rounded-full bg-red-100 text-red-500 flex items-center justify-center text-[8px]">
+                                        <i class="fa-solid fa-triangle-exclamation"></i>
+                                    </div>
+                                    <span class="text-[10px] font-bold text-slate-800">Peringatan Dini Banjir</span>
+                                </div>
+                                <div class="text-[10px] font-bold text-slate-800 mb-1">Kali Surnenep</div>
+                                <div class="text-[9px] text-slate-500 space-y-1 mb-3">
+                                    <div>Tinggi Air: 285 cm</div>
+                                    <div>Status: <span class="text-red-500 font-bold">SIAGA</span></div>
+                                    <div>Waktu: 24 Sep 2025 14:30</div>
+                                </div>
+                                <p class="text-[9px] text-slate-500 leading-relaxed border-t pt-2 border-slate-100">
+                                    Segera lakukan pengecekan lapangan.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 6: Manajemen Kejadian dan Laporan -->
+    <section class="py-12 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Mockup -->
+                <div class="bg-white rounded-2xl shadow-lg border border-slate-200 p-4 h-80 flex flex-col">
+                    <div class="flex gap-4 h-full">
+                        <!-- Statistik Kejadian -->
+                        <div class="flex-1 flex flex-col">
+                            <div class="text-xs font-bold text-slate-800 mb-3">Statistik Kejadian Banjir</div>
+                            <div class="flex gap-2 mb-4">
+                                <span class="bg-primary text-white text-[10px] px-2 py-1 rounded">Harian</span>
+                                <span class="bg-slate-100 text-slate-500 text-[10px] px-2 py-1 rounded">Mingguan</span>
+                                <span class="bg-slate-100 text-slate-500 text-[10px] px-2 py-1 rounded">Bulanan</span>
+                                <span class="bg-slate-100 text-slate-500 text-[10px] px-2 py-1 rounded">Tahunan</span>
+                            </div>
+                            <!-- Bar Chart -->
+                            <div class="flex-1 flex items-end gap-1 pb-4 border-b border-slate-100 relative">
+                                <!-- Highlight Tooltip -->
+                                <div class="absolute top-1/3 left-1/4 bg-slate-800 text-white text-[8px] px-2 py-1 rounded -translate-x-1/2">
+                                    Mar 2026<br><span class="font-bold">12 Kejadian</span>
+                                </div>
+                                <div class="w-full bg-slate-200 rounded-t h-1/4"></div>
+                                <div class="w-full bg-slate-200 rounded-t h-2/4"></div>
+                                <div class="w-full bg-slate-200 rounded-t h-1/4"></div>
+                                <div class="w-full bg-slate-200 rounded-t h-3/4"></div>
+                                <div class="w-full bg-slate-200 rounded-t h-full"></div>
+                                <div class="w-full bg-slate-200 rounded-t h-5/6"></div>
+                                <div class="w-full bg-slate-200 rounded-t h-1/4"></div>
+                                <div class="w-full bg-slate-200 rounded-t h-2/4"></div>
+                                <div class="w-full bg-slate-200 rounded-t h-3/4"></div>
+                                <div class="w-full bg-slate-200 rounded-t h-full"></div>
+                                <div class="w-full bg-slate-200 rounded-t h-1/4"></div>
+                                <div class="w-full bg-slate-200 rounded-t h-2/4"></div>
+                            </div>
+                            <div class="flex justify-between text-[8px] text-slate-400 mt-1 px-1">
+                                <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>Mei</span><span>Jun</span><span>Jul</span><span>Agu</span><span>Sep</span><span>Okt</span><span>Nov</span><span>Des</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Kejadian Terbaru -->
+                        <div class="w-48 border-l border-slate-100 pl-4 flex flex-col">
+                            <div class="flex justify-between items-center mb-3">
+                                <div class="text-xs font-bold text-slate-800">Kejadian Terbaru</div>
+                                <div class="text-[9px] text-primary font-semibold cursor-pointer">Lihat Semua</div>
+                            </div>
+                            <div class="space-y-3 flex-1 overflow-y-auto custom-scroll">
+                                <!-- Item 1 -->
+                                <div class="bg-slate-50 p-2 rounded border border-slate-100">
+                                    <div class="flex justify-between items-start mb-1">
+                                        <span class="text-[10px] font-bold text-slate-800">Kali Surnenep</span>
+                                        <span class="bg-red-100 text-red-600 text-[8px] font-bold px-1.5 py-0.5 rounded">Siaga</span>
+                                    </div>
+                                    <div class="text-[9px] text-slate-500">24 Sep 2026, 14:30</div>
+                                </div>
+                                <!-- Item 2 -->
+                                <div class="bg-slate-50 p-2 rounded border border-slate-100">
+                                    <div class="flex justify-between items-start mb-1">
+                                        <span class="text-[10px] font-bold text-slate-800">Kali Anom</span>
+                                        <span class="bg-orange-100 text-orange-600 text-[8px] font-bold px-1.5 py-0.5 rounded">Waspada</span>
+                                    </div>
+                                    <div class="text-[9px] text-slate-500">24 Sep 2026, 11:20</div>
+                                </div>
+                                <!-- Item 3 -->
+                                <div class="bg-slate-50 p-2 rounded border border-slate-100">
+                                    <div class="flex justify-between items-start mb-1">
+                                        <span class="text-[10px] font-bold text-slate-800">Kali Gunting</span>
+                                        <span class="bg-green-100 text-green-600 text-[8px] font-bold px-1.5 py-0.5 rounded">Normal</span>
+                                    </div>
+                                    <div class="text-[9px] text-slate-500">23 Sep 2026, 16:45</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Text -->
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">06</div>
+                        <h3 class="text-2xl font-bold text-slate-900">Manajemen Kejadian dan Laporan</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Pencatatan kejadian banjir, verifikasi petugas, dan laporan lengkap untuk evaluasi dan pengambilan keputusan.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Pencatatan kejadian secara otomatis
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Verifikasi dan catatan respons petugas
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Laporan statistik dan histori
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-700">
+                            <i class="fa-solid fa-check-circle text-blue-500"></i> Ekspor data dan laporan
+                        </li>
+                    </ul>
+                    <a href="#" class="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition">
+                        Lihat Contoh Laporan <i class="fa-solid fa-plus text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 cta-bg text-white text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="inline-block bg-white/10 border border-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-6 tracking-wider backdrop-blur-sm">FITUR AIRA</div>
+            <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-6">
+                Teknologi Terintegrasi<br>untuk Wilayah yang Lebih Aman
+            </h2>
+            <p class="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">
+                Manfaatkan seluruh fitur AIRA untuk pemantauan, peringatan dini, dan respons banjir yang lebih cepat, akurat, dan terkoordinasi.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="bg-primary hover:bg-blue-600 text-white px-8 py-3.5 rounded-full text-sm font-semibold transition inline-flex items-center gap-2 shadow-lg shadow-blue-500/30">
+                    Akses Dashboard <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#" class="bg-transparent hover:bg-white/10 border border-white/30 text-white px-8 py-3.5 rounded-full text-sm font-semibold transition">
+                    Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkbg text-slate-400 py-8 border-t border-slate-800 text-center text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                    <i class="fa-solid fa-water"></i>
+                </div>
+                <span class="font-extrabold text-white tracking-tight">AIRA</span>
+            </div>
+            <p>&copy; 2023 AIRA - Artificial Intelligence Response Banjir. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

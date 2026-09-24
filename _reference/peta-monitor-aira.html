@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCTV Monitor - AIRA</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563EB',
+                        darkbg: '#0B1120',
+                        panel: '#111827',
+                        borderdark: '#1E293B',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for specific elements */
+        .image-grayscale {
+            filter: grayscale(100%);
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        /* Map specific styles */
+        .map-bg {
+            background-color: #0f172a;
+            background-image: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .map-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 40% 40%, rgba(239, 68, 68, 0.2) 0%, rgba(249, 115, 22, 0.1) 30%, rgba(16, 185, 129, 0.05) 60%, transparent 80%);
+            mix-blend-mode: multiply;
+        }
+        .map-pin {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 10;
+            cursor: pointer;
+        }
+        .map-pin-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            border: 2px solid white;
+        }
+        .map-pin-label {
+            font-size: 9px;
+            font-weight: 600;
+            color: white;
+            margin-top: 4px;
+            text-shadow: 1px 1px 2px black, -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-300 bg-darkbg antialiased overflow-hidden h-screen flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-panel border-r border-borderdark flex flex-col h-full flex-shrink-0 z-30">
+        <!-- Logo -->
+        <div class="h-20 flex items-center px-6 border-b border-borderdark">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                    <i class="fa-solid fa-water"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-xl tracking-tight text-white block leading-none">AIRA</span>
+                    <span class="text-[9px] text-slate-400 font-medium tracking-wide">Artificial Intelligence<br>Respons Banjir</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex-1 overflow-y-auto no-scrollbar py-4 px-3 space-y-1">
+            <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg text-sm font-medium transition">
+                <i class="fa-solid fa-house w-5 text-center"></i>
+                Dashboard
+            </a>
+            <!-- Active -->
+            <a href="cctv-monitor.html" class="flex items-center gap-3 px-3 py-2.5 bg-primary text-white rounded-lg text-sm font-semibold transition">
+                <i class="fa-solid fa-map-location-dot w-5 text-center"></i>
+                Peta & Monitoring
+            </a>
+            <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg text-sm font-medium transition">
+                <i class="fa-solid fa-video w-5 text-center"></i>
+                CCTV
+            </a>
+            <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg text-sm font-medium transition">
+                <i class="fa-solid fa-wifi w-5 text-center"></i>
+                Sensor IoT
+            </a>
+            <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg text-sm font-medium transition">
+                <i class="fa-solid fa-chart-line w-5 text-center"></i>
+                Analisis Risiko
+            </a>
+            <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg text-sm font-medium transition">
+                <i class="fa-solid fa-cloud-sun w-5 text-center"></i>
+                Prediksi & Cuaca
+            </a>
+            <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg text-sm font-medium transition">
+                <i class="fa-solid fa-bell w-5 text-center"></i>
+                Peringatan Dini
+            </a>
+            <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg text-sm font-medium transition">
+                <i class="fa-solid fa-file-invoice w-5 text-center"></i>
+                Laporan Kejadian
+            </a>
+            
+            <div class="pt-4 pb-2 px-3 text-[10px] font-bold text-slate-500 uppercase tracking-wider">Manajemen</div>
+            
+            <a href="#" class="flex items-center justify-between px-3 py-2.5 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg text-sm font-medium transition">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-database w-5 text-center"></i>
+                    Manajemen Data
+                </div>
+                <i class="fa-solid fa-chevron-down text-[10px]"></i>
+            </a>
+            <a href="#" class="flex items-center justify-between px-3 py-2.5 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg text-sm font-medium transition">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-mobile-screen w-5 text-center"></i>
+                    Manajemen Perangkat
+                </div>
+                <i class="fa-solid fa-chevron-down text-[10px]"></i>
+            </a>
+            <a href="#" class="flex items-center justify-between px-3 py-2.5 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg text-sm font-medium transition">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-users w-5 text-center"></i>
+                    Manajemen Petugas
+                </div>
+                <i class="fa-solid fa-chevron-down text-[10px]"></i>
+            </a>
+            <a href="#" class="flex items-center justify-between px-3 py-2.5 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg text-sm font-medium transition">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-bell w-5 text-center"></i>
+                    Notifikasi
+                </div>
+                <i class="fa-solid fa-chevron-down text-[10px]"></i>
+            </a>
+            <a href="#" class="flex items-center justify-between px-3 py-2.5 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg text-sm font-medium transition">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-gear w-5 text-center"></i>
+                    Pengaturan
+                </div>
+                <i class="fa-solid fa-chevron-down text-[10px]"></i>
+            </a>
+        </nav>
+
+        <!-- Bottom Profile -->
+        <div class="p-4 border-t border-borderdark space-y-3">
+            <div class="flex items-center gap-3 bg-slate-800/50 p-3 rounded-xl border border-borderdark">
+                <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=100&auto=format&fit=crop" alt="Kab. Surnenep" class="w-10 h-10 rounded-lg object-cover image-grayscale">
+                <div>
+                    <div class="text-xs font-bold text-white">Kab. Surnenep</div>
+                    <div class="text-[10px] text-slate-400">Sistem Pemantauan Banjir</div>
+                </div>
+            </div>
+            <div class="flex items-center justify-between gap-3 bg-slate-800/50 p-3 rounded-xl border border-borderdark cursor-pointer hover:bg-slate-800 transition">
+                <div class="flex items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" alt="Ahda Barori" class="w-10 h-10 rounded-lg object-cover image-grayscale">
+                    <div>
+                        <div class="text-xs font-bold text-white">Ahda Barori</div>
+                        <div class="text-[10px] text-slate-400">Administrator</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-slate-500 text-xs"></i>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content (Map Area) -->
+    <main class="flex-1 flex flex-col relative h-full bg-slate-900 border-r border-borderdark">
+        
+        <!-- Top Bar -->
+        <header class="h-20 bg-panel border-b border-borderdark flex items-center justify-between px-6 flex-shrink-0 z-20">
+            <!-- Search -->
+            <div class="relative w-96">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm"></i>
+                <input type="text" placeholder="Cari lokasi, kecamatan, sungai, atau kamera..." class="w-full bg-slate-800/50 border border-slate-700 text-slate-300 text-sm rounded-lg pl-9 pr-16 py-2.5 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition placeholder-slate-500">
+                <div class="absolute right-3 top-1/2 -translate-y-1/2 bg-slate-700 text-slate-300 text-[10px] font-bold px-2 py-0.5 rounded">Ctrl + K</div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-6">
+                <!-- Date & Time -->
+                <div class="text-right border-r border-borderdark pr-6">
+                    <div class="text-xs text-slate-400">Rabu, 24 September 2026</div>
+                    <div class="text-sm font-bold text-white">10:24:18 WIB</div>
+                </div>
+
+                <!-- Weather -->
+                <div class="flex items-center gap-3 bg-slate-800/50 border border-borderdark rounded-xl px-4 py-2">
+                    <i class="fa-solid fa-cloud-sun text-orange-400 text-xl"></i>
+                    <div>
+                        <div class="text-sm font-bold text-white">28°C</div>
+                        <div class="text-[10px] text-slate-400">Berawan</div>
+                    </div>
+                    <i class="fa-solid fa-expand text-slate-400 text-xs ml-2 cursor-pointer hover:text-white"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Map Filters -->
+        <div class="absolute top-24 left-6 right-[420px] z-20 flex flex-wrap gap-2">
+            <select class="bg-panel border border-borderdark text-slate-300 text-xs rounded-lg px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary appearance-none pr-8 relative bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394a3b8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:10px_10px] bg-[right_10px_center] bg-no-repeat">
+                <option>Semua Kecamatan</option>
+            </select>
+            <select class="bg-panel border border-borderdark text-slate-300 text-xs rounded-lg px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary appearance-none pr-8 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394a3b8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:10px_10px] bg-[right_10px_center] bg-no-repeat">
+                <option>Semua Status</option>
+            </select>
+            <select class="bg-panel border border-borderdark text-slate-300 text-xs rounded-lg px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary appearance-none pr-8 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394a3b8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:10px_10px] bg-[right_10px_center] bg-no-repeat">
+                <option>Semua Jenis</option>
+            </select>
+
+            <div class="flex items-center gap-2 bg-panel border border-borderdark rounded-lg px-3 py-2 cursor-pointer hover:bg-slate-800 transition">
+                <input type="checkbox" checked class="rounded bg-slate-700 border-slate-600 text-primary focus:ring-primary h-3 w-3">
+                <span class="text-xs text-slate-300">Risiko Banjir</span>
+            </div>
+            <div class="flex items-center gap-2 bg-panel border border-borderdark rounded-lg px-3 py-2 cursor-pointer hover:bg-slate-800 transition">
+                <input type="checkbox" checked class="rounded bg-slate-700 border-slate-600 text-primary focus:ring-primary h-3 w-3">
+                <span class="text-xs text-slate-300">Batas Wilayah</span>
+            </div>
+            <div class="flex items-center gap-2 bg-panel border border-borderdark rounded-lg px-3 py-2 cursor-pointer hover:bg-slate-800 transition">
+                <input type="checkbox" checked class="rounded bg-slate-700 border-slate-600 text-primary focus:ring-primary h-3 w-3">
+                <span class="text-xs text-slate-300">Sungai</span>
+            </div>
+            <div class="flex items-center gap-2 bg-panel border border-borderdark rounded-lg px-3 py-2 cursor-pointer hover:bg-slate-800 transition">
+                <input type="checkbox" checked class="rounded bg-slate-700 border-slate-600 text-primary focus:ring-primary h-3 w-3">
+                <span class="text-xs text-slate-300">Jalan</span>
+            </div>
+            <div class="flex items-center gap-2 bg-panel border border-borderdark rounded-lg px-3 py-2 cursor-pointer hover:bg-slate-800 transition">
+                <i class="fa-solid fa-layer-group text-slate-400 text-xs"></i>
+                <span class="text-xs text-slate-300">Layer Peta</span>
+            </div>
+        </div>
+
+        <!-- Map Area -->
+        <div class="flex-1 relative map-bg overflow-hidden">
+            <div class="map-overlay"></div>
+            
+            <!-- Map Compass -->
+            <div class="absolute top-6 left-6 bg-panel/80 backdrop-blur-md w-10 h-10 rounded-full border border-slate-600 flex items-center justify-center text-white z-20 shadow-lg">
+                <i class="fa-regular fa-compass text-lg"></i>
+            </div>
+
+            <!-- Map Controls -->
+            <div class="absolute bottom-24 right-6 flex flex-col gap-2 z-20">
+                <button class="bg-panel/90 backdrop-blur-md w-10 h-10 rounded-lg border border-slate-600 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 transition shadow-lg">
+                    <i class="fa-solid fa-gear text-sm"></i>
+                </button>
+                <button class="bg-panel/90 backdrop-blur-md w-10 h-10 rounded-lg border border-slate-600 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 transition shadow-lg">
+                    <i class="fa-solid fa-plus text-sm"></i>
+                </button>
+                <button class="bg-panel/90 backdrop-blur-md w-10 h-10 rounded-lg border border-slate-600 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 transition shadow-lg">
+                    <i class="fa-solid fa-minus text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Map Pins (Simulated based on image) -->
+            <!-- Kec. Batupatih -->
+            <div class="map-pin" style="top: 22%; left: 35%;">
+                <div class="map-pin-icon bg-red-500"><i class="fa-solid fa-exclamation"></i></div>
+                <div class="map-pin-label">Kec. Batupatih</div>
+            </div>
+            <!-- Kec. Ambunten -->
+            <div class="map-pin" style="top: 25%; left: 25%;">
+                <div class="map-pin-icon bg-blue-500"><i class="fa-solid fa-video"></i></div>
+                <div class="map-pin-label">Kec. Ambunten</div>
+            </div>
+            <!-- Kec. Pasongsongan -->
+            <div class="map-pin" style="top: 35%; left: 15%;">
+                <div class="map-pin-icon bg-blue-500"><i class="fa-solid fa-video"></i></div>
+                <div class="map-pin-label">Kec. Pasongsongan</div>
+            </div>
+            <!-- Kec. Dasuk -->
+            <div class="map-pin" style="top: 45%; left: 28%;">
+                <div class="map-pin-icon bg-red-500"><i class="fa-solid fa-exclamation"></i></div>
+                <div class="map-pin-label">Kec. Dasuk</div>
+            </div>
+            <!-- Kec. Manding -->
+            <div class="map-pin" style="top: 55%; left: 20%;">
+                <div class="map-pin-icon bg-orange-500"><i class="fa-solid fa-exclamation"></i></div>
+                <div class="map-pin-label">Kec. Manding</div>
+            </div>
+            <!-- Kec. Kota Sumenep -->
+            <div class="map-pin" style="top: 40%; left: 50%;">
+                <div class="map-pin-icon bg-red-500"><i class="fa-solid fa-exclamation"></i></div>
+                <div class="map-pin-label">Kec. Kota Sumenep</div>
+            </div>
+            <!-- Kec. Pragaan -->
+            <div class="map-pin" style="top: 48%; left: 42%;">
+                <div class="map-pin-icon bg-green-500"><i class="fa-solid fa-check"></i></div>
+                <div class="map-pin-label">Kec. Pragaan</div>
+            </div>
+            <!-- Kec. Giligenting -->
+            <div class="map-pin" style="top: 45%; left: 75%;">
+                <div class="map-pin-icon bg-blue-500"><i class="fa-solid fa-video"></i></div>
+                <div class="map-pin-label">Kec. Giligenting</div>
+            </div>
+            <!-- Kec. Sapeken -->
+            <div class="map-pin" style="top: 65%; left: 70%;">
+                <div class="map-pin-icon bg-blue-500"><i class="fa-solid fa-video"></i></div>
+                <div class="map-pin-label">Kec. Sapeken</div>
+            </div>
+            <!-- Kec. Arjasa -->
+            <div class="map-pin" style="top: 75%; left: 55%;">
+                <div class="map-pin-icon bg-green-500"><i class="fa-solid fa-check"></i></div>
+                <div class="map-pin-label">Kec. Arjasa</div>
+            </div>
+
+            <!-- Map Tooltip (Popup) -->
+            <div class="absolute top-[30%] left-[55%] bg-panel/95 backdrop-blur-md border border-slate-600 rounded-xl p-3 w-64 z-30 shadow-2xl">
+                <div class="flex gap-3">
+                    <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=200&auto=format&fit=crop" class="w-16 h-12 rounded object-cover image-grayscale" alt="Tooltip">
+                    <div>
+                        <div class="text-xs font-bold text-white mb-1">Jembatan Kali Sumenep</div>
+                        <div class="bg-red-500/20 text-red-400 text-[9px] font-bold px-1.5 py-0.5 rounded inline-block mb-1">Risiko Tinggi</div>
+                        <div class="text-[10px] text-slate-300">Tinggi Muka Air: 285 cm</div>
+                        <div class="text-[10px] text-slate-300">Curah Hujan: 45 mm/jam</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Legend (Bottom Left) -->
+            <div class="absolute bottom-6 left-6 bg-panel/90 backdrop-blur-md border border-slate-600 rounded-xl p-4 z-20 shadow-lg">
+                <div class="text-xs font-bold text-white mb-3">Tingkat Risiko Banjir</div>
+                <div class="flex items-center gap-4 text-[10px] text-slate-300">
+                    <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-green-500"></span> Normal</div>
+                    <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span> Waspada</div>
+                    <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-orange-500"></span> Siaga</div>
+                    <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> Bahaya</div>
+                </div>
+            </div>
+
+            <!-- Map Scale & Controls (Bottom Right) -->
+            <div class="absolute bottom-6 right-6 flex items-center gap-3 z-20">
+                <!-- Scale -->
+                <div class="bg-panel/90 backdrop-blur-md border border-slate-600 rounded-lg px-3 py-1.5 flex items-center gap-2 text-[10px] text-slate-300 shadow-lg">
+                    <span>0</span>
+                    <div class="w-16 h-1 bg-slate-400 relative">
+                        <div class="absolute left-1/4 top-0 h-full w-px bg-slate-400"></div>
+                        <div class="absolute left-1/2 top-0 h-full w-px bg-slate-400"></div>
+                        <div class="absolute left-3/4 top-0 h-full w-px bg-slate-400"></div>
+                    </div>
+                    <span>20 km</span>
+                </div>
+                <!-- Map Type Toggles -->
+                <div class="bg-panel/90 backdrop-blur-md border border-slate-600 rounded-lg p-1 flex gap-1 shadow-lg">
+                    <button class="bg-blue-600 text-white text-[10px] font-bold px-3 py-1.5 rounded transition">Satelit</button>
+                    <button class="text-slate-400 hover:text-white text-[10px] font-bold px-3 py-1.5 rounded transition">Hybrid</button>
+                    <button class="text-slate-400 hover:text-white text-[10px] font-bold px-3 py-1.5 rounded transition">Peta</button>
+                </div>
+                <!-- Additional Controls -->
+                <button class="bg-panel/90 backdrop-blur-md border border-slate-600 rounded-lg w-8 h-8 flex items-center justify-center text-slate-400 hover:text-white transition shadow-lg">
+                    <i class="fa-solid fa-crosshairs text-xs"></i>
+                </button>
+                <button class="bg-panel/90 backdrop-blur-md border border-slate-600 rounded-lg w-8 h-8 flex items-center justify-center text-slate-400 hover:text-white transition shadow-lg">
+                    <i class="fa-solid fa-microphone text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Right Panel (CCTV Feed) -->
+    <aside class="w-[420px] bg-panel flex flex-col h-full border-l border-borderdark z-20 flex-shrink-0">
+        <!-- Header -->
+        <div class="h-20 flex items-center justify-between px-6 border-b border-borderdark flex-shrink-0">
+            <div class="flex items-center gap-3">
+                <h2 class="text-lg font-bold text-white">Kamera CCTV</h2>
+                <div class="flex items-center gap-1.5 bg-green-500/20 text-green-400 text-[10px] font-bold px-2 py-1 rounded-full border border-green-500/30">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> 42 Kamera Aktif
+                </div>
+            </div>
+            <a href="#" class="text-xs text-primary font-semibold hover:underline flex items-center gap-1">Lihat Semua <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+        </div>
+
+        <!-- Search & Filter -->
+        <div class="p-4 border-b border-borderdark flex-shrink-0">
+            <div class="flex gap-2 mb-4">
+                <div class="relative flex-1">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm"></i>
+                    <input type="text" placeholder="Cari kamera..." class="w-full bg-slate-800/50 border border-slate-700 text-slate-300 text-sm rounded-lg pl-9 pr-4 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition placeholder-slate-500">
+                </div>
+                <button class="bg-slate-800/50 border border-slate-700 text-slate-400 hover:text-white w-10 h-10 rounded-lg flex items-center justify-center transition">
+                    <i class="fa-solid fa-filter text-sm"></i>
+                </button>
+                <button class="bg-slate-800/50 border border-slate-700 text-slate-400 hover:text-white w-10 h-10 rounded-lg flex items-center justify-center transition">
+                    <i class="fa-solid fa-sliders text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Status Filters -->
+            <div class="flex flex-wrap gap-2">
+                <button class="bg-blue-600 text-white text-[10px] font-bold px-3 py-1.5 rounded-lg border border-blue-500 transition">Semua (42)</button>
+                <button class="bg-slate-800/50 text-slate-300 text-[10px] font-bold px-3 py-1.5 rounded-lg border border-slate-700 hover:bg-slate-700 transition">Normal (28)</button>
+                <button class="bg-slate-800/50 text-orange-400 text-[10px] font-bold px-3 py-1.5 rounded-lg border border-slate-700 hover:bg-slate-700 transition">Waspada (8)</button>
+                <button class="bg-slate-800/50 text-red-400 text-[10px] font-bold px-3 py-1.5 rounded-lg border border-slate-700 hover:bg-slate-700 transition">Siaga (4)</button>
+                <button class="bg-slate-800/50 text-red-500 text-[10px] font-bold px-3 py-1.5 rounded-lg border border-slate-700 hover:bg-slate-700 transition">Bahaya (2)</button>
+            </div>
+        </div>
+
+        <!-- Feeds Grid -->
+        <div class="flex-1 overflow-y-auto no-scrollbar p-4 space-y-4">
+            <div class="grid grid-cols-2 gap-3">
+                
+                <!-- Feed 1 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 group cursor-pointer hover:border-primary transition">
+                    <div class="relative h-28">
+                        <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover image-grayscale group-hover:scale-105 transition duration-500" alt="Feed 1">
+                        <div class="absolute top-1.5 left-1.5 bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">Siaga</div>
+                        <div class="absolute top-1.5 right-1.5 bg-black/60 text-white text-[9px] p-1 rounded cursor-pointer hover:bg-black"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                    <div class="p-2.5">
+                        <div class="flex items-start gap-2 mb-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1 flex-shrink-0"></span>
+                            <div class="text-[10px] font-bold text-white leading-tight">Jembatan Kali Sumenep</div>
+                        </div>
+                        <div class="flex justify-between items-center text-[9px] text-slate-400">
+                            <span>Kec. Kota Sumenep</span>
+                            <span>10:24:18</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feed 2 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 group cursor-pointer hover:border-primary transition">
+                    <div class="relative h-28">
+                        <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover image-grayscale group-hover:scale-105 transition duration-500" alt="Feed 2">
+                        <div class="absolute top-1.5 left-1.5 bg-green-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">Normal</div>
+                        <div class="absolute top-1.5 right-1.5 bg-black/60 text-white text-[9px] p-1 rounded cursor-pointer hover:bg-black"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                    <div class="p-2.5">
+                        <div class="flex items-start gap-2 mb-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1 flex-shrink-0"></span>
+                            <div class="text-[10px] font-bold text-white leading-tight">Kali Saronggi</div>
+                        </div>
+                        <div class="flex justify-between items-center text-[9px] text-slate-400">
+                            <span>Kec. Saronggi</span>
+                            <span>10:24:18</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feed 3 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 group cursor-pointer hover:border-primary transition">
+                    <div class="relative h-28">
+                        <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover image-grayscale group-hover:scale-105 transition duration-500" alt="Feed 3">
+                        <div class="absolute top-1.5 left-1.5 bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">Waspada</div>
+                        <div class="absolute top-1.5 right-1.5 bg-black/60 text-white text-[9px] p-1 rounded cursor-pointer hover:bg-black"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                    <div class="p-2.5">
+                        <div class="flex items-start gap-2 mb-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1 flex-shrink-0"></span>
+                            <div class="text-[10px] font-bold text-white leading-tight">Kali Kebun Agung</div>
+                        </div>
+                        <div class="flex justify-between items-center text-[9px] text-slate-400">
+                            <span>Kec. Kota Sumenep</span>
+                            <span>10:24:18</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feed 4 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 group cursor-pointer hover:border-primary transition">
+                    <div class="relative h-28">
+                        <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover image-grayscale group-hover:scale-105 transition duration-500" alt="Feed 4">
+                        <div class="absolute top-1.5 left-1.5 bg-green-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">Normal</div>
+                        <div class="absolute top-1.5 right-1.5 bg-black/60 text-white text-[9px] p-1 rounded cursor-pointer hover:bg-black"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                    <div class="p-2.5">
+                        <div class="flex items-start gap-2 mb-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1 flex-shrink-0"></span>
+                            <div class="text-[10px] font-bold text-white leading-tight">Kali Lenteng</div>
+                        </div>
+                        <div class="flex justify-between items-center text-[9px] text-slate-400">
+                            <span>Kec. Lenteng</span>
+                            <span>10:24:18</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feed 5 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 group cursor-pointer hover:border-primary transition">
+                    <div class="relative h-28">
+                        <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover image-grayscale group-hover:scale-105 transition duration-500" alt="Feed 5">
+                        <div class="absolute top-1.5 left-1.5 bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">Siaga</div>
+                        <div class="absolute top-1.5 right-1.5 bg-black/60 text-white text-[9px] p-1 rounded cursor-pointer hover:bg-black"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                    <div class="p-2.5">
+                        <div class="flex items-start gap-2 mb-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1 flex-shrink-0"></span>
+                            <div class="text-[10px] font-bold text-white leading-tight">Kali Batuan</div>
+                        </div>
+                        <div class="flex justify-between items-center text-[9px] text-slate-400">
+                            <span>Kec. Batuan</span>
+                            <span>10:24:18</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feed 6 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 group cursor-pointer hover:border-primary transition">
+                    <div class="relative h-28">
+                        <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover image-grayscale group-hover:scale-105 transition duration-500" alt="Feed 6">
+                        <div class="absolute top-1.5 left-1.5 bg-green-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">Normal</div>
+                        <div class="absolute top-1.5 right-1.5 bg-black/60 text-white text-[9px] p-1 rounded cursor-pointer hover:bg-black"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                    <div class="p-2.5">
+                        <div class="flex items-start gap-2 mb-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1 flex-shrink-0"></span>
+                            <div class="text-[10px] font-bold text-white leading-tight">Jembatan Manding</div>
+                        </div>
+                        <div class="flex justify-between items-center text-[9px] text-slate-400">
+                            <span>Kec. Manding</span>
+                            <span>10:24:18</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feed 7 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 group cursor-pointer hover:border-primary transition">
+                    <div class="relative h-28">
+                        <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover image-grayscale group-hover:scale-105 transition duration-500" alt="Feed 7">
+                        <div class="absolute top-1.5 left-1.5 bg-green-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">Normal</div>
+                        <div class="absolute top-1.5 right-1.5 bg-black/60 text-white text-[9px] p-1 rounded cursor-pointer hover:bg-black"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                    <div class="p-2.5">
+                        <div class="flex items-start gap-2 mb-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1 flex-shrink-0"></span>
+                            <div class="text-[10px] font-bold text-white leading-tight">Kali Dasuk</div>
+                        </div>
+                        <div class="flex justify-between items-center text-[9px] text-slate-400">
+                            <span>Kec. Dasuk</span>
+                            <span>10:24:18</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feed 8 -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 group cursor-pointer hover:border-primary transition">
+                    <div class="relative h-28">
+                        <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover image-grayscale group-hover:scale-105 transition duration-500" alt="Feed 8">
+                        <div class="absolute top-1.5 left-1.5 bg-orange-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">Waspada</div>
+                        <div class="absolute top-1.5 right-1.5 bg-black/60 text-white text-[9px] p-1 rounded cursor-pointer hover:bg-black"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                    <div class="p-2.5">
+                        <div class="flex items-start gap-2 mb-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1 flex-shrink-0"></span>
+                            <div class="text-[10px] font-bold text-white leading-tight">Kali Batupatih</div>
+                        </div>
+                        <div class="flex justify-between items-center text-[9px] text-slate-400">
+                            <span>Kec. Batupatih</span>
+                            <span>10:24:18</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </aside>
+
+</body>
+</html>
