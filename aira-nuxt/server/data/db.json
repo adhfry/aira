@@ -1,0 +1,2850 @@
+{
+  "meta": {
+    "anchor": "2026-09-24T03:24:18.000Z",
+    "baseline": {
+      "high": 9,
+      "medium": 9,
+      "normal": 38
+    }
+  },
+  "cameras": [
+    {
+      "id": "cam-001",
+      "name": "Jembatan Kali Surnenep",
+      "location": "Jl. Trunojoyo, Bangselok",
+      "district": "Kota Surnenep",
+      "status": "bahaya",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.00723,
+      "lng": 113.86562,
+      "lastUpdate": "2026-09-24T03:23:45.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-002",
+      "name": "Pintu Air Dasuk",
+      "location": "Desa Dasuk Laok",
+      "district": "Dasuk",
+      "status": "bahaya",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.93529,
+      "lng": 113.83255,
+      "lastUpdate": "2026-09-24T03:24:08.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-003",
+      "name": "Kali Batuan",
+      "location": "Desa Batuan",
+      "district": "Batuan",
+      "status": "siaga",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.00126,
+      "lng": 113.82966,
+      "lastUpdate": "2026-09-24T03:24:09.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-004",
+      "name": "Kali Lenteng",
+      "location": "Desa Lenteng Timur",
+      "district": "Lenteng",
+      "status": "siaga",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.95168,
+      "lng": 113.81715,
+      "lastUpdate": "2026-09-24T03:24:01.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-005",
+      "name": "Kali Batupatih Hulu",
+      "location": "Desa Bantelan",
+      "district": "Batupatih",
+      "status": "siaga",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.95087,
+      "lng": 113.96401,
+      "lastUpdate": "2026-09-24T03:23:42.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-006",
+      "name": "Bendung Kalianget",
+      "location": "Desa Kalianget Barat",
+      "district": "Kalianget",
+      "status": "siaga",
+      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.06217,
+      "lng": 113.92422,
+      "lastUpdate": "2026-09-24T03:23:48.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-007",
+      "name": "Kali Kebun Agung",
+      "location": "Kel. Kebun Agung",
+      "district": "Kota Surnenep",
+      "status": "waspada",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.00634,
+      "lng": 113.85154,
+      "lastUpdate": "2026-09-24T03:23:59.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-008",
+      "name": "Kali Batupatih",
+      "location": "Desa Batupatih",
+      "district": "Batupatih",
+      "status": "waspada",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.93689,
+      "lng": 113.9524,
+      "lastUpdate": "2026-09-24T03:24:12.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-009",
+      "name": "Kali Saronggi",
+      "location": "Desa Saroka",
+      "district": "Saronggi",
+      "status": "waspada",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.07319,
+      "lng": 113.86072,
+      "lastUpdate": "2026-09-24T03:23:39.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-010",
+      "name": "Saluran Primer Pajagalan",
+      "location": "Kel. Pajagalan",
+      "district": "Kota Surnenep",
+      "status": "waspada",
+      "imageUrl": "https://images.unsplash.com/photo-1468581264429-2548ef9eb732?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.00675,
+      "lng": 113.87316,
+      "lastUpdate": "2026-09-24T03:24:05.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-011",
+      "name": "Muara Kalianget",
+      "location": "Desa Kalianget Timur",
+      "district": "Kalianget",
+      "status": "waspada",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.06676,
+      "lng": 113.91799,
+      "lastUpdate": "2026-09-24T03:24:14.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-012",
+      "name": "Kali Dasuk",
+      "location": "Desa Dasuk Daya",
+      "district": "Dasuk",
+      "status": "waspada",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.91067,
+      "lng": 113.84436,
+      "lastUpdate": "2026-09-24T03:24:01.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-013",
+      "name": "Simpang Lenteng",
+      "location": "Jl. Raya Lenteng",
+      "district": "Lenteng",
+      "status": "waspada",
+      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.94802,
+      "lng": 113.8024,
+      "lastUpdate": "2026-09-24T03:23:39.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-014",
+      "name": "Jembatan Bluto",
+      "location": "Desa Bluto",
+      "district": "Bluto",
+      "status": "waspada",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.08325,
+      "lng": 113.78815,
+      "lastUpdate": "2026-09-24T03:24:03.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-015",
+      "name": "Jembatan Manding",
+      "location": "Desa Manding Laok",
+      "district": "Manding",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.9482,
+      "lng": 113.88586,
+      "lastUpdate": "2026-09-24T03:23:55.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-016",
+      "name": "Kali Gading",
+      "location": "Desa Gadding",
+      "district": "Manding",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.94198,
+      "lng": 113.87595,
+      "lastUpdate": "2026-09-24T01:57:18.000Z",
+      "isOnline": false
+    },
+    {
+      "id": "cam-017",
+      "name": "Pasar Anom",
+      "location": "Kel. Pangarangan",
+      "district": "Kota Surnenep",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.00566,
+      "lng": 113.85371,
+      "lastUpdate": "2026-09-24T03:23:40.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-018",
+      "name": "Taman Bunga",
+      "location": "Kel. Pangarangan",
+      "district": "Kota Surnenep",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.01202,
+      "lng": 113.86191,
+      "lastUpdate": "2026-09-24T03:24:08.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-019",
+      "name": "Pintu Air Marengan",
+      "location": "Desa Marengan Daya",
+      "district": "Kota Surnenep",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.00725,
+      "lng": 113.86056,
+      "lastUpdate": "2026-09-24T03:23:47.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-020",
+      "name": "Terminal Arya Wiraraja",
+      "location": "Desa Pabian",
+      "district": "Kota Surnenep",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.99232,
+      "lng": 113.85497,
+      "lastUpdate": "2026-09-24T03:24:07.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-021",
+      "name": "Kali Anom",
+      "location": "Desa Kolor",
+      "district": "Kota Surnenep",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1468581264429-2548ef9eb732?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.00654,
+      "lng": 113.84747,
+      "lastUpdate": "2026-09-24T03:24:17.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-022",
+      "name": "Pelabuhan Kalianget",
+      "location": "Desa Kalianget Timur",
+      "district": "Kalianget",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.0412,
+      "lng": 113.91309,
+      "lastUpdate": "2026-09-24T03:23:43.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-023",
+      "name": "Jembatan Karang Anyar",
+      "location": "Desa Karang Anyar",
+      "district": "Kalianget",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.05783,
+      "lng": 113.92722,
+      "lastUpdate": "2026-09-24T03:23:55.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-024",
+      "name": "Kali Gunting",
+      "location": "Desa Gunggung",
+      "district": "Batuan",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.99768,
+      "lng": 113.83454,
+      "lastUpdate": "2026-09-24T03:23:49.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-025",
+      "name": "Simpang Batuan",
+      "location": "Desa Babbalan",
+      "district": "Batuan",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.98801,
+      "lng": 113.82782,
+      "lastUpdate": "2026-09-24T03:23:43.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-026",
+      "name": "Bendung Lenteng",
+      "location": "Desa Lenteng Barat",
+      "district": "Lenteng",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.97184,
+      "lng": 113.79504,
+      "lastUpdate": "2026-09-24T03:24:06.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-027",
+      "name": "Pasar Lenteng",
+      "location": "Desa Lenteng Timur",
+      "district": "Lenteng",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.97536,
+      "lng": 113.81376,
+      "lastUpdate": "2026-09-24T03:23:43.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-028",
+      "name": "Pantai Lombang",
+      "location": "Desa Lombang",
+      "district": "Batupatih",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.94932,
+      "lng": 113.95214,
+      "lastUpdate": "2026-09-24T03:24:05.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-029",
+      "name": "Simpang Batupatih",
+      "location": "Desa Batupatih Laok",
+      "district": "Batupatih",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.93892,
+      "lng": 113.96681,
+      "lastUpdate": "2026-09-24T03:24:12.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-030",
+      "name": "Jembatan Dasuk",
+      "location": "Desa Dasuk Timur",
+      "district": "Dasuk",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.93227,
+      "lng": 113.85912,
+      "lastUpdate": "2026-09-24T03:24:08.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-031",
+      "name": "Pasar Manding",
+      "location": "Desa Manding Daya",
+      "district": "Manding",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.91967,
+      "lng": 113.8533,
+      "lastUpdate": "2026-09-24T03:24:00.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-032",
+      "name": "Kali Bluto",
+      "location": "Desa Pakandangan",
+      "district": "Bluto",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1468581264429-2548ef9eb732?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.08577,
+      "lng": 113.78601,
+      "lastUpdate": "2026-09-24T03:24:16.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-033",
+      "name": "Pasar Bluto",
+      "location": "Desa Bluto",
+      "district": "Bluto",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.07495,
+      "lng": 113.7853,
+      "lastUpdate": "2026-09-24T03:23:58.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-034",
+      "name": "Pelabuhan Bluto",
+      "location": "Desa Aeng Dake",
+      "district": "Bluto",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.09988,
+      "lng": 113.79422,
+      "lastUpdate": "2026-09-24T02:08:18.000Z",
+      "isOnline": false
+    },
+    {
+      "id": "cam-035",
+      "name": "Jembatan Saronggi",
+      "location": "Desa Saronggi",
+      "district": "Saronggi",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.06736,
+      "lng": 113.84753,
+      "lastUpdate": "2026-09-24T03:23:54.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-036",
+      "name": "Tambak Saronggi",
+      "location": "Desa Talang",
+      "district": "Saronggi",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -7.07357,
+      "lng": 113.85281,
+      "lastUpdate": "2026-09-24T03:23:56.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-037",
+      "name": "Kali Ambunten",
+      "location": "Desa Ambunten Timur",
+      "district": "Ambunten",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.89813,
+      "lng": 113.73223,
+      "lastUpdate": "2026-09-24T03:24:13.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-038",
+      "name": "Pelabuhan Ambunten",
+      "location": "Desa Ambunten Tengah",
+      "district": "Ambunten",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.88595,
+      "lng": 113.75573,
+      "lastUpdate": "2026-09-24T03:23:43.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-039",
+      "name": "Jembatan Ambunten",
+      "location": "Desa Ambunten Barat",
+      "district": "Ambunten",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.89008,
+      "lng": 113.73333,
+      "lastUpdate": "2026-09-24T03:23:56.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-040",
+      "name": "Kali Pasongsongan",
+      "location": "Desa Pasongsongan",
+      "district": "Pasongsongan",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.91476,
+      "lng": 113.67098,
+      "lastUpdate": "2026-09-24T03:24:06.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-041",
+      "name": "Pantai Pasongsongan",
+      "location": "Desa Padangdangan",
+      "district": "Pasongsongan",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.89981,
+      "lng": 113.66175,
+      "lastUpdate": "2026-09-24T03:23:42.000Z",
+      "isOnline": true
+    },
+    {
+      "id": "cam-042",
+      "name": "Simpang Pasongsongan",
+      "location": "Desa Panaongan",
+      "district": "Pasongsongan",
+      "status": "normal",
+      "imageUrl": "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=600&auto=format&fit=crop",
+      "lat": -6.88895,
+      "lng": 113.66009,
+      "lastUpdate": "2026-09-24T03:23:57.000Z",
+      "isOnline": true
+    }
+  ],
+  "sensors": [
+    {
+      "id": "sen-001",
+      "type": "water_level",
+      "name": "TMA Kali Surnenep",
+      "location": "Jembatan Kali Surnenep",
+      "district": "Kota Surnenep",
+      "value": 285,
+      "unit": "cm",
+      "trend": "up",
+      "status": "bahaya",
+      "lat": -6.99982,
+      "lng": 113.86857,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:12.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 233
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 241
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 243
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 244
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 248
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 257
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 261
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 272
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 262
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 279
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 272
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 285
+        }
+      ]
+    },
+    {
+      "id": "sen-002",
+      "type": "water_level",
+      "name": "TMA Pintu Air Dasuk",
+      "location": "Pintu Air Dasuk",
+      "district": "Dasuk",
+      "value": 262,
+      "unit": "cm",
+      "trend": "up",
+      "status": "bahaya",
+      "lat": -6.92019,
+      "lng": 113.85372,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:10.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 210
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 227
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 221
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 233
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 236
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 237
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 246
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 236
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 248
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 262
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 257
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 262
+        }
+      ]
+    },
+    {
+      "id": "sen-003",
+      "type": "water_level",
+      "name": "TMA Kali Batupatih",
+      "location": "Desa Bantelan",
+      "district": "Batupatih",
+      "value": 238,
+      "unit": "cm",
+      "trend": "up",
+      "status": "siaga",
+      "lat": -6.96128,
+      "lng": 113.95994,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:23:55.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 192
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 193
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 207
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 210
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 218
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 209
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 227
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 221
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 232
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 236
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 231
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 238
+        }
+      ]
+    },
+    {
+      "id": "sen-004",
+      "type": "water_level",
+      "name": "TMA Kali Lenteng",
+      "location": "Desa Lenteng Timur",
+      "district": "Lenteng",
+      "value": 221,
+      "unit": "cm",
+      "trend": "up",
+      "status": "siaga",
+      "lat": -6.97397,
+      "lng": 113.81434,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:15.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 184
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 177
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 193
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 187
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 197
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 208
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 195
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 198
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 211
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 217
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 223
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 221
+        }
+      ]
+    },
+    {
+      "id": "sen-005",
+      "type": "water_level",
+      "name": "TMA Bendung Kalianget",
+      "location": "Desa Kalianget Barat",
+      "district": "Kalianget",
+      "value": 214,
+      "unit": "cm",
+      "trend": "stable",
+      "status": "siaga",
+      "lat": -7.06172,
+      "lng": 113.92149,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:11.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 215
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 206
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 220
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 215
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 210
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 210
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 220
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 215
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 209
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 221
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 222
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 214
+        }
+      ]
+    },
+    {
+      "id": "sen-006",
+      "type": "water_level",
+      "name": "TMA Kali Batuan",
+      "location": "Desa Batuan",
+      "district": "Batuan",
+      "value": 196,
+      "unit": "cm",
+      "trend": "up",
+      "status": "waspada",
+      "lat": -6.98671,
+      "lng": 113.83793,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:23:55.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 164
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 159
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 170
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 169
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 172
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 173
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 176
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 184
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 183
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 190
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 188
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 196
+        }
+      ]
+    },
+    {
+      "id": "sen-007",
+      "type": "water_level",
+      "name": "TMA Kali Kebun Agung",
+      "location": "Kel. Kebun Agung",
+      "district": "Kota Surnenep",
+      "value": 188,
+      "unit": "cm",
+      "trend": "stable",
+      "status": "waspada",
+      "lat": -7.01466,
+      "lng": 113.86793,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:23:58.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 181
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 185
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 195
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 181
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 187
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 181
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 185
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 182
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 195
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 191
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 182
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 188
+        }
+      ]
+    },
+    {
+      "id": "sen-008",
+      "type": "water_level",
+      "name": "TMA Kali Manding",
+      "location": "Desa Manding Laok",
+      "district": "Manding",
+      "value": 176,
+      "unit": "cm",
+      "trend": "up",
+      "status": "waspada",
+      "lat": -6.93301,
+      "lng": 113.85884,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:08.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 150
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 144
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 144
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 149
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 160
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 157
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 162
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 159
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 168
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 167
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 173
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 176
+        }
+      ]
+    },
+    {
+      "id": "sen-009",
+      "type": "water_level",
+      "name": "TMA Jembatan Bluto",
+      "location": "Desa Bluto",
+      "district": "Bluto",
+      "value": 164,
+      "unit": "cm",
+      "trend": "stable",
+      "status": "waspada",
+      "lat": -7.08246,
+      "lng": 113.79889,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:12.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 165
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 162
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 166
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 164
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 164
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 167
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 162
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 161
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 165
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 168
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 162
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 164
+        }
+      ]
+    },
+    {
+      "id": "sen-010",
+      "type": "water_level",
+      "name": "TMA Kali Saronggi",
+      "location": "Desa Saroka",
+      "district": "Saronggi",
+      "value": 132,
+      "unit": "cm",
+      "trend": "down",
+      "status": "normal",
+      "lat": -7.07782,
+      "lng": 113.8578,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:23:57.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 152
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 149
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 144
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 148
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 144
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 143
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 144
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 136
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 136
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 134
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 135
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 132
+        }
+      ]
+    },
+    {
+      "id": "sen-011",
+      "type": "water_level",
+      "name": "TMA Kali Gunting",
+      "location": "Desa Gunggung",
+      "district": "Batuan",
+      "value": 118,
+      "unit": "cm",
+      "trend": "down",
+      "status": "normal",
+      "lat": -6.99746,
+      "lng": 113.83878,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:09.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 139
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 131
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 130
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 127
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 132
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 129
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 127
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 125
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 122
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 123
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 117
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 118
+        }
+      ]
+    },
+    {
+      "id": "sen-012",
+      "type": "water_level",
+      "name": "TMA Kali Ambunten",
+      "location": "Desa Ambunten Timur",
+      "district": "Ambunten",
+      "value": 104,
+      "unit": "cm",
+      "trend": "stable",
+      "status": "normal",
+      "lat": -6.90035,
+      "lng": 113.74468,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:09.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 104
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 103
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 107
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 107
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 101
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 108
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 101
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 103
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 103
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 104
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 105
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 104
+        }
+      ]
+    },
+    {
+      "id": "sen-013",
+      "type": "water_level",
+      "name": "TMA Kali Pasongsongan",
+      "location": "Desa Pasongsongan",
+      "district": "Pasongsongan",
+      "value": 96,
+      "unit": "cm",
+      "trend": "down",
+      "status": "normal",
+      "lat": -6.90451,
+      "lng": 113.67041,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:23:56.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 108
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 111
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 106
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 103
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 104
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 104
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 102
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 99
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 98
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 98
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 101
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 96
+        }
+      ]
+    },
+    {
+      "id": "sen-014",
+      "type": "water_level",
+      "name": "TMA Kali Gading",
+      "location": "Desa Gadding",
+      "district": "Manding",
+      "value": 88,
+      "unit": "cm",
+      "trend": "stable",
+      "status": "normal",
+      "lat": -6.92231,
+      "lng": 113.86885,
+      "isOnline": false,
+      "lastUpdate": "2026-09-24T01:49:18.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 89
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 88
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 85
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 91
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 91
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 87
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 91
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 87
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 91
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 89
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 88
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 88
+        }
+      ]
+    },
+    {
+      "id": "sen-015",
+      "type": "rainfall",
+      "name": "ARG Kota Surnenep",
+      "location": "Kantor BPBD",
+      "district": "Kota Surnenep",
+      "value": 45,
+      "unit": "mm/jam",
+      "trend": "up",
+      "status": "bahaya",
+      "lat": -7.0034,
+      "lng": 113.84785,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:23:48.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 37
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 36
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 38
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 40
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 40
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 41
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 42
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 41
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 44
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 42
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 44
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 45
+        }
+      ]
+    },
+    {
+      "id": "sen-016",
+      "type": "rainfall",
+      "name": "ARG Dasuk",
+      "location": "Kantor Kecamatan Dasuk",
+      "district": "Dasuk",
+      "value": 38,
+      "unit": "mm/jam",
+      "trend": "up",
+      "status": "siaga",
+      "lat": -6.93974,
+      "lng": 113.83512,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:10.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 31
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 32
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 33
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 33
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 33
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 33
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 35
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 35
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 36
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 37
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 38
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 38
+        }
+      ]
+    },
+    {
+      "id": "sen-017",
+      "type": "rainfall",
+      "name": "ARG Batupatih",
+      "location": "Kantor Kecamatan Batupatih",
+      "district": "Batupatih",
+      "value": 31,
+      "unit": "mm/jam",
+      "trend": "up",
+      "status": "siaga",
+      "lat": -6.96116,
+      "lng": 113.9742,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:23:59.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 26
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 26
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 27
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 28
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 28
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 29
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 30
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 28
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 30
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 30
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 30
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 31
+        }
+      ]
+    },
+    {
+      "id": "sen-018",
+      "type": "rainfall",
+      "name": "ARG Lenteng",
+      "location": "Kantor Kecamatan Lenteng",
+      "district": "Lenteng",
+      "value": 24,
+      "unit": "mm/jam",
+      "trend": "stable",
+      "status": "waspada",
+      "lat": -6.96888,
+      "lng": 113.80519,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:23:55.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 24
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 24
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 23
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 23
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 24
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 25
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 25
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 24
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 24
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 25
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 25
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 24
+        }
+      ]
+    },
+    {
+      "id": "sen-019",
+      "type": "rainfall",
+      "name": "ARG Kalianget",
+      "location": "Kantor Kecamatan Kalianget",
+      "district": "Kalianget",
+      "value": 18,
+      "unit": "mm/jam",
+      "trend": "stable",
+      "status": "waspada",
+      "lat": -7.05551,
+      "lng": 113.92888,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:01.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 19
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 18
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 18
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 18
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 18
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 18
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 18
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 18
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 18
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 18
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 17
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "id": "sen-020",
+      "type": "rainfall",
+      "name": "ARG Bluto",
+      "location": "Kantor Kecamatan Bluto",
+      "district": "Bluto",
+      "value": 9,
+      "unit": "mm/jam",
+      "trend": "down",
+      "status": "normal",
+      "lat": -7.07733,
+      "lng": 113.78993,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:04.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 10
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 10
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 10
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 10
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 10
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 10
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 10
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 10
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 9
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 9
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 9
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "id": "sen-021",
+      "type": "rainfall",
+      "name": "ARG Saronggi",
+      "location": "Kantor Kecamatan Saronggi",
+      "district": "Saronggi",
+      "value": 6,
+      "unit": "mm/jam",
+      "trend": "down",
+      "status": "normal",
+      "lat": -7.07491,
+      "lng": 113.86853,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:14.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 7
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 7
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 7
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 7
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 6
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 6
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 7
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 6
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 6
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 6
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 6
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "id": "sen-022",
+      "type": "rainfall",
+      "name": "ARG Ambunten",
+      "location": "Kantor Kecamatan Ambunten",
+      "district": "Ambunten",
+      "value": 4,
+      "unit": "mm/jam",
+      "trend": "stable",
+      "status": "normal",
+      "lat": -6.88774,
+      "lng": 113.7462,
+      "isOnline": false,
+      "lastUpdate": "2026-09-24T01:49:18.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 4
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 4
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 4
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 4
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 4
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 4
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 4
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 4
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 4
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 4
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 4
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "id": "sen-023",
+      "type": "weather",
+      "name": "AWS Kota Surnenep",
+      "location": "Stasiun Meteorologi Trunojoyo",
+      "district": "Kota Surnenep",
+      "value": 28,
+      "unit": "°C",
+      "trend": "stable",
+      "status": "normal",
+      "lat": -7.01502,
+      "lng": 113.85925,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:14.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 28.2
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 28.8
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 28.6
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 28.5
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 28.6
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 27.9
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 27.3
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 27.4
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 27.4
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 28.1
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 28.5
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 28
+        }
+      ]
+    },
+    {
+      "id": "sen-024",
+      "type": "weather",
+      "name": "AWS Kalianget",
+      "location": "Pelabuhan Kalianget",
+      "district": "Kalianget",
+      "value": 29,
+      "unit": "°C",
+      "trend": "up",
+      "status": "normal",
+      "lat": -7.03872,
+      "lng": 113.92626,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:17.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 23.7
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 24
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 25
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 25
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 26.3
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 26.9
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 25.8
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 27.5
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 27.8
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 28.1
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 28
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 29
+        }
+      ]
+    },
+    {
+      "id": "sen-025",
+      "type": "weather",
+      "name": "AWS Lenteng",
+      "location": "Desa Lenteng Barat",
+      "district": "Lenteng",
+      "value": 27,
+      "unit": "°C",
+      "trend": "down",
+      "status": "normal",
+      "lat": -6.96115,
+      "lng": 113.80294,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:18.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 30.5
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 31.5
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 30
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 29.4
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 29.7
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 29.6
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 29.5
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 28.6
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 27.7
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 27.6
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 26.6
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 27
+        }
+      ]
+    },
+    {
+      "id": "sen-026",
+      "type": "weather",
+      "name": "AWS Batupatih",
+      "location": "Pantai Lombang",
+      "district": "Batupatih",
+      "value": 28,
+      "unit": "°C",
+      "trend": "stable",
+      "status": "normal",
+      "lat": -6.94818,
+      "lng": 113.95497,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:05.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 27.9
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 28.6
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 28.2
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 27.7
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 28.4
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 28
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 27.5
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 27.7
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 28.1
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 28.4
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 28.5
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 28
+        }
+      ]
+    },
+    {
+      "id": "sen-027",
+      "type": "weather",
+      "name": "AWS Bluto",
+      "location": "Desa Pakandangan",
+      "district": "Bluto",
+      "value": 30,
+      "unit": "°C",
+      "trend": "up",
+      "status": "normal",
+      "lat": -7.0859,
+      "lng": 113.79746,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:23:56.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 24.8
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 25.2
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 25.7
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 26.3
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 27.3
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 26.3
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 27.4
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 28.8
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 28.9
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 28.5
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 29.7
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "sen-028",
+      "type": "weather",
+      "name": "AWS Pasongsongan",
+      "location": "Desa Padangdangan",
+      "district": "Pasongsongan",
+      "value": 27,
+      "unit": "°C",
+      "trend": "stable",
+      "status": "normal",
+      "lat": -6.89928,
+      "lng": 113.65117,
+      "isOnline": true,
+      "lastUpdate": "2026-09-24T03:24:14.000Z",
+      "history": [
+        {
+          "time": "2026-09-23T16:24:18.000Z",
+          "value": 27.6
+        },
+        {
+          "time": "2026-09-23T17:24:18.000Z",
+          "value": 26.8
+        },
+        {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 27.7
+        },
+        {
+          "time": "2026-09-23T19:24:18.000Z",
+          "value": 26.3
+        },
+        {
+          "time": "2026-09-23T20:24:18.000Z",
+          "value": 27.5
+        },
+        {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 27.2
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 27
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 26.3
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 26.5
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 27.3
+        },
+        {
+          "time": "2026-09-24T02:24:18.000Z",
+          "value": 27.4
+        },
+        {
+          "time": "2026-09-24T03:24:18.000Z",
+          "value": 27
+        }
+      ]
+    }
+  ],
+  "incidents": [
+    {
+      "id": "inc-001",
+      "title": "Peringatan Dini - Risiko Tinggi",
+      "type": "peringatan",
+      "district": "Kota Surnenep",
+      "location": "Kali Surnenep",
+      "description": "Kenaikan tinggi muka air di Kali Surnenep",
+      "severity": "bahaya",
+      "status": "aktif",
+      "timestamp": "2026-09-24T03:24:18.000Z",
+      "reporter": "Sistem AIRA"
+    },
+    {
+      "id": "inc-002",
+      "title": "Curah Hujan Tinggi",
+      "type": "hujan_tinggi",
+      "district": "Kota Surnenep",
+      "location": "ARG Kota Surnenep",
+      "description": "Intensitas 45 mm/jam di Kec. Kota Surnenep",
+      "severity": "siaga",
+      "status": "aktif",
+      "timestamp": "2026-09-24T03:12:18.000Z",
+      "reporter": "Sistem AIRA"
+    },
+    {
+      "id": "inc-003",
+      "title": "Verifikasi Lapangan",
+      "type": "verifikasi",
+      "district": "Saronggi",
+      "location": "Jembatan Saronggi",
+      "description": "Petugas melakukan pengecekan di Jembatan Saronggi",
+      "severity": "waspada",
+      "status": "ditangani",
+      "timestamp": "2026-09-24T02:45:18.000Z",
+      "reporter": "Rizky Maulana"
+    },
+    {
+      "id": "inc-004",
+      "title": "Kamera Offline",
+      "type": "offline",
+      "district": "Manding",
+      "location": "Kali Gading",
+      "description": "CCTV Kali Gading tidak merespons",
+      "severity": "waspada",
+      "status": "aktif",
+      "timestamp": "2026-09-24T02:21:18.000Z",
+      "reporter": "Sistem AIRA"
+    },
+    {
+      "id": "inc-005",
+      "title": "Status Normal",
+      "type": "normal",
+      "district": "Lenteng",
+      "location": "Kali Lenteng",
+      "description": "Tinggi muka air di Kali Lenteng kembali normal",
+      "severity": "normal",
+      "status": "selesai",
+      "timestamp": "2026-09-24T01:36:18.000Z",
+      "reporter": "Sistem AIRA"
+    },
+    {
+      "id": "inc-006",
+      "title": "Genangan Terdeteksi",
+      "type": "peringatan",
+      "district": "Dasuk",
+      "location": "Pintu Air Dasuk",
+      "description": "Computer Vision mendeteksi genangan 30 cm di sekitar pintu air",
+      "severity": "bahaya",
+      "status": "ditangani",
+      "timestamp": "2026-09-24T00:54:18.000Z",
+      "reporter": "Sistem AIRA"
+    },
+    {
+      "id": "inc-007",
+      "title": "Curah Hujan Tinggi",
+      "type": "hujan_tinggi",
+      "district": "Batupatih",
+      "location": "ARG Batupatih",
+      "description": "Intensitas 31 mm/jam di Kec. Batupatih",
+      "severity": "siaga",
+      "status": "ditangani",
+      "timestamp": "2026-09-24T00:14:18.000Z",
+      "reporter": "Sistem AIRA"
+    },
+    {
+      "id": "inc-008",
+      "title": "Verifikasi Lapangan",
+      "type": "verifikasi",
+      "district": "Kota Surnenep",
+      "location": "Kali Kebun Agung",
+      "description": "Petugas mengonfirmasi luapan kecil di bantaran Kali Kebun Agung",
+      "severity": "waspada",
+      "status": "selesai",
+      "timestamp": "2026-09-23T23:24:18.000Z",
+      "reporter": "Siti Nurhaliza"
+    },
+    {
+      "id": "inc-009",
+      "title": "Peringatan Dini - Siaga",
+      "type": "peringatan",
+      "district": "Kalianget",
+      "location": "Bendung Kalianget",
+      "description": "Tinggi muka air mendekati ambang siaga",
+      "severity": "siaga",
+      "status": "ditangani",
+      "timestamp": "2026-09-23T22:24:18.000Z",
+      "reporter": "Sistem AIRA"
+    },
+    {
+      "id": "inc-010",
+      "title": "Sensor Offline",
+      "type": "offline",
+      "district": "Ambunten",
+      "location": "ARG Ambunten",
+      "description": "Sensor curah hujan Ambunten tidak mengirim data",
+      "severity": "waspada",
+      "status": "aktif",
+      "timestamp": "2026-09-23T21:24:18.000Z",
+      "reporter": "Sistem AIRA"
+    },
+    {
+      "id": "inc-011",
+      "title": "Status Normal",
+      "type": "normal",
+      "district": "Bluto",
+      "location": "Jembatan Bluto",
+      "description": "Kondisi aliran sungai kembali stabil",
+      "severity": "normal",
+      "status": "selesai",
+      "timestamp": "2026-09-23T19:24:18.000Z",
+      "reporter": "Sistem AIRA"
+    },
+    {
+      "id": "inc-012",
+      "title": "Genangan Jalan",
+      "type": "peringatan",
+      "district": "Lenteng",
+      "location": "Simpang Lenteng",
+      "description": "Genangan setinggi 20 cm menghambat lalu lintas",
+      "severity": "siaga",
+      "status": "selesai",
+      "timestamp": "2026-09-23T17:04:18.000Z",
+      "reporter": "Dimas Pratama"
+    },
+    {
+      "id": "inc-013",
+      "title": "Verifikasi Lapangan",
+      "type": "verifikasi",
+      "district": "Batuan",
+      "location": "Kali Batuan",
+      "description": "Pembersihan sampah penyumbat aliran oleh petugas",
+      "severity": "waspada",
+      "status": "selesai",
+      "timestamp": "2026-09-23T14:44:18.000Z",
+      "reporter": "Rizky Maulana"
+    },
+    {
+      "id": "inc-014",
+      "title": "Curah Hujan Tinggi",
+      "type": "hujan_tinggi",
+      "district": "Dasuk",
+      "location": "ARG Dasuk",
+      "description": "Intensitas 38 mm/jam di Kec. Dasuk",
+      "severity": "siaga",
+      "status": "selesai",
+      "timestamp": "2026-09-23T12:24:18.000Z",
+      "reporter": "Sistem AIRA"
+    },
+    {
+      "id": "inc-015",
+      "title": "Peringatan Dini - Waspada",
+      "type": "peringatan",
+      "district": "Manding",
+      "location": "Jembatan Manding",
+      "description": "Kenaikan muka air 25 cm dalam 2 jam",
+      "severity": "waspada",
+      "status": "selesai",
+      "timestamp": "2026-09-23T09:04:18.000Z",
+      "reporter": "Sistem AIRA"
+    },
+    {
+      "id": "inc-016",
+      "title": "Kamera Offline",
+      "type": "offline",
+      "district": "Bluto",
+      "location": "Pelabuhan Bluto",
+      "description": "CCTV Pelabuhan Bluto terputus dari jaringan",
+      "severity": "waspada",
+      "status": "aktif",
+      "timestamp": "2026-09-23T05:44:18.000Z",
+      "reporter": "Sistem AIRA"
+    },
+    {
+      "id": "inc-017",
+      "title": "Status Normal",
+      "type": "normal",
+      "district": "Kalianget",
+      "location": "Muara Kalianget",
+      "description": "Air laut surut, aliran muara kembali normal",
+      "severity": "normal",
+      "status": "selesai",
+      "timestamp": "2026-09-23T02:24:18.000Z",
+      "reporter": "Sistem AIRA"
+    },
+    {
+      "id": "inc-018",
+      "title": "Banjir Rob",
+      "type": "peringatan",
+      "district": "Kalianget",
+      "location": "Pelabuhan Kalianget",
+      "description": "Banjir rob menggenangi area pelabuhan",
+      "severity": "siaga",
+      "status": "selesai",
+      "timestamp": "2026-09-22T18:04:18.000Z",
+      "reporter": "Siti Nurhaliza"
+    },
+    {
+      "id": "inc-019",
+      "title": "Verifikasi Lapangan",
+      "type": "verifikasi",
+      "district": "Pasongsongan",
+      "location": "Kali Pasongsongan",
+      "description": "Pengecekan tanggul pasca hujan deras",
+      "severity": "normal",
+      "status": "selesai",
+      "timestamp": "2026-09-22T08:04:18.000Z",
+      "reporter": "Dimas Pratama"
+    },
+    {
+      "id": "inc-020",
+      "title": "Status Normal",
+      "type": "normal",
+      "district": "Saronggi",
+      "location": "Kali Saronggi",
+      "description": "Tinggi muka air stabil di bawah ambang waspada",
+      "severity": "normal",
+      "status": "selesai",
+      "timestamp": "2026-09-21T22:04:18.000Z",
+      "reporter": "Sistem AIRA"
+    }
+  ],
+  "districts": [
+    {
+      "id": "kec-001",
+      "name": "Kota Surnenep",
+      "riskLevel": "bahaya",
+      "riskPercentage": 85,
+      "population": 76450,
+      "coordinates": {
+        "lat": -7.0086,
+        "lng": 113.8594
+      }
+    },
+    {
+      "id": "kec-002",
+      "name": "Batupatih",
+      "riskLevel": "bahaya",
+      "riskPercentage": 78,
+      "population": 51210,
+      "coordinates": {
+        "lat": -6.9535,
+        "lng": 113.9661
+      }
+    },
+    {
+      "id": "kec-003",
+      "name": "Dasuk",
+      "riskLevel": "bahaya",
+      "riskPercentage": 72,
+      "population": 38920,
+      "coordinates": {
+        "lat": -6.9282,
+        "lng": 113.8421
+      }
+    },
+    {
+      "id": "kec-004",
+      "name": "Kalianget",
+      "riskLevel": "siaga",
+      "riskPercentage": 65,
+      "population": 41870,
+      "coordinates": {
+        "lat": -7.0506,
+        "lng": 113.9291
+      }
+    },
+    {
+      "id": "kec-005",
+      "name": "Lenteng",
+      "riskLevel": "siaga",
+      "riskPercentage": 58,
+      "population": 60330,
+      "coordinates": {
+        "lat": -6.9642,
+        "lng": 113.8032
+      }
+    },
+    {
+      "id": "kec-006",
+      "name": "Batuan",
+      "riskLevel": "siaga",
+      "riskPercentage": 52,
+      "population": 34110,
+      "coordinates": {
+        "lat": -6.9894,
+        "lng": 113.8321
+      }
+    },
+    {
+      "id": "kec-007",
+      "name": "Manding",
+      "riskLevel": "waspada",
+      "riskPercentage": 46,
+      "population": 37780,
+      "coordinates": {
+        "lat": -6.9321,
+        "lng": 113.8702
+      }
+    },
+    {
+      "id": "kec-008",
+      "name": "Bluto",
+      "riskLevel": "waspada",
+      "riskPercentage": 41,
+      "population": 49560,
+      "coordinates": {
+        "lat": -7.0851,
+        "lng": 113.7964
+      }
+    },
+    {
+      "id": "kec-009",
+      "name": "Saronggi",
+      "riskLevel": "normal",
+      "riskPercentage": 33,
+      "population": 39240,
+      "coordinates": {
+        "lat": -7.0741,
+        "lng": 113.8653
+      }
+    },
+    {
+      "id": "kec-010",
+      "name": "Ambunten",
+      "riskLevel": "normal",
+      "riskPercentage": 28,
+      "population": 43190,
+      "coordinates": {
+        "lat": -6.8942,
+        "lng": 113.7443
+      }
+    },
+    {
+      "id": "kec-011",
+      "name": "Pasongsongan",
+      "riskLevel": "normal",
+      "riskPercentage": 22,
+      "population": 47050,
+      "coordinates": {
+        "lat": -6.9021,
+        "lng": 113.6612
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "usr-001",
+      "name": "Ahda Barori",
+      "role": "Administrator",
+      "email": "ahda.barori@surnenepkab.go.id",
+      "phone": "0812-3456-7890",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
+      "district": "Kota Surnenep",
+      "status": "aktif"
+    },
+    {
+      "id": "usr-002",
+      "name": "Siti Nurhaliza",
+      "role": "Operator",
+      "email": "siti.nurhaliza@surnenepkab.go.id",
+      "phone": "0813-2211-4455",
+      "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop",
+      "district": "Kota Surnenep",
+      "status": "aktif"
+    },
+    {
+      "id": "usr-003",
+      "name": "Rizky Maulana",
+      "role": "Petugas Lapangan",
+      "email": "rizky.maulana@surnenepkab.go.id",
+      "phone": "0857-3344-1122",
+      "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
+      "district": "Saronggi",
+      "status": "aktif"
+    },
+    {
+      "id": "usr-004",
+      "name": "Dimas Pratama",
+      "role": "Petugas Lapangan",
+      "email": "dimas.pratama@surnenepkab.go.id",
+      "phone": "0821-7788-9900",
+      "avatarUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
+      "district": "Lenteng",
+      "status": "aktif"
+    },
+    {
+      "id": "usr-005",
+      "name": "Nabila Putri",
+      "role": "Analis Data",
+      "email": "nabila.putri@surnenepkab.go.id",
+      "phone": "0838-5566-7788",
+      "avatarUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
+      "district": "Kalianget",
+      "status": "nonaktif"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "ntf-001",
+      "title": "Peringatan Dini Banjir - Kali Surnenep",
+      "message": "Terjadi kenaikan tinggi muka air di Kali Surnenep. Status BAHAYA. Segera lakukan pengecekan lapangan.",
+      "type": "darurat",
+      "recipients": [
+        "Petugas Lapangan",
+        "Masyarakat Kota Surnenep"
+      ],
+      "status": "terkirim",
+      "createdAt": "2026-09-24T03:23:18.000Z"
+    },
+    {
+      "id": "ntf-002",
+      "title": "Curah Hujan Tinggi - Kota Surnenep",
+      "message": "Intensitas hujan 45 mm/jam terdeteksi. Waspadai genangan di area rendah.",
+      "type": "peringatan",
+      "recipients": [
+        "Petugas Lapangan",
+        "Operator"
+      ],
+      "status": "terkirim",
+      "createdAt": "2026-09-24T03:11:18.000Z"
+    },
+    {
+      "id": "ntf-003",
+      "title": "Kamera CCTV Offline",
+      "message": "CCTV Kali Gading tidak merespons. Mohon pengecekan perangkat.",
+      "type": "informasi",
+      "recipients": [
+        "Operator"
+      ],
+      "status": "terkirim",
+      "createdAt": "2026-09-24T02:20:18.000Z"
+    },
+    {
+      "id": "ntf-004",
+      "title": "Siaga Bendung Kalianget",
+      "message": "Tinggi muka air Bendung Kalianget mendekati ambang siaga.",
+      "type": "peringatan",
+      "recipients": [
+        "Petugas Lapangan",
+        "Masyarakat Kalianget"
+      ],
+      "status": "gagal",
+      "createdAt": "2026-09-23T22:23:18.000Z"
+    },
+    {
+      "id": "ntf-005",
+      "title": "Genangan Pintu Air Dasuk",
+      "message": "Genangan 30 cm terdeteksi di sekitar Pintu Air Dasuk. Hindari jalur tersebut.",
+      "type": "darurat",
+      "recipients": [
+        "Masyarakat Dasuk",
+        "Petugas Lapangan"
+      ],
+      "status": "terkirim",
+      "createdAt": "2026-09-24T00:53:18.000Z"
+    },
+    {
+      "id": "ntf-006",
+      "title": "Uji Coba Sirene Publik",
+      "message": "Uji coba sirene peringatan dini akan dilakukan Sabtu pukul 09.00 WIB.",
+      "type": "informasi",
+      "recipients": [
+        "Masyarakat Kab. Surnenep"
+      ],
+      "status": "draft",
+      "createdAt": "2026-09-24T03:04:18.000Z"
+    },
+    {
+      "id": "ntf-007",
+      "title": "Status Normal - Kali Lenteng",
+      "message": "Tinggi muka air di Kali Lenteng kembali normal.",
+      "type": "informasi",
+      "recipients": [
+        "Masyarakat Lenteng"
+      ],
+      "status": "terkirim",
+      "createdAt": "2026-09-24T01:35:18.000Z"
+    },
+    {
+      "id": "ntf-008",
+      "title": "Laporan Harian Banjir",
+      "message": "Rekap kondisi banjir harian telah tersedia di dashboard.",
+      "type": "informasi",
+      "recipients": [
+        "Administrator",
+        "Analis Data"
+      ],
+      "status": "draft",
+      "createdAt": "2026-09-24T03:19:18.000Z"
+    }
+  ]
+}
