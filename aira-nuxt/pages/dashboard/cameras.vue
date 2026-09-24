@@ -96,7 +96,7 @@ const summary = computed(() => {
 
     <template #cell-name="{ item }">
       <div class="flex items-center gap-3 min-w-[220px]">
-        <img :src="item.imageUrl" :alt="item.name" class="w-14 h-10 rounded-lg object-cover image-grayscale flex-shrink-0" loading="lazy" />
+        <img :src="item.imageUrl" :alt="item.name" class="w-14 h-10 rounded-lg object-cover flex-shrink-0" loading="lazy" />
         <div class="min-w-0">
           <div class="font-bold text-slate-800 truncate">{{ item.name }}</div>
           <div class="text-[11px] text-slate-500 truncate">{{ item.location }}</div>

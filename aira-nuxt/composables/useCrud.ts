@@ -35,13 +35,13 @@ export function useCrud<T extends { id: string }>(resource: Resource) {
   }
 
   async function create(payload: Partial<T>): Promise<T> {
-    const created = await $fetch<T>(endpoint, { method: 'POST', body: payload })
+    const created = (await $fetch(endpoint, { method: 'POST', body: payload })) as T
     await afterMutation()
     return created
   }
 
   async function update(id: string, payload: Partial<T>): Promise<T> {
-    const updated = await $fetch<T>(`${endpoint}/${id}`, { method: 'PUT', body: payload })
+    const updated = (await $fetch(`${endpoint}/${id}`, { method: 'PUT', body: payload })) as T
     await afterMutation()
     return updated
   }

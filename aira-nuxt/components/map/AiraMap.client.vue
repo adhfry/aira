@@ -15,7 +15,6 @@ const props = withDefaults(
     areas?: MapArea[]
     variant?: 'dashboard' | 'peta'
     tile?: TileMode
-    grayscale?: boolean
     showRiskAreas?: boolean
     showBoundaries?: boolean
     showRoads?: boolean
@@ -25,7 +24,6 @@ const props = withDefaults(
     areas: () => [],
     variant: 'dashboard',
     tile: 'satelit',
-    grayscale: false,
     showRiskAreas: true,
     showBoundaries: false,
     showRoads: false,
@@ -204,5 +202,5 @@ defineExpose({
 </script>
 
 <template>
-  <div ref="el" class="w-full h-full isolate z-0" :class="{ 'map-grayscale': grayscale }"></div>
+  <div ref="el" class="w-full h-full isolate z-0"></div>
 </template>

@@ -197,7 +197,7 @@ const cardBorder = computed(() => (props.dark ? 'border-borderdark' : 'border-sl
           <img
             src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=100&auto=format&fit=crop"
             alt="Kab. Surnenep"
-            class="w-10 h-10 rounded-lg object-cover image-grayscale"
+            class="w-10 h-10 rounded-lg object-cover"
           />
           <div>
             <div class="text-xs font-bold text-white">Kab. Surnenep</div>
@@ -213,7 +213,7 @@ const cardBorder = computed(() => (props.dark ? 'border-borderdark' : 'border-sl
             <img
               :src="profile?.avatarUrl ?? 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop'"
               :alt="profile?.name ?? 'Administrator'"
-              class="w-10 h-10 rounded-lg object-cover image-grayscale flex-shrink-0"
+              class="w-10 h-10 rounded-lg object-cover flex-shrink-0"
             />
             <div class="min-w-0">
               <div class="text-xs font-bold text-white truncate">{{ profile?.name ?? 'Ahda Barori' }}</div>

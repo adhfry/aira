@@ -40,7 +40,7 @@ function darkPopup(img: string | null, title: string, status: Status, lines: str
   const pill = m.label === 'Normal' ? 'bg-green-500/20 text-green-400' : m.label === 'Waspada' ? 'bg-yellow-500/20 text-yellow-400' : m.label === 'Siaga' ? 'bg-orange-500/20 text-orange-400' : 'bg-red-500/20 text-red-400'
   return `<div class="bg-panel/95 backdrop-blur-md border border-slate-600 rounded-xl p-3 w-64 shadow-2xl">
     <div class="flex gap-3">
-      ${img ? `<img src="${escapeHtml(img)}" class="w-16 h-12 rounded object-cover image-grayscale flex-shrink-0" alt="" />` : ''}
+      ${img ? `<img src="${escapeHtml(img)}" class="w-16 h-12 rounded object-cover flex-shrink-0" alt="" />` : ''}
       <div class="min-w-0">
         <div class="text-xs font-bold text-white mb-1">${escapeHtml(title)}</div>
         <div class="${pill} text-[9px] font-bold px-1.5 py-0.5 rounded inline-block mb-1">Risiko ${m.risk} · ${m.label}</div>

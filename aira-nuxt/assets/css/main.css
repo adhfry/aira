@@ -74,9 +74,6 @@ html {
 }
 
 /* ===== Peta (Leaflet) ===== */
-.map-grayscale .leaflet-tile-pane {
-  filter: grayscale(100%);
-}
 .leaflet-container {
   font-family: 'Plus Jakarta Sans', sans-serif;
   background: #0f172a;

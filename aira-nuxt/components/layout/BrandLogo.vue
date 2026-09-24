@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * Logo AIRA (berwarna asli — satu-satunya gambar yang tidak grayscale).
+ * Logo AIRA (berwarna asli).
  * `variant` mengikuti ukuran di referensi: navbar (w-10), sidebar (w-8), footer (w-8, tanpa subjudul).
  */
 withDefaults(

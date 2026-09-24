@@ -13,7 +13,7 @@ const refreshing = ref(false)
 function cameraPopup(c: Camera) {
   const s = statusMeta(c.status)
   return `<div class="bg-white text-slate-800 p-2 rounded-lg shadow-lg text-[10px] w-44">
-    <img src="${escapeHtml(c.imageUrl)}" alt="" class="w-full h-16 object-cover rounded mb-2 image-grayscale" />
+    <img src="${escapeHtml(c.imageUrl)}" alt="" class="w-full h-16 object-cover rounded mb-2" />
     <div class="font-bold text-xs mb-0.5">${escapeHtml(c.name)}</div>
     <div class="text-slate-500 mb-1">Kec. ${escapeHtml(c.district)}</div>
     <span class="inline-block ${s.soft} font-bold px-1.5 py-0.5 rounded">${s.label}</span>
@@ -108,7 +108,7 @@ const legend = [
     <!-- Map Area -->
     <div class="flex-1 relative rounded-xl overflow-hidden bg-slate-800 border border-slate-700 isolate">
       <UiSkeleton v-if="loading" class="absolute inset-0 !bg-slate-700" />
-      <MapAiraMap v-else ref="map" :markers="markers" :areas="areas" variant="dashboard" tile="satelit" grayscale :show-risk-areas="layer !== 'cctv' && layer !== 'sensor'" />
+      <MapAiraMap v-else ref="map" :markers="markers" :areas="areas" variant="dashboard" tile="satelit" :show-risk-areas="layer !== 'cctv' && layer !== 'sensor'" />
 
       <!-- Map Controls -->
       <div class="absolute top-4 right-4 flex flex-col gap-1 z-[500]">

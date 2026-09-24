@@ -124,7 +124,7 @@ const onlineCount = computed(() => props.cameras.filter((c) => c.isOnline).lengt
           <div class="relative h-28 overflow-hidden">
             <img
               :src="c.imageUrl"
-              class="w-full h-full object-cover image-grayscale group-hover:scale-105 transition duration-500"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
               :class="{ 'opacity-40': !c.isOnline }"
               :alt="c.name"
               loading="lazy"
