@@ -22,6 +22,13 @@ export function formatNumber(n: number): string {
   return new Intl.NumberFormat('id-ID').format(n)
 }
 
+/** Nilai form opsional → angka (undefined bila kosong/tidak valid). */
+export function optionalNumber(v: unknown): number | undefined {
+  if (v === '' || v === null || v === undefined) return undefined
+  const n = Number(v)
+  return Number.isFinite(n) ? n : undefined
+}
+
 /** Konversi ISO → nilai untuk <input type="datetime-local"> */
 export function toDatetimeLocal(iso: string): string {
   const d = iso ? new Date(iso) : new Date()
