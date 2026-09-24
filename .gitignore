@@ -1,2 +1,3 @@
 dev-server.log
 *.log
+restart-dev.sh

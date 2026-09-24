@@ -99,6 +99,12 @@ html {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
   border: 2px solid white;
 }
+.map-pin-icon.map-pin-sm {
+  width: 18px;
+  height: 18px;
+  font-size: 8px;
+  border-width: 1.5px;
+}
 .map-pin-label {
   font-size: 9px;
   font-weight: 600;
