@@ -486,9 +486,9 @@ const incidents = incidentList.map(([title, type, zone, district, location, desc
 }))
 
 // ---------- Petugas ----------
-const avatar = (id) => `https://images.unsplash.com/photo-${id}?q=80&w=100&auto=format&fit=crop`
+const avatar = (id) => (id.startsWith('/') ? id : `https://images.unsplash.com/photo-${id}?q=80&w=100&auto=format&fit=crop`)
 const users = [
-  ['Ahda Barori', 'Administrator', 'ahda.barori@sumenepkab.go.id', '0812-3456-7890', '1507003211169-0a1dd7228f2d', 'Kota Sumenep', 'aktif'],
+  ['Ahda Firly Barori', 'Administrator', 'ahda.barori@sumenepkab.go.id', '0812-3456-7890', '/images/team/ahda-firly-barori.jpg', 'Kota Sumenep', 'aktif'],
   ['Siti Nurhaliza', 'Operator', 'siti.nurhaliza@sumenepkab.go.id', '0813-2211-4455', '1494790108377-be9c29b29330', 'Kota Sumenep', 'aktif'],
   ['Rizky Maulana', 'Petugas Lapangan', 'rizky.maulana@sumenepkab.go.id', '0857-3344-1122', '1500648767791-00dcc994a43e', 'Kota Sumenep', 'aktif'],
   ['Dimas Pratama', 'Petugas Lapangan', 'dimas.pratama@sumenepkab.go.id', '0821-7788-9900', '1472099645785-5658abf4ff4e', 'Kalianget', 'aktif'],

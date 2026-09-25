@@ -195,11 +195,7 @@ const cardBorder = computed(() => (props.dark ? 'border-borderdark' : 'border-sl
       <!-- Bottom Profile -->
       <div class="p-4 border-t space-y-3 flex-shrink-0" :class="border">
         <div class="flex items-center gap-3 bg-slate-800/50 p-3 rounded-xl border" :class="cardBorder">
-          <img
-            src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=100&auto=format&fit=crop"
-            alt="Kab. Sumenep"
-            class="w-10 h-10 rounded-lg object-cover"
-          />
+          <img src="/images/sumenep/sumenep-logo-sm.png" alt="Lambang Kabupaten Sumenep" class="w-10 h-10 object-contain flex-shrink-0" width="40" height="40" />
           <div>
             <div class="text-xs font-bold text-white">Kab. Sumenep</div>
             <div class="text-[10px] text-slate-400">Sistem Pemantauan Banjir</div>
@@ -212,12 +208,12 @@ const cardBorder = computed(() => (props.dark ? 'border-borderdark' : 'border-sl
         >
           <div class="flex items-center gap-3 min-w-0">
             <img
-              :src="profile?.avatarUrl ?? 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop'"
-              :alt="profile?.name ?? 'Administrator'"
+              :src="profile?.avatarUrl ?? '/images/team/ahda-firly-barori.jpg'"
+              :alt="profile?.name ?? 'Ahda Firly Barori'"
               class="w-10 h-10 rounded-lg object-cover flex-shrink-0"
             />
             <div class="min-w-0">
-              <div class="text-xs font-bold text-white truncate">{{ profile?.name ?? 'Ahda Barori' }}</div>
+              <div class="text-xs font-bold text-white truncate">{{ profile?.name ?? 'Ahda Firly Barori' }}</div>
               <div class="text-[10px] text-slate-400">{{ profile?.role ?? 'Administrator' }}</div>
             </div>
           </div>
