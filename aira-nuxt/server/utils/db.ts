@@ -1,8 +1,12 @@
 import seed from '../data/db.json'
-import type { Camera, District, Incident, Notification, Sensor, User } from '~/types'
+import type { Camera, District, Incident, Notification, Sensor, User, Zone } from '~/types'
+
+/** Versi skema data — bila berbeda dengan data tersimpan, database dibuat ulang dari seed. */
+export const DB_VERSION = 3
 
 export interface Database {
-  meta: { anchor: string; baseline: { high: number; medium: number; normal: number } }
+  meta: { anchor: string; version: number; geoSource?: string; geoFetchedAt?: string }
+  zones: Zone[]
   cameras: Camera[]
   sensors: Sensor[]
   incidents: Incident[]
@@ -26,8 +30,10 @@ function shiftDates<T>(value: T, delta: number): T {
   if (Array.isArray(value)) return value.map((v) => shiftDates(v, delta)) as T
   if (value && typeof value === 'object') {
     const out: Record<string, unknown> = {}
+    // Kejadian bertanggal nyata tidak digeser
+    const fixed = (value as Record<string, unknown>).dateFixed === true
     for (const [k, v] of Object.entries(value)) {
-      out[k] = DATE_KEYS.has(k) && typeof v === 'string' ? new Date(Date.parse(v) + delta).toISOString() : shiftDates(v, delta)
+      out[k] = !fixed && DATE_KEYS.has(k) && typeof v === 'string' ? new Date(Date.parse(v) + delta).toISOString() : shiftDates(v, delta)
     }
     return out as T
   }
@@ -45,7 +51,7 @@ export function freshDatabase(): Database {
 export async function readDb(): Promise<Database> {
   if (cache) return cache
   const stored = await storage().getItem<Database>(STORAGE_KEY)
-  if (stored && typeof stored === 'object' && Array.isArray(stored.cameras)) {
+  if (stored && typeof stored === 'object' && stored.meta?.version === DB_VERSION && Array.isArray(stored.zones)) {
     cache = stored
   } else {
     cache = freshDatabase()

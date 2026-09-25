@@ -3,7 +3,7 @@ import type { District, Status } from '~/types'
 import type { CrudColumn, CrudField, CrudFilter, FormModel } from '~/types/crud'
 
 definePageMeta({ layout: 'dashboard' })
-useSeoMeta({ title: 'Analisis Risiko Kecamatan - AIRA', description: 'Kelola data kecamatan dan tingkat risiko banjir.', robots: 'noindex' })
+useSeoMeta({ title: 'Data Kecamatan - AIRA', description: 'Kelola data kecamatan dan tingkat risiko banjir.', robots: 'noindex' })
 
 const crud = useDistricts()
 const { items: cameras } = useCameras()
@@ -27,7 +27,7 @@ const columns: CrudColumn[] = [
 ]
 
 const fields: CrudField[] = [
-  { key: 'name', label: 'Nama Kecamatan', type: 'text', required: true, placeholder: 'mis. Kota Surnenep' },
+  { key: 'name', label: 'Nama Kecamatan', type: 'text', required: true, placeholder: 'mis. Kota Sumenep' },
   { key: 'population', label: 'Populasi (jiwa)', type: 'number', required: true, min: 0, step: 1 },
   { key: 'riskPercentage', label: 'Persentase Risiko (%)', type: 'number', required: true, min: 0, max: 100, step: 1 },
   {
@@ -82,8 +82,8 @@ const summary = computed(() => {
 
 <template>
   <CrudPage
-    title="Analisis Risiko Kecamatan"
-    subtitle="Data kecamatan, persentase risiko, dan level status banjir."
+    title="Data Kecamatan"
+    subtitle="Konteks regional Kabupaten Sumenep. Persentase risiko kecamatan adalah estimasi simulasi — analisis utama ada di Zona Risiko."
     icon="fa-chart-line"
     entity="Kecamatan"
     search-placeholder="Cari nama kecamatan…"

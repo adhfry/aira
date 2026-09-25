@@ -24,7 +24,7 @@ const mainMenu = [
   { label: 'Peta & Monitoring', icon: 'fa-map-location-dot', to: '/peta' },
   { label: 'CCTV', icon: 'fa-video', to: '/dashboard/cameras' },
   { label: 'Sensor IoT', icon: 'fa-wifi', to: '/dashboard/sensors' },
-  { label: 'Analisis Risiko', icon: 'fa-chart-line', to: '/dashboard/districts' },
+  { label: 'Analisis Risiko', icon: 'fa-chart-line', to: '/dashboard/zones' },
   { label: 'Prediksi & Cuaca', icon: 'fa-cloud-sun', to: '/dashboard/sensors?type=weather' },
   { label: 'Peringatan Dini', icon: 'fa-bell', to: '/dashboard/notifications?type=peringatan' },
   { label: 'Laporan Kejadian', icon: 'fa-file-invoice', to: '/dashboard/incidents' },
@@ -36,6 +36,7 @@ const groups: MenuGroup[] = [
     label: 'Manajemen Data',
     icon: 'fa-database',
     children: [
+      { label: 'Zona Risiko', to: '/dashboard/zones', icon: 'fa-draw-polygon' },
       { label: 'Data Kecamatan', to: '/dashboard/districts', icon: 'fa-map' },
       { label: 'Data Kejadian', to: '/dashboard/incidents', icon: 'fa-file-lines' },
     ],
@@ -196,11 +197,11 @@ const cardBorder = computed(() => (props.dark ? 'border-borderdark' : 'border-sl
         <div class="flex items-center gap-3 bg-slate-800/50 p-3 rounded-xl border" :class="cardBorder">
           <img
             src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=100&auto=format&fit=crop"
-            alt="Kab. Surnenep"
+            alt="Kab. Sumenep"
             class="w-10 h-10 rounded-lg object-cover"
           />
           <div>
-            <div class="text-xs font-bold text-white">Kab. Surnenep</div>
+            <div class="text-xs font-bold text-white">Kab. Sumenep</div>
             <div class="text-[10px] text-slate-400">Sistem Pemantauan Banjir</div>
           </div>
         </div>

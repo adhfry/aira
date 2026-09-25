@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const facts = [
-  { icon: 'fa-location-dot', box: 'bg-blue-50 text-primary', label: 'Lokasi', value: 'Kawasan Perkotaan' },
+  { icon: 'fa-location-dot', box: 'bg-blue-50 text-primary', label: 'Lokasi', value: 'Kota Sumenep' },
   { icon: 'fa-check-circle', box: 'bg-green-50 text-green-600', label: 'Status', value: 'Terpantau' },
 ]
 </script>
@@ -26,8 +26,8 @@ const facts = [
         <!-- Right Image -->
         <div class="relative">
           <img
-            src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop"
-            alt="Flood Monitoring"
+            src="/images/sumenep/masjid-jamik.jpg"
+            alt="Masjid Jamik Sumenep"
             class="rounded-2xl shadow-xl w-full h-96 object-cover image-grayscale"
           />
           <!-- Floating Cards -->

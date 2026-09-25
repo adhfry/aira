@@ -1,6 +1,6 @@
 # AIRA — Artificial Intelligence Response Banjir
 
-Platform pemantauan, analisis risiko, dan peringatan dini banjir Kabupaten Surnenep.
+Platform pemantauan, analisis risiko, dan peringatan dini banjir Kabupaten Sumenep.
 Migrasi dari static HTML (`../_reference/`) ke **Nuxt 4 + TailwindCSS** dengan CRUD data.
 
 ## Teknologi
@@ -63,7 +63,7 @@ Semua halaman CRUD mendukung filter via query URL, mis. `/dashboard/incidents?st
 
 ## API
 
-Enam entitas: `cameras`, `sensors`, `incidents`, `districts`, `users`, `notifications`.
+Tujuh entitas: `zones`, `cameras`, `sensors`, `incidents`, `districts`, `users`, `notifications`.
 
 | Method | Endpoint | Keterangan |
 | --- | --- | --- |
@@ -79,9 +79,43 @@ Aturan turunan di server:
 - **Sensor**: mengubah `value` menambah titik `history` (maks. 12) dan menghitung `trend` otomatis.
 - **Kecamatan**: `riskLevel` otomatis dari `riskPercentage` bila tidak dikirim (≥70 bahaya, ≥50 siaga, ≥35 waspada).
 
+## Studi kasus & sumber data (Kota Sumenep)
+
+Fondasi spasial AIRA berasal dari penelitian nyata:
+
+| Sumber | Dipakai untuk |
+| --- | --- |
+| BRIDA Sumenep × ITS (2026), *Karaton* 5(1) — survei lapangan 31 Okt 2025 | 6 titik kritis & 15 titik genangan 30–45 cm |
+| Resmani, Andawayanti & Cahya (2017), *J. Teknik Pengairan* 8(2) | 8 outlet drainase, kapasitas, status Q5, panjang backwater |
+| Prosiding PSPK 3 UKWMS (2024) | Koordinat hulu & hilir Sungai Marengan |
+
+**Semua koordinat ditentukan dari sumber yang dapat ditelusuri** (field `coordAccuracy` + `coordNote`):
+
+- `data_resmi` — Pusdatin Kemendikdasmen (SDN Pajagalan I, Jl. Dr. Wahidin)
+- `penelitian` — koordinat tertulis di publikasi (hulu/hilir Sungai Marengan)
+- `osm` — geometri jalan, Kali Marengan, desa & objek dari OpenStreetMap (ODbL)
+- `direktori` — geocode alamat terdaftar pada jalan yang disebut penelitian (Jl. Kartini, Jl. Jati Emas, Pasar Anom Baru)
+
+Koridor zona (mis. Jl. Dr. Wahidin – Setiabudi, KH Mansyur → Raung → Urip Sumoharjo) digambar dari geometri jalan OSM.
+Elevasi tanah dari SRTM 30 m (OpenTopoData). Titik CCTV/sensor adalah **titik pantau usulan AIRA** pada lokasi bersumber;
+nilai sensor, status, kejadian terkini & notifikasi adalah **skenario simulasi hujan sangat lebat**.
+
+Model TMA: sensor saluran mengukur tinggi air dari dasar saluran (`channelDepth` = kedalaman saluran) → status otomatis
+(≥100% meluap/bahaya, ≥85% siaga, ≥65% waspada). Di mulut outlet 4–7 terdapat pasangan sensor sisi saluran & sisi Kali Marengan
+pada peilschaal bersama: **Δ = TMA sungai − TMA saluran**, positif = backwater. Zona ditandai backwater hanya bila koridornya berada
+dalam panjang pengaruh backwater hasil kajian 2017.
+
+Membuat ulang data:
+
+```bash
+node scripts/fetch-geo.mjs        # ambil geometri OSM → scripts/data/geo-sumenep.json
+npm run seed                      # tulis server/data/db.json & assets/geo/kali-marengan.json
+node scripts/fetch-elevation.mjs  # (opsional) elevasi SRTM → scripts/data/elevations.json, lalu npm run seed lagi
+```
+
 ## Data & persistensi
 
-- Seed awal: `server/data/db.json` (42 CCTV, 28 sensor, 20 kejadian, 11 kecamatan, 5 petugas, 8 notifikasi),
+- Seed awal: `server/data/db.json` (13 zona, 18 CCTV, 23 sensor, 19 kejadian, 11 kecamatan, 5 petugas, 8 notifikasi),
   dihasilkan oleh `scripts/seed.mjs`.
 - Saat pertama kali dijalankan, seed disalin ke `.data/aira/aira-db.json` dan seluruh timestamp digeser
   agar data terasa terkini. Semua perubahan CRUD disimpan di file tersebut (tetap ada setelah restart).

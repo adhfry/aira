@@ -31,7 +31,7 @@ const visible = computed(() => {
   return props.cameras
     .filter((c) => status.value === 'semua' || c.status === status.value)
     .filter((c) => !onlineOnly.value || c.isOnline)
-    .filter((c) => !q || `${c.name} ${c.district} ${c.location}`.toLowerCase().includes(q))
+    .filter((c) => !q || `${c.code} ${c.name} ${c.district} ${c.location}`.toLowerCase().includes(q))
     .sort((a, b) => (sortBy.value === 'status' ? STATUS_ORDER[b.status] - STATUS_ORDER[a.status] : a.name.localeCompare(b.name, 'id')))
 })
 
@@ -140,10 +140,14 @@ const onlineCount = computed(() => props.cameras.filter((c) => c.isOnline).lengt
           <div class="p-2.5">
             <div class="flex items-start gap-2 mb-1">
               <span class="w-1.5 h-1.5 rounded-full mt-1 flex-shrink-0" :class="c.isOnline ? 'bg-green-500' : 'bg-slate-500'"></span>
-              <div class="text-[10px] font-bold text-white leading-tight">{{ c.name }}</div>
+              <div class="text-[10px] font-bold text-white leading-tight">
+                <span class="text-slate-400">{{ c.code }}</span> {{ c.name }}
+              </div>
             </div>
             <div class="flex justify-between items-center text-[9px] text-slate-400 gap-2">
-              <span class="truncate">Kec. {{ c.district }}</span>
+              <span class="truncate" :title="c.coordNote || COORD_ACCURACY_META[c.coordAccuracy].hint">
+                <i class="fa-solid text-[8px]" :class="COORD_ACCURACY_META[c.coordAccuracy].icon"></i> {{ COORD_ACCURACY_META[c.coordAccuracy].label }}
+              </span>
               <span class="tabular-nums">{{ c.isOnline ? clock.timeLabel.replace(' WIB', '') : formatTime(c.lastUpdate) }}</span>
             </div>
           </div>

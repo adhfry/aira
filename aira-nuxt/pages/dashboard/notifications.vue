@@ -20,10 +20,10 @@ const columns: CrudColumn[] = [
 ]
 
 const fields: CrudField[] = [
-  { key: 'title', label: 'Judul', type: 'text', required: true, full: true, placeholder: 'mis. Peringatan Dini Banjir - Kali Surnenep' },
+  { key: 'title', label: 'Judul', type: 'text', required: true, full: true, placeholder: 'mis. Peringatan Dini Banjir - Perum Satelit' },
   { key: 'type', label: 'Jenis', type: 'select', required: true, options: TYPE_OPTIONS },
   { key: 'status', label: 'Status', type: 'select', required: true, options: STATUS_OPTS },
-  { key: 'recipients', label: 'Penerima', type: 'tags', required: true, full: true, placeholder: 'Petugas Lapangan, Masyarakat Kota Surnenep', help: 'Pisahkan beberapa penerima dengan koma.' },
+  { key: 'recipients', label: 'Penerima', type: 'tags', required: true, full: true, placeholder: 'Petugas Lapangan, Masyarakat Kota Sumenep', help: 'Pisahkan beberapa penerima dengan koma.' },
   { key: 'message', label: 'Pesan', type: 'textarea', required: true, full: true },
 ]
 

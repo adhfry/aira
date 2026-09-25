@@ -34,8 +34,8 @@ const benefits = [
         <!-- Right Image -->
         <div class="relative">
           <img
-            src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop"
-            alt="Community Flood"
+            src="/images/sumenep/taman-bunga.jpg"
+            alt="Taman Bunga Sumenep"
             class="rounded-2xl shadow-xl w-full h-80 object-cover image-grayscale"
           />
           <div class="absolute bottom-6 right-6 bg-white p-4 rounded-xl shadow-lg border border-slate-100 max-w-xs flex gap-3 items-start">

@@ -1,17 +1,13 @@
 <script setup lang="ts">
 const { data: stats } = useStats()
-const { items: districts } = useDistricts()
+const { items: zones } = useZones()
 
-// Angka diambil dari API bila tersedia (fallback = angka referensi)
+// Angka dari API (fallback = angka referensi desain)
 const cards = computed(() => [
-  { icon: 'fa-video', value: stats.value?.cameras.total ?? 42, label: 'Titik CCTV' },
-  { icon: 'fa-wifi', value: stats.value?.sensors.total ?? 28, label: 'Sensor Air' },
-  { icon: 'fa-cloud-sun', value: 12, label: 'Stasiun Cuaca' },
-  {
-    icon: 'fa-location-dot',
-    value: districts.value.length ? districts.value.filter((d) => d.riskLevel === 'bahaya' || d.riskLevel === 'siaga').length : 5,
-    label: 'Wilayah Prioritas',
-  },
+  { icon: 'fa-video', value: stats.value?.cameras.total ?? 16, label: 'Titik CCTV' },
+  { icon: 'fa-wifi', value: stats.value?.sensors.total ?? 19, label: 'Sensor IoT' },
+  { icon: 'fa-diagram-project', value: zones.value.filter((z) => z.type === 'outlet_drainase').length || 7, label: 'Outlet Drainase' },
+  { icon: 'fa-location-dot', value: zones.value.filter((z) => z.type === 'titik_kritis').length || 6, label: 'Titik Kritis' },
 ])
 
 const sideIcons = [
@@ -89,8 +85,8 @@ const sideIcons = [
 
               <!-- Tooltip -->
               <div class="absolute top-1/3 left-1/4 mt-4 -ml-16 bg-white text-slate-800 p-2 rounded shadow-lg text-[10px] w-32 z-10">
-                <div class="font-bold mb-1">Kali Surnenep</div>
-                <div class="text-slate-500">Tinggi Air: 285 cm</div>
+                <div class="font-bold mb-1">Hilir Kali Marengan</div>
+                <div class="text-slate-500">TMA sungai: 285 cm</div>
                 <div class="text-red-500 font-bold">Status: Siaga</div>
               </div>
 
@@ -107,12 +103,12 @@ const sideIcons = [
               <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Informasi Lokasi</div>
               <div class="bg-slate-800 rounded-lg p-2 border border-slate-700">
                 <img
-                  src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=400&auto=format&fit=crop"
-                  class="w-full h-16 object-cover rounded mb-2 image-grayscale"
-                  alt="Location"
+                  src="/images/sumenep/sungai-meluap.jpg"
+                  class="w-full h-16 object-cover rounded mb-2"
+                  alt="Kali Marengan meluap"
                 />
-                <div class="text-xs font-bold text-white mb-1">Kali Surnenep</div>
-                <div class="text-[9px] text-slate-400 mb-2">Kecamatan Rota Surnenep</div>
+                <div class="text-xs font-bold text-white mb-1">Hilir Kali Marengan</div>
+                <div class="text-[9px] text-slate-400 mb-2">Desa Marengan Laok, Kalianget</div>
                 <div class="flex items-center gap-1 text-[9px] text-red-400 bg-red-400/10 px-2 py-1 rounded w-max mb-2">
                   <i class="fa-solid fa-triangle-exclamation"></i> Risiko Tinggi
                 </div>

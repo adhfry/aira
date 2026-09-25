@@ -1,108 +1,180 @@
 <script setup lang="ts">
-import type { Camera, District, Sensor, Status } from '~/types'
-import type { MapMarker, TileMode } from '~/types/map'
+import type { Camera, Sensor, Status, Zone } from '~/types'
+import { MARENGAN_LINE, type MapLine, type MapMarker, type TileMode } from '~/types/map'
+import { STATUS_HEX } from '~/utils/status'
 
 definePageMeta({ layout: 'dashboard', theme: 'dark', fullBleed: true })
-useSeoMeta({ title: 'Peta & Monitoring - AIRA', description: 'Peta monitoring banjir dan feed CCTV Kabupaten Surnenep.', robots: 'noindex' })
+useSeoMeta({
+  title: 'Peta & Monitoring - AIRA',
+  description: 'Peta monitoring banjir Kota Sumenep: zona titik kritis, outlet drainase, Sungai Marengan, dan feed CCTV.',
+  robots: 'noindex',
+})
 
 const { items: cameras, pending: camerasPending } = useCameras()
 const { items: sensors } = useSensors()
-const { items: districts } = useDistricts()
+const { items: zones } = useZones()
+const { data: stats } = useStats()
 
 // ---------- Filter ----------
-type Jenis = 'semua' | 'kecamatan' | 'camera' | 'water_level' | 'rainfall' | 'weather'
-const fDistrict = ref('')
+type Jenis = 'semua' | 'zone' | 'camera' | 'water_level' | 'river_level' | 'rainfall' | 'weather' | 'tide'
+const fZone = ref('')
 const fStatus = ref<Status | ''>('')
 const fJenis = ref<Jenis>('semua')
 const showRisk = ref(true)
-const showBoundary = ref(true)
+const showBoundary = ref(false)
 const showRiver = ref(true)
 const showRoads = ref(false)
 const tile = ref<TileMode>('satelit')
 const layerMenu = ref(false)
-const layers = reactive({ kecamatan: true, camera: true, rainfall: true, weather: false })
+const layers = reactive({ zone: true, camera: true, water_level: true, rainfall: true, weather: false, tide: true })
 
 const selectClass =
   "bg-panel border border-borderdark text-slate-300 text-xs rounded-lg px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary appearance-none pr-8 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394a3b8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:10px_10px] bg-[right_10px_center] bg-no-repeat"
 
-function matches(item: { district: string; status: Status }) {
-  return (!fDistrict.value || item.district === fDistrict.value) && (!fStatus.value || item.status === fStatus.value)
+const riskById = computed(() => new Map((stats.value?.zoneRisks ?? []).map((r) => [r.zoneId, r])))
+const zoneLevel = (z: Zone): Status => riskById.value.get(z.id)?.level ?? 'normal'
+const zoneById = computed(() => new Map(zones.value.map((z) => [z.id, z])))
+
+function matches(item: { zoneId: string; status: Status }) {
+  return (!fZone.value || item.zoneId === fZone.value) && (!fStatus.value || item.status === fStatus.value)
 }
 const want = (j: Jenis) => fJenis.value === 'semua' || fJenis.value === j
 
 // ---------- Popup ----------
-function nearestSensor(district: string, type: Sensor['type']) {
-  return sensors.value.filter((s) => s.district === district && s.type === type).sort((a, b) => b.value - a.value)[0]
+const PILL: Record<Status, string> = {
+  normal: 'bg-green-500/20 text-green-400',
+  waspada: 'bg-yellow-500/20 text-yellow-400',
+  siaga: 'bg-orange-500/20 text-orange-400',
+  bahaya: 'bg-red-500/20 text-red-400',
 }
 
-function darkPopup(img: string | null, title: string, status: Status, lines: string[]) {
-  const m = statusMeta(status)
-  const pill = m.label === 'Normal' ? 'bg-green-500/20 text-green-400' : m.label === 'Waspada' ? 'bg-yellow-500/20 text-yellow-400' : m.label === 'Siaga' ? 'bg-orange-500/20 text-orange-400' : 'bg-red-500/20 text-red-400'
-  return `<div class="bg-panel/95 backdrop-blur-md border border-slate-600 rounded-xl p-3 w-64 shadow-2xl">
+function accuracyLine(a: Camera['coordAccuracy'], note?: string) {
+  const m = COORD_ACCURACY_META[a]
+  return `<div class="text-[9px] text-slate-400 mt-1.5 pt-1.5 border-t border-slate-700"><b class="text-slate-300">Sumber koordinat: ${m.label}</b>${note ? `<br>${escapeHtml(note)}` : ''}</div>`
+}
+
+function darkPopup(img: string | null, kicker: string, title: string, status: Status, badge: string, lines: string[], footer = '') {
+  return `<div class="bg-panel/95 backdrop-blur-md border border-slate-600 rounded-xl p-3 w-72 shadow-2xl">
     <div class="flex gap-3">
-      ${img ? `<img src="${escapeHtml(img)}" class="w-16 h-12 rounded object-cover flex-shrink-0" alt="" />` : ''}
+      ${img ? `<img src="${escapeHtml(img)}" class="w-20 h-14 rounded object-cover flex-shrink-0" alt="" />` : ''}
       <div class="min-w-0">
+        <div class="text-[9px] font-bold text-slate-500">${escapeHtml(kicker)}</div>
         <div class="text-xs font-bold text-white mb-1">${escapeHtml(title)}</div>
-        <div class="${pill} text-[9px] font-bold px-1.5 py-0.5 rounded inline-block mb-1">Risiko ${m.risk} · ${m.label}</div>
+        <div class="${PILL[status]} text-[9px] font-bold px-1.5 py-0.5 rounded inline-block mb-1">${escapeHtml(badge)}</div>
         ${lines.map((l) => `<div class="text-[10px] text-slate-300">${escapeHtml(l)}</div>`).join('')}
+        ${footer}
       </div>
     </div>
   </div>`
 }
 
-function cameraPopup(c: Camera) {
-  const w = nearestSensor(c.district, 'water_level')
-  const r = nearestSensor(c.district, 'rainfall')
-  return darkPopup(c.imageUrl, c.name, c.status, [
-    `Kec. ${c.district} · ${c.isOnline ? 'Online' : 'Offline'}`,
-    ...(w ? [`Tinggi Muka Air: ${w.value} cm`] : []),
-    ...(r ? [`Curah Hujan: ${r.value} mm/jam`] : []),
-  ])
+function zoneSensor(zoneId: string, types: Sensor['type'][]) {
+  return sensors.value.filter((s) => s.zoneId === zoneId && types.includes(s.type)).sort((a, b) => b.value - a.value)[0]
 }
 
-function districtPopup(d: District) {
-  const w = nearestSensor(d.name, 'water_level')
-  return darkPopup(null, `Kec. ${d.name}`, d.riskLevel, [
-    `Persentase risiko: ${d.riskPercentage}%`,
-    `Populasi: ${formatNumber(d.population)} jiwa`,
-    ...(w ? [`Tinggi Muka Air: ${w.value} cm`] : []),
-  ])
+function cameraPopup(c: Camera) {
+  const z = zoneById.value.get(c.zoneId)
+  const w = zoneSensor(c.zoneId, ['water_level', 'river_level'])
+  return darkPopup(
+    c.imageUrl,
+    `${c.code} · Titik pantau usulan`,
+    c.name,
+    c.status,
+    statusMeta(c.status).label,
+    [`Zona: ${z?.name ?? '-'}`, c.isOnline ? 'Online' : 'Offline', ...(w ? [`${w.name}: ${w.value} cm`] : [])],
+    accuracyLine(c.coordAccuracy, c.coordNote),
+  )
+}
+
+function zonePopup(z: Zone) {
+  const r = riskById.value.get(z.id)
+  const lvl = zoneLevel(z)
+  return darkPopup(
+    null,
+    `${z.code} · ${ZONE_TYPE_META[z.type].label}`,
+    z.name,
+    lvl,
+    `Risiko dinamis ${r?.dynamic ?? '-'} · ${statusMeta(lvl).label}`,
+    [
+      `Struktural ${r?.structural ?? '-'} · Historis ${r?.historical ?? '-'} · Real-time ${r?.realtime ?? '-'}`,
+      ...(z.outlet ? [`Outlet ${z.outlet}${z.capacity ? ` · kapasitas ${z.capacity} m³/s` : ''} · ${DRAINAGE_STATUS_META[z.drainageStatus].label}`] : []),
+      ...(z.backwaterLength ? [`Backwater ±${z.backwaterLength.toLocaleString('id-ID')} m${r?.backwater ? ' — AKTIF' : ''}`] : []),
+      ...(z.elevation !== null ? [`Elevasi tanah ±${z.elevation} m dpl (SRTM)`] : []),
+    ],
+    accuracyLine(z.coordAccuracy, z.coordNote),
+  )
 }
 
 function sensorPopup(s: Sensor) {
-  return darkPopup(null, s.name, s.status, [`${s.location}`, `Nilai: ${s.value} ${s.unit}`, s.isOnline ? 'Online' : 'Offline'])
+  return darkPopup(
+    null,
+    `${s.code} · ${SENSOR_TYPE_META[s.type].label}`,
+    s.name,
+    s.status,
+    `${s.value} ${s.unit}${s.channelDepth ? ` / ${s.channelDepth} cm (${Math.round((s.value / s.channelDepth) * 100)}%)` : ''}`,
+    [s.location, s.isOnline ? 'Online' : 'Offline'],
+    accuracyLine(s.coordAccuracy, s.coordNote),
+  )
 }
 
 // ---------- Marker ----------
+const visibleZones = computed(() =>
+  zones.value.filter((z) => (!fZone.value || z.id === fZone.value) && (!fStatus.value || zoneLevel(z) === fStatus.value)),
+)
+
 const markers = computed<MapMarker[]>(() => {
   const list: MapMarker[] = []
-  if (layers.kecamatan && want('kecamatan')) {
+  if (layers.zone && want('zone')) {
     list.push(
-      ...districts.value
-        .filter((d) => (!fDistrict.value || d.name === fDistrict.value) && (!fStatus.value || d.riskLevel === fStatus.value))
-        .map((d) => ({ id: d.id, kind: 'district' as const, lat: d.coordinates.lat, lng: d.coordinates.lng, status: d.riskLevel, label: `Kec. ${d.name}`, popup: districtPopup(d) })),
+      ...visibleZones.value.map((z) => ({
+        id: z.id,
+        kind: 'zone' as const,
+        lat: z.lat,
+        lng: z.lng,
+        status: zoneLevel(z),
+        label: z.name,
+        accuracy: z.coordAccuracy,
+        popup: zonePopup(z),
+      })),
     )
   }
   if (layers.camera && want('camera')) {
-    list.push(...cameras.value.filter(matches).map((c) => ({ id: c.id, kind: 'camera' as const, lat: c.lat, lng: c.lng, status: c.status, label: '', popup: cameraPopup(c) })))
+    list.push(
+      ...cameras.value.filter(matches).map((c) => ({
+        id: c.id,
+        kind: 'camera' as const,
+        lat: c.lat,
+        lng: c.lng,
+        status: c.status,
+        label: '',
+        accuracy: c.coordAccuracy,
+        popup: cameraPopup(c),
+      })),
+    )
   }
-  const sensorKinds: Sensor['type'][] = []
-  if (showRiver.value) sensorKinds.push('water_level')
-  if (layers.rainfall) sensorKinds.push('rainfall')
-  if (layers.weather) sensorKinds.push('weather')
+  const kinds: Sensor['type'][] = []
+  if (layers.water_level) kinds.push('water_level')
+  if (showRiver.value) kinds.push('river_level')
+  if (layers.rainfall) kinds.push('rainfall')
+  if (layers.weather) kinds.push('weather')
+  if (layers.tide) kinds.push('tide')
   list.push(
     ...sensors.value
-      .filter((s) => sensorKinds.includes(s.type) && want(s.type) && matches(s))
-      .map((s) => ({ id: s.id, kind: s.type, lat: s.lat, lng: s.lng, status: s.status, label: '', popup: sensorPopup(s) })),
+      .filter((s) => kinds.includes(s.type) && want(s.type) && matches(s))
+      .map((s) => ({ id: s.id, kind: s.type, lat: s.lat, lng: s.lng, status: s.status, label: '', accuracy: s.coordAccuracy, popup: sensorPopup(s) })),
   )
   return list
 })
 
 const areas = computed(() =>
-  districts.value
-    .filter((d) => !fDistrict.value || d.name === fDistrict.value)
-    .map((d) => ({ id: d.id, lat: d.coordinates.lat, lng: d.coordinates.lng, status: d.riskLevel })),
+  visibleZones.value.filter((z) => !z.path?.length).map((z) => ({ id: z.id, lat: z.lat, lng: z.lng, status: zoneLevel(z), radius: z.radius })),
 )
+const lines = computed<MapLine[]>(() => [
+  ...(showRiver.value ? [MARENGAN_LINE] : []),
+  ...(showRisk.value
+    ? visibleZones.value.filter((z) => z.path?.length).map((z) => ({ id: z.id, points: z.path, color: STATUS_HEX[zoneLevel(z)], label: `${z.code} · ${z.name}`, weight: 6 }))
+    : []),
+])
 
 // ---------- Interaksi ----------
 const map = ref<{ zoomIn: () => void; zoomOut: () => void; resetView: () => void; focus: (id: string, zoom?: number) => void } | null>(null)
@@ -114,12 +186,12 @@ function selectCamera(c: Camera) {
   panelOpen.value = false
   if (!layers.camera) layers.camera = true
   if (fJenis.value !== 'semua' && fJenis.value !== 'camera') fJenis.value = 'semua'
-  nextTick(() => map.value?.focus(c.id, 15))
+  if (fZone.value && fZone.value !== c.zoneId) fZone.value = ''
+  nextTick(() => map.value?.focus(c.id, 17))
 }
 
-watch(fDistrict, (name) => {
-  const d = districts.value.find((x) => x.name === name)
-  if (d) nextTick(() => map.value?.focus(d.id, 13))
+watch(fZone, (id) => {
+  if (id) nextTick(() => map.value?.focus(id, 16))
   else map.value?.resetView()
 })
 
@@ -142,9 +214,11 @@ const legend = [
 ]
 
 const layerOptions = [
-  { key: 'kecamatan', label: 'Pin Kecamatan', icon: 'fa-map-pin' },
+  { key: 'zone', label: 'Zona Risiko (label)', icon: 'fa-draw-polygon' },
   { key: 'camera', label: 'Titik CCTV', icon: 'fa-video' },
+  { key: 'water_level', label: 'TMA Saluran', icon: 'fa-water' },
   { key: 'rainfall', label: 'Sensor Curah Hujan', icon: 'fa-cloud-rain' },
+  { key: 'tide', label: 'Sensor Pasang', icon: 'fa-wave-square' },
   { key: 'weather', label: 'Stasiun Cuaca', icon: 'fa-temperature-half' },
 ] as const
 </script>
@@ -172,7 +246,7 @@ const layerOptions = [
           :show-risk-areas="showRisk"
           :show-boundaries="showBoundary"
           :show-roads="showRoads"
-          :zoom="11"
+          :lines="lines"
         />
         <!-- Overlay gradien risiko (seperti referensi) -->
         <div
@@ -182,9 +256,9 @@ const layerOptions = [
 
         <!-- Map Filters -->
         <div class="absolute top-4 left-4 sm:left-6 right-4 sm:right-6 z-[600] flex flex-wrap gap-2">
-          <select v-model="fDistrict" :class="selectClass" aria-label="Filter kecamatan">
-            <option value="">Semua Kecamatan</option>
-            <option v-for="d in districts" :key="d.id" :value="d.name">Kec. {{ d.name }}</option>
+          <select v-model="fZone" :class="selectClass" aria-label="Filter zona">
+            <option value="">Semua Zona</option>
+            <option v-for="z in zones" :key="z.id" :value="z.id">{{ z.code }} · {{ z.name }}</option>
           </select>
           <select v-model="fStatus" :class="selectClass" aria-label="Filter status">
             <option value="">Semua Status</option>
@@ -192,24 +266,26 @@ const layerOptions = [
           </select>
           <select v-model="fJenis" :class="selectClass" aria-label="Filter jenis titik">
             <option value="semua">Semua Jenis</option>
-            <option value="kecamatan">Kecamatan</option>
+            <option value="zone">Zona Risiko</option>
             <option value="camera">CCTV</option>
-            <option value="water_level">Sensor Air</option>
+            <option value="water_level">TMA Saluran</option>
+            <option value="river_level">TMA Sungai</option>
             <option value="rainfall">Sensor Hujan</option>
+            <option value="tide">Sensor Pasang</option>
             <option value="weather">Stasiun Cuaca</option>
           </select>
 
           <label class="hidden md:flex items-center gap-2 bg-panel border border-borderdark rounded-lg px-3 py-2 cursor-pointer hover:bg-slate-800 transition">
             <input v-model="showRisk" type="checkbox" class="rounded bg-slate-700 border-slate-600 text-primary focus:ring-primary h-3 w-3" />
-            <span class="text-xs text-slate-300">Risiko Banjir</span>
+            <span class="text-xs text-slate-300">Area Risiko</span>
           </label>
           <label class="hidden md:flex items-center gap-2 bg-panel border border-borderdark rounded-lg px-3 py-2 cursor-pointer hover:bg-slate-800 transition">
             <input v-model="showBoundary" type="checkbox" class="rounded bg-slate-700 border-slate-600 text-primary focus:ring-primary h-3 w-3" />
-            <span class="text-xs text-slate-300">Batas Wilayah</span>
+            <span class="text-xs text-slate-300">Buffer Zona</span>
           </label>
           <label class="hidden md:flex items-center gap-2 bg-panel border border-borderdark rounded-lg px-3 py-2 cursor-pointer hover:bg-slate-800 transition">
             <input v-model="showRiver" type="checkbox" class="rounded bg-slate-700 border-slate-600 text-primary focus:ring-primary h-3 w-3" />
-            <span class="text-xs text-slate-300">Sungai</span>
+            <span class="text-xs text-slate-300">Sungai Marengan</span>
           </label>
           <label class="hidden md:flex items-center gap-2 bg-panel border border-borderdark rounded-lg px-3 py-2 cursor-pointer hover:bg-slate-800 transition">
             <input v-model="showRoads" type="checkbox" class="rounded bg-slate-700 border-slate-600 text-primary focus:ring-primary h-3 w-3" />
@@ -232,13 +308,13 @@ const layerOptions = [
               </label>
               <div class="md:hidden border-t border-borderdark pt-1 mt-1 space-y-1">
                 <label class="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-slate-800 cursor-pointer text-xs text-slate-300">
-                  <input v-model="showRisk" type="checkbox" class="rounded bg-slate-700 border-slate-600 text-primary h-3 w-3" /> Risiko Banjir
+                  <input v-model="showRisk" type="checkbox" class="rounded bg-slate-700 border-slate-600 text-primary h-3 w-3" /> Area Risiko
                 </label>
                 <label class="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-slate-800 cursor-pointer text-xs text-slate-300">
-                  <input v-model="showBoundary" type="checkbox" class="rounded bg-slate-700 border-slate-600 text-primary h-3 w-3" /> Batas Wilayah
+                  <input v-model="showBoundary" type="checkbox" class="rounded bg-slate-700 border-slate-600 text-primary h-3 w-3" /> Buffer Zona
                 </label>
                 <label class="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-slate-800 cursor-pointer text-xs text-slate-300">
-                  <input v-model="showRiver" type="checkbox" class="rounded bg-slate-700 border-slate-600 text-primary h-3 w-3" /> Sungai
+                  <input v-model="showRiver" type="checkbox" class="rounded bg-slate-700 border-slate-600 text-primary h-3 w-3" /> Sungai Marengan
                 </label>
                 <label class="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-slate-800 cursor-pointer text-xs text-slate-300">
                   <input v-model="showRoads" type="checkbox" class="rounded bg-slate-700 border-slate-600 text-primary h-3 w-3" /> Jalan
@@ -266,9 +342,13 @@ const layerOptions = [
 
         <!-- Map Legend (Bottom Left) -->
         <div class="absolute bottom-6 left-4 sm:left-6 bg-panel/90 backdrop-blur-md border border-slate-600 rounded-xl p-3 sm:p-4 z-[600] shadow-lg">
-          <div class="text-xs font-bold text-white mb-2 sm:mb-3">Tingkat Risiko Banjir</div>
+          <div class="text-xs font-bold text-white mb-2 sm:mb-3">Risiko Dinamis Zona</div>
           <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-[10px] text-slate-300">
             <div v-for="l in legend" :key="l.label" class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full" :class="l.dot"></span> {{ l.label }}</div>
+          </div>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-[9px] text-slate-400 mt-2 pt-2 border-t border-slate-700">
+            <span class="flex items-center gap-1.5"><span class="w-4 h-1 rounded bg-sky-400"></span> Kali Marengan (OSM)</span>
+            <span class="flex items-center gap-1.5"><span class="w-4 h-1.5 rounded bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500"></span> Koridor zona (jalan OSM)</span>
           </div>
         </div>
 

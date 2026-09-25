@@ -7,7 +7,7 @@ const events = computed(() => [...props.incidents].sort((a, b) => b.timestamp.lo
 </script>
 
 <template>
-  <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4 flex flex-col h-[400px]">
+  <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4 flex flex-col h-[420px]">
     <DashboardPanelHeader title="Kejadian Terbaru" link-to="/dashboard/incidents" />
 
     <div v-if="loading" class="space-y-4">

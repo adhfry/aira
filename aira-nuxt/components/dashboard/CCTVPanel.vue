@@ -48,7 +48,7 @@ const stamp = computed(() => {
       <div class="relative rounded-xl overflow-hidden flex-1 mb-3 bg-slate-200 min-h-0">
         <img :src="main.imageUrl" :alt="`CCTV ${main.name}`" class="w-full h-full object-cover" />
         <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded">
-          {{ main.name }}<br /><span class="text-[8px] font-normal opacity-80 tabular-nums">{{ stamp }}</span>
+          {{ main.code }} · {{ main.name }}<br /><span class="text-[8px] font-normal opacity-80 tabular-nums">{{ stamp }}</span>
         </div>
         <div class="absolute top-3 right-3 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
           <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> Live
@@ -69,7 +69,7 @@ const stamp = computed(() => {
           @click="selectedId = c.id"
         >
           <img :src="c.imageUrl" class="w-full h-full object-cover" :alt="c.name" />
-          <div class="absolute top-1 left-1 bg-black/60 text-white text-[8px] font-bold px-1.5 py-0.5 rounded">{{ c.name }}</div>
+          <div class="absolute top-1 left-1 bg-black/60 text-white text-[8px] font-bold px-1.5 py-0.5 rounded">{{ c.code }} · {{ c.name }}</div>
           <div class="absolute bottom-1 right-1 text-[8px] font-bold px-1.5 py-0.5 rounded" :class="statusMeta(c.status).solid">
             {{ statusMeta(c.status).label }}
           </div>

@@ -1,6 +1,6 @@
-import type { Camera, District, Incident, Notification, Sensor, User } from '~/types'
+import type { Camera, District, Incident, Notification, Sensor, User, Zone } from '~/types'
 
-export type Resource = 'cameras' | 'sensors' | 'incidents' | 'districts' | 'users' | 'notifications'
+export type Resource = 'zones' | 'cameras' | 'sensors' | 'incidents' | 'districts' | 'users' | 'notifications'
 
 interface ApiError {
   data?: { message?: string; statusMessage?: string; data?: { errors?: string[] } }
@@ -54,6 +54,7 @@ export function useCrud<T extends { id: string }>(resource: Resource) {
   return { items, data, pending, error, refresh, create, update, remove }
 }
 
+export const useZones = () => useCrud<Zone>('zones')
 export const useCameras = () => useCrud<Camera>('cameras')
 export const useSensors = () => useCrud<Sensor>('sensors')
 export const useIncidents = () => useCrud<Incident>('incidents')

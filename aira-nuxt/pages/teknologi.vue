@@ -172,6 +172,9 @@ const IOT_IMG = (w: number) => `https://images.unsplash.com/photo-1581091226825-
       </div>
     </section>
 
+    <!-- 3 Layer Risiko & Backwater -->
+    <LandingRiskLayers />
+
     <!-- Arsitektur Sistem Section -->
     <section id="arsitektur" class="py-20 bg-white scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

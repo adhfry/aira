@@ -51,13 +51,9 @@ const bars = ['bg-slate-200 h-1/4', 'bg-slate-200 h-2/4', 'bg-slate-200 h-1/4', 
           <div class="bg-white rounded-2xl shadow-2xl p-4 w-full max-w-lg ml-auto border border-slate-200">
             <!-- CCTV Feed -->
             <div class="relative rounded-xl overflow-hidden mb-4 h-56 bg-slate-200">
-              <img
-                src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=800&auto=format&fit=crop"
-                alt="CCTV Jembatan Kali"
-                class="w-full h-full object-cover image-grayscale"
-              />
+              <img src="/images/sumenep/taman-bunga-jalan.jpg" alt="CCTV Taman Bunga Sumenep" class="w-full h-full object-cover" />
               <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
-                <i class="fa-solid fa-video text-red-500"></i> CCTV - Jembatan Kali
+                <i class="fa-solid fa-video text-red-500"></i> CCTV - Taman Bunga
               </div>
               <div class="absolute top-3 right-3 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
                 <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> Live
@@ -66,8 +62,8 @@ const bars = ['bg-slate-200 h-1/4', 'bg-slate-200 h-2/4', 'bg-slate-200 h-1/4', 
               <div class="absolute bottom-3 right-3 bg-red-500 text-white text-xs font-bold px-3 py-2 rounded-lg flex items-center gap-2 shadow-lg">
                 <i class="fa-solid fa-triangle-exclamation"></i>
                 <div>
-                  <div class="text-[10px] opacity-80">Tinggi Resiko Banjir</div>
-                  <div>Ketinggian air meningkat</div>
+                  <div class="text-[10px] opacity-80">Peringatan Dini</div>
+                  <div>Hujan sangat lebat 45 mm/jam</div>
                 </div>
               </div>
             </div>
@@ -75,7 +71,7 @@ const bars = ['bg-slate-200 h-1/4', 'bg-slate-200 h-2/4', 'bg-slate-200 h-1/4', 
             <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
               <div class="flex justify-between items-start mb-2">
                 <div>
-                  <div class="text-xs text-slate-500 font-semibold mb-1">Tinggi Muka Air</div>
+                  <div class="text-xs text-slate-500 font-semibold mb-1">TMA Kali Marengan · Hilir</div>
                   <div class="text-2xl font-extrabold text-slate-900">285 cm</div>
                 </div>
                 <div class="bg-orange-100 text-orange-600 text-[10px] font-bold px-2 py-1 rounded">Siaga</div>

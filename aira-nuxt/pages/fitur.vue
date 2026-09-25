@@ -30,9 +30,9 @@ const layers = [
 ]
 
 const events = [
-  { name: 'Kali Surnenep', status: 'Siaga', badge: 'bg-red-100 text-red-600', time: '24 Sep 2026, 14:30' },
-  { name: 'Kali Anom', status: 'Waspada', badge: 'bg-orange-100 text-orange-600', time: '24 Sep 2026, 11:20' },
-  { name: 'Kali Gunting', status: 'Normal', badge: 'bg-green-100 text-green-600', time: '23 Sep 2026, 16:45' },
+  { name: 'Perum Satelit', status: 'Bahaya', badge: 'bg-red-100 text-red-600', time: '24 Sep 2026, 10:18' },
+  { name: 'Jl. Dr. Wahidin', status: 'Siaga', badge: 'bg-orange-100 text-orange-600', time: '24 Sep 2026, 09:59' },
+  { name: 'Jl. Trunojoyo', status: 'Normal', badge: 'bg-green-100 text-green-600', time: '23 Sep 2026, 16:45' },
 ]
 
 const periode = ref('Harian')
@@ -74,8 +74,8 @@ const periode = ref('Harian')
             <div class="absolute top-1/2 left-1/2 w-3 h-3 bg-orange-500 rounded-full border-2 border-white z-10"></div>
             <div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-green-500 rounded-full border-2 border-white z-10"></div>
             <div class="absolute top-1/3 left-1/3 mt-2 -ml-16 bg-white text-slate-800 p-2 rounded shadow-lg text-[10px] w-32 z-20">
-              <div class="font-bold mb-1">Kali Surnenep</div>
-              <div class="text-slate-500">Tinggi Air: 285 cm</div>
+              <div class="font-bold mb-1">Hilir Kali Marengan</div>
+              <div class="text-slate-500">TMA sungai: 285 cm</div>
               <div class="text-red-500 font-bold">Status: Siaga</div>
             </div>
             <div class="absolute bottom-2 left-2 bg-slate-900/80 backdrop-blur-sm px-3 py-1.5 rounded text-[9px] flex gap-3 text-slate-300 z-10">
@@ -89,9 +89,9 @@ const periode = ref('Harian')
           <!-- Right Panel (CCTV & Water Level) -->
           <div class="w-56 border-l border-slate-700 p-3 bg-slate-900 hidden sm:flex flex-col gap-3 z-20">
             <div class="relative rounded-lg overflow-hidden h-28 bg-slate-800">
-              <img :src="CCTV(400)" alt="CCTV" class="w-full h-full object-cover image-grayscale" />
+              <img src="/images/sumenep/taman-bunga-jalan.jpg" alt="CCTV Taman Bunga" class="w-full h-full object-cover image-grayscale" />
               <div class="absolute top-1 left-1 bg-black/60 backdrop-blur-md text-white text-[8px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1">
-                <i class="fa-solid fa-video text-red-500"></i> CCTV - Jembatan Kali
+                <i class="fa-solid fa-video text-red-500"></i> CCTV - Taman Bunga
               </div>
               <div class="absolute top-1 right-1 bg-green-500 text-white text-[8px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1">
                 <span class="w-1 h-1 bg-white rounded-full animate-pulse"></span> Live
@@ -140,17 +140,17 @@ const periode = ref('Harian')
       <div class="bg-slate-100 rounded-2xl p-4 border border-slate-200">
         <div class="flex gap-4">
           <div class="flex-1 relative rounded-xl overflow-hidden h-64 bg-slate-300">
-            <img :src="CCTV(600)" alt="CCTV Main" class="w-full h-full object-cover image-grayscale" />
+            <img src="/images/sumenep/banjir-jalan.jpg" alt="CCTV Taman Bunga — genangan jalan" class="w-full h-full object-cover image-grayscale" />
             <div class="absolute top-1/2 left-1/4 w-1/3 h-1/3 border-2 border-red-500 bg-red-500/20 rounded flex items-end p-1">
               <span class="text-[10px] font-bold text-red-600 bg-white/80 px-1 rounded">Genangan Terdeteksi</span>
             </div>
             <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
-              <i class="fa-solid fa-video text-red-500"></i> CCTV - Jembatan Kali Surnenep
+              <i class="fa-solid fa-video text-red-500"></i> CCTV - Taman Bunga
             </div>
             <div class="absolute top-3 right-3 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
               <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> Live
             </div>
-            <div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded">Tinggi Air: 285 cm</div>
+            <div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded">Genangan: ±35 cm</div>
           </div>
           <div class="w-24 hidden sm:flex flex-col gap-2">
             <div v-for="t in thumbs" :key="t.time" class="relative rounded-lg overflow-hidden h-20 bg-slate-300 border-2 border-transparent hover:border-primary cursor-pointer">
@@ -220,7 +220,7 @@ const periode = ref('Harian')
                 <i class="fa-solid fa-cloud-showers-heavy"></i>
               </div>
               <div>
-                <div class="text-[10px] text-slate-500 font-semibold">Kecamatan Kota Surnenep</div>
+                <div class="text-[10px] text-slate-500 font-semibold">Kecamatan Kota Sumenep</div>
                 <div class="text-xs font-bold text-slate-900">Potensi Hujan Tinggi</div>
               </div>
             </div>
@@ -272,9 +272,9 @@ const periode = ref('Harian')
           </div>
         </div>
         <div class="absolute bottom-1/3 left-1/4 sm:left-1/3 bg-white rounded-lg shadow-lg p-3 w-40 z-10 border-l-4 border-red-500">
-          <div class="text-xs font-bold text-slate-800 mb-1">Kali Surnenep</div>
+          <div class="text-xs font-bold text-slate-800 mb-1">Hilir Kali Marengan</div>
           <div class="text-[10px] text-slate-500 mb-2">Status: Siaga</div>
-          <div class="text-[10px] text-slate-500 mb-1">Tinggi Air: 285 cm</div>
+          <div class="text-[10px] text-slate-500 mb-1">TMA sungai: 285 cm</div>
           <div class="text-[10px] text-red-500 font-bold">Risiko: Tinggi</div>
         </div>
       </div>
@@ -302,7 +302,7 @@ const periode = ref('Harian')
               </div>
               <div class="text-[10px] text-slate-500 mb-2">Hari ini, 14:30</div>
               <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                Terjadi kenaikan tinggi muka air di Kali Surnenep. Status SIAGA. Segera lakukan pengecekan lapangan.
+                Terjadi kenaikan tinggi muka air di hilir Kali Marengan. Status SIAGA. Segera lakukan pengecekan lapangan.
               </p>
               <NuxtLink
                 to="/dashboard/notifications"
@@ -337,9 +337,9 @@ const periode = ref('Harian')
                 </div>
                 <span class="text-[10px] font-bold text-slate-800">Peringatan Dini Banjir</span>
               </div>
-              <div class="text-[10px] font-bold text-slate-800 mb-1">Kali Surnenep</div>
+              <div class="text-[10px] font-bold text-slate-800 mb-1">Hilir Kali Marengan</div>
               <div class="text-[9px] text-slate-500 space-y-1 mb-3">
-                <div>Tinggi Air: 285 cm</div>
+                <div>TMA sungai: 285 cm</div>
                 <div>Status: <span class="text-red-500 font-bold">SIAGA</span></div>
                 <div>Waktu: 24 Sep 2025 14:30</div>
               </div>

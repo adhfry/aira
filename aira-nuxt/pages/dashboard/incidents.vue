@@ -7,6 +7,7 @@ useSeoMeta({ title: 'Laporan Kejadian - AIRA', description: 'Pencatatan dan veri
 
 const crud = useIncidents()
 const { options: districtOptions } = useDistrictOptions()
+const { options: zoneOptions, zoneName, districtOf } = useZoneOptions()
 
 const TYPE_OPTIONS = (Object.keys(INCIDENT_TYPE_META) as IncidentType[]).map((v) => ({ value: v, label: INCIDENT_TYPE_META[v].label }))
 const STATUS_OPTS = (Object.keys(INCIDENT_STATUS_META) as IncidentStatus[]).map((v) => ({ value: v, label: INCIDENT_STATUS_META[v].label }))
@@ -25,8 +26,9 @@ const fields = computed<CrudField[]>(() => [
   { key: 'title', label: 'Judul Kejadian', type: 'text', required: true, full: true, placeholder: 'mis. Peringatan Dini - Risiko Tinggi' },
   { key: 'type', label: 'Jenis', type: 'select', required: true, options: TYPE_OPTIONS },
   { key: 'severity', label: 'Tingkat', type: 'select', required: true, options: STATUS_OPTIONS },
-  { key: 'district', label: 'Kecamatan', type: 'select', required: true, options: districtOptions.value },
-  { key: 'location', label: 'Lokasi', type: 'text', required: true, placeholder: 'mis. Kali Surnenep' },
+  { key: 'zoneId', label: 'Zona Risiko', type: 'select', options: [{ value: '', label: '— Di luar zona pantau —' }, ...zoneOptions.value], full: true, help: 'Kecamatan terisi otomatis dari zona.' },
+  { key: 'district', label: 'Kecamatan', type: 'select', options: districtOptions.value, help: 'Wajib bila kejadian di luar zona pantau.' },
+  { key: 'location', label: 'Lokasi', type: 'text', required: true, placeholder: 'mis. Jl. Dr. Wahidin' },
   { key: 'status', label: 'Status Penanganan', type: 'select', required: true, options: STATUS_OPTS },
   { key: 'timestamp', label: 'Waktu Kejadian', type: 'datetime', required: true },
   { key: 'reporter', label: 'Pelapor', type: 'text', placeholder: 'Sistem AIRA', full: true },
@@ -37,13 +39,14 @@ const filters = computed<CrudFilter[]>(() => [
   { key: 'type', label: 'Jenis', options: TYPE_OPTIONS },
   { key: 'severity', label: 'Tingkat', options: STATUS_OPTIONS },
   { key: 'status', label: 'Status', options: STATUS_OPTS },
-  { key: 'district', label: 'Kecamatan', options: districtOptions.value },
+  { key: 'zoneId', label: 'Zona', options: zoneOptions.value },
 ])
 
 const defaults = (): FormModel => ({
   title: '',
   type: 'peringatan',
   severity: 'waspada',
+  zoneId: '',
   district: '',
   location: '',
   status: 'aktif',
@@ -56,7 +59,8 @@ const toPayload = (f: FormModel) => ({
   title: f.title,
   type: f.type,
   severity: f.severity,
-  district: f.district,
+  zoneId: f.zoneId || '',
+  district: f.zoneId ? districtOf(String(f.zoneId)) : f.district || 'Kota Sumenep',
   location: f.location,
   status: f.status,
   timestamp: new Date(String(f.timestamp)).toISOString(),
@@ -115,7 +119,7 @@ const summary = computed(() => {
     <template #cell-district="{ item }">
       <div class="whitespace-nowrap">
         <div class="text-slate-700 text-xs font-semibold">{{ item.location }}</div>
-        <div class="text-[11px] text-slate-500">Kec. {{ item.district }}</div>
+        <div class="text-[11px] text-slate-500">{{ item.zoneId ? zoneName(item.zoneId) : `Kec. ${item.district}` }}</div>
       </div>
     </template>
     <template #cell-severity="{ item }"><UiStatusPill :status="item.severity" /></template>

@@ -2,13 +2,13 @@
 useSeoMeta({
   title: 'Manfaat AIRA - Artificial Intelligence Response Banjir',
   description:
-    'Matriks strategi 3x3, dampak, dan metrik manfaat AIRA bagi pemerintah daerah, petugas lapangan, dan masyarakat Kabupaten Surnenep.',
+    'Matriks strategi 3x3, dampak, dan metrik manfaat AIRA bagi pemerintah daerah, petugas lapangan, dan masyarakat Kabupaten Sumenep.',
   ogTitle: 'Manfaat AIRA',
   ogImage: '/AiraLogo.png',
 })
 
 const { data: stats } = useStats()
-const { items: districts } = useDistricts()
+const { items: zones } = useZones()
 
 const phases = [
   { key: 'sebelum', title: 'Sebelum Banjir', subtitle: 'Mitigasi & Kesiapsiagaan', icon: 'fa-shield-halved', head: 'bg-blue-50 text-primary border-blue-100' },
@@ -66,9 +66,9 @@ const impacts = [
 ]
 
 const metrics = computed(() => [
-  { icon: 'fa-video', value: String(stats.value?.cameras.total ?? 42), label: 'Titik CCTV Terpantau', note: 'Data real-time' },
-  { icon: 'fa-wifi', value: String(stats.value?.sensors.total ?? 28), label: 'Sensor IoT Terpasang', note: 'Data real-time' },
-  { icon: 'fa-map', value: String(districts.value.length || 11), label: 'Kecamatan Tercakup', note: 'Data real-time' },
+  { icon: 'fa-video', value: String(stats.value?.cameras.total ?? 16), label: 'Titik CCTV Usulan', note: 'Prototipe' },
+  { icon: 'fa-wifi', value: String(stats.value?.sensors.total ?? 19), label: 'Sensor IoT Usulan', note: 'Prototipe' },
+  { icon: 'fa-draw-polygon', value: String(zones.value.length || 13), label: 'Zona Risiko Terpetakan', note: 'Berbasis kajian' },
   { icon: 'fa-clock', value: '24/7', label: 'Pemantauan Tanpa Henti', note: 'Layanan sistem' },
   { icon: 'fa-stopwatch', value: '< 5 mnt', label: 'Waktu Peringatan Dini', note: 'Target sistem' },
   { icon: 'fa-bullseye', value: '60%', label: 'Percepatan Respons', note: 'Target implementasi' },
@@ -80,7 +80,7 @@ const metrics = computed(() => [
     <!-- Hero Section -->
     <LandingPageHero
       badge="MANFAAT AIRA"
-      description="AIRA membantu pemerintah daerah, petugas, dan masyarakat Kabupaten Surnenep bergerak lebih cepat dan tepat — sebelum, saat, dan setelah banjir terjadi."
+      description="AIRA membantu pemerintah daerah, petugas, dan masyarakat Kabupaten Sumenep bergerak lebih cepat dan tepat — sebelum, saat, dan setelah banjir terjadi."
     >
       <template #title>Dampak Nyata untuk<br />Daerah yang<br /><span class="text-primary">Lebih Tangguh</span></template>
       <template #actions>
@@ -90,8 +90,8 @@ const metrics = computed(() => [
       </template>
 
       <img
-        src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop"
-        alt="Masyarakat dan banjir"
+        src="/images/sumenep/banjir-perumahan.jpg"
+        alt="Banjir di permukiman Sumenep"
         class="rounded-2xl shadow-xl w-full h-[400px] object-cover image-grayscale"
       />
       <div class="absolute bottom-8 left-2 sm:-left-8 bg-white p-5 rounded-2xl shadow-xl border border-slate-100 w-64 animate-float">
@@ -169,8 +169,8 @@ const metrics = computed(() => [
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div class="relative">
             <img
-              src="https://images.unsplash.com/photo-1468581264429-2548ef9eb732?q=80&w=800&auto=format&fit=crop"
-              alt="Sungai"
+              src="/images/sumenep/sungai-meluap.jpg"
+              alt="Air sungai meluap — indikator banjir"
               class="rounded-2xl shadow-xl w-full h-96 object-cover image-grayscale"
             />
             <div class="absolute bottom-6 right-6 bg-white p-4 rounded-xl shadow-lg border border-slate-100 max-w-xs flex gap-3 items-start">

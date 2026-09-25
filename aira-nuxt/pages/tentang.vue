@@ -47,8 +47,8 @@ const teknologi = [
     >
       <template #title>Teknologi untuk<br />Daerah yang Lebih<br /><span class="text-primary">Siap Menghadapi Banjir</span></template>
       <img
-        src="https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=800&auto=format&fit=crop"
-        alt="CCTV Monitoring"
+        src="/images/sumenep/tugu-selamat-datang.jpg"
+        alt="Tugu Selamat Datang Kabupaten Sumenep"
         class="rounded-2xl shadow-xl w-full h-[400px] object-cover image-grayscale"
       />
       <!-- Floating Card -->
@@ -127,8 +127,8 @@ const teknologi = [
           <!-- Right Image with Overlay -->
           <div class="relative rounded-2xl overflow-hidden shadow-xl">
             <img
-              src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop"
-              alt="Flood Background"
+              src="/images/sumenep/banjir-jalan.jpg"
+              alt="Genangan di jalan Kota Sumenep"
               class="w-full h-[400px] object-cover image-grayscale"
             />
             <div class="absolute inset-0 bg-slate-900/70 p-6 sm:p-8 flex flex-col justify-center">
@@ -148,6 +148,9 @@ const teknologi = [
         </div>
       </div>
     </section>
+
+    <!-- Landasan Ilmiah (studi kasus Sumenep) -->
+    <LandingResearchFoundation />
 
     <!-- Nilai Utama Section -->
     <section class="py-20 bg-white">

@@ -10,16 +10,16 @@ const DOTS = ['bg-red-500', 'bg-orange-500', 'bg-blue-500']
 const LABELS = ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00', '24:00']
 
 const selected = ref('')
-// Default: 3 wilayah dengan risiko tertinggi; bila dipilih, tampilkan wilayah tersebut saja
+// Default: 3 zona dengan risiko dinamis tertinggi; bila dipilih, tampilkan zona tersebut saja
 const series = computed(() => {
-  if (selected.value) return props.predictions.filter((p) => p.district === selected.value)
+  if (selected.value) return props.predictions.filter((p) => p.zone === selected.value)
   return props.predictions.slice(0, 3)
 })
 
 const data = computed<ChartData<'line'>>(() => ({
   labels: LABELS,
   datasets: series.value.map((s, i) => ({
-    label: s.district,
+    label: s.zone,
     data: s.values,
     borderColor: COLORS[i],
     backgroundColor: `${COLORS[i]}1a`,
@@ -66,22 +66,22 @@ const options: ChartOptions<'line'> = {
 </script>
 
 <template>
-  <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4 flex flex-col h-[400px]">
+  <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4 flex flex-col h-[420px]">
     <div class="flex justify-between items-center gap-2 mb-4">
       <div class="flex items-center gap-2 min-w-0">
         <h3 class="font-bold text-slate-800 text-sm">Prediksi Risiko 24 Jam ke Depan</h3>
         <i
           class="fa-solid fa-circle-info text-slate-400 text-xs cursor-help"
-          title="Prediksi dihitung dari persentase risiko kecamatan dengan pola puncak sore hari."
+          title="Prediksi dari risiko dinamis zona (AIRA Risk Engine) dengan pola puncak hujan sore hari — simulasi prototipe."
         ></i>
       </div>
       <select
         v-model="selected"
-        aria-label="Pilih wilayah prediksi"
+        aria-label="Pilih zona prediksi"
         class="bg-slate-50 border border-slate-200 text-[10px] rounded-lg px-2 py-1 focus:outline-none focus:ring-1 focus:ring-primary max-w-[120px]"
       >
-        <option value="">Pilih Wilayah</option>
-        <option v-for="p in predictions" :key="p.district" :value="p.district">{{ p.district }}</option>
+        <option value="">Pilih Zona</option>
+        <option v-for="p in predictions" :key="p.zone" :value="p.zone">{{ p.zone }}</option>
       </select>
     </div>
 
@@ -95,8 +95,8 @@ const options: ChartOptions<'line'> = {
 
     <!-- Legend -->
     <div class="flex flex-wrap justify-center gap-4 text-[9px] font-semibold text-slate-600 mt-2">
-      <span v-for="(s, i) in series" :key="s.district" class="flex items-center gap-1">
-        <span class="w-2 h-2 rounded-full" :class="DOTS[i]"></span> {{ s.district }}
+      <span v-for="(s, i) in series" :key="s.zone" class="flex items-center gap-1">
+        <span class="w-2 h-2 rounded-full" :class="DOTS[i]"></span> {{ s.zone }}
       </span>
     </div>
   </div>

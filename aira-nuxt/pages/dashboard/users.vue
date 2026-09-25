@@ -24,7 +24,7 @@ const columns: CrudColumn[] = [
 
 const fields = computed<CrudField[]>(() => [
   { key: 'name', label: 'Nama Lengkap', type: 'text', required: true },
-  { key: 'email', label: 'Email', type: 'email', required: true, placeholder: 'nama@surnenepkab.go.id' },
+  { key: 'email', label: 'Email', type: 'email', required: true, placeholder: 'nama@sumenepkab.go.id' },
   { key: 'phone', label: 'Telepon / WhatsApp', type: 'tel', placeholder: '08xx-xxxx-xxxx' },
   { key: 'role', label: 'Peran', type: 'select', required: true, options: ROLES },
   { key: 'district', label: 'Wilayah Tugas', type: 'select', required: true, options: districtOptions.value },
