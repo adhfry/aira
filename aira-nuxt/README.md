@@ -95,6 +95,7 @@ Fondasi spasial AIRA berasal dari penelitian nyata:
 - `penelitian` — koordinat tertulis di publikasi (hulu/hilir Sungai Marengan)
 - `osm` — geometri jalan, Kali Marengan, desa & objek dari OpenStreetMap (ODbL)
 - `direktori` — geocode alamat terdaftar pada jalan yang disebut penelitian (Jl. Kartini, Jl. Jati Emas, Pasar Anom Baru)
+- `lapangan` — 7 titik rawan banjir CCTV yang ditetapkan dan dikonfirmasi tim AIRA (14 Okt 2026)
 
 Koridor zona (mis. Jl. Dr. Wahidin – Setiabudi, KH Mansyur → Raung → Urip Sumoharjo) digambar dari geometri jalan OSM.
 Elevasi tanah dari SRTM 30 m (OpenTopoData). Titik CCTV/sensor adalah **titik pantau usulan AIRA** pada lokasi bersumber;

@@ -74,7 +74,7 @@ const summary = computed(() => {
     { label: 'Titik CCTV Usulan', value: items.length, icon: 'fa-video', box: 'bg-blue-50 text-primary' },
     { label: 'Online', value: `${items.filter((c) => c.isOnline).length} / ${items.length}`, icon: 'fa-signal', box: 'bg-green-50 text-green-600' },
     { label: 'Siaga / Bahaya', value: items.filter((c) => c.status === 'siaga' || c.status === 'bahaya').length, icon: 'fa-triangle-exclamation', box: 'bg-red-50 text-red-500' },
-    { label: 'Koordinat Data Resmi / Penelitian', value: items.filter((c) => c.coordAccuracy === 'data_resmi' || c.coordAccuracy === 'penelitian').length, icon: 'fa-location-crosshairs', box: 'bg-purple-50 text-purple-600' },
+    { label: 'Koordinat Terkonfirmasi', value: items.filter((c) => ['data_resmi', 'penelitian', 'lapangan'].includes(c.coordAccuracy)).length, icon: 'fa-location-crosshairs', box: 'bg-purple-50 text-purple-600' },
   ]
 })
 </script>

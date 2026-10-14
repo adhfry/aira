@@ -6,8 +6,9 @@ export type Status = 'normal' | 'waspada' | 'siaga' | 'bahaya'
  * - penelitian : koordinat yang tertulis di publikasi ilmiah
  * - osm        : geometri OpenStreetMap (jalan, sungai, desa, objek)
  * - direktori  : geocode alamat terdaftar pada jalan yang disebut penelitian
+ * - lapangan   : titik rawan banjir yang ditetapkan dan dikonfirmasi tim AIRA
  */
-export type CoordAccuracy = 'data_resmi' | 'penelitian' | 'osm' | 'direktori'
+export type CoordAccuracy = 'data_resmi' | 'penelitian' | 'osm' | 'direktori' | 'lapangan'
 
 export interface Camera {
   id: string

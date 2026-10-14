@@ -62,4 +62,5 @@ export const COORD_ACCURACY_META: Record<CoordAccuracy, { label: string; tone: '
   penelitian: { label: 'Penelitian', tone: 'purple', icon: 'fa-book-open', hint: 'Koordinat yang tertulis di publikasi penelitian' },
   osm: { label: 'OpenStreetMap', tone: 'blue', icon: 'fa-map', hint: 'Geometri jalan/sungai/desa OpenStreetMap (ODbL)' },
   direktori: { label: 'Direktori alamat', tone: 'slate', icon: 'fa-address-book', hint: 'Geocode alamat terdaftar pada jalan yang disebut penelitian' },
+  lapangan: { label: 'Titik tim AIRA', tone: 'green', icon: 'fa-location-crosshairs', hint: 'Titik rawan banjir yang ditetapkan dan dikonfirmasi tim AIRA' },
 }

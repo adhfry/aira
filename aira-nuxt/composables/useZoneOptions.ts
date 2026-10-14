@@ -34,4 +34,5 @@ export const COORD_ACCURACY_OPTIONS: SelectOption[] = [
   { value: 'penelitian', label: 'Koordinat penelitian' },
   { value: 'osm', label: 'OpenStreetMap' },
   { value: 'direktori', label: 'Direktori alamat' },
+  { value: 'lapangan', label: 'Titik tim AIRA (terkonfirmasi)' },
 ]

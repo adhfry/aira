@@ -11,7 +11,7 @@ type FieldRule =
 type Schema = Record<string, FieldRule & { label: string }>
 
 const STATUS = ['normal', 'waspada', 'siaga', 'bahaya'] as const
-const ACCURACY = ['data_resmi', 'penelitian', 'osm', 'direktori'] as const
+const ACCURACY = ['data_resmi', 'penelitian', 'osm', 'direktori', 'lapangan'] as const
 
 export const SCHEMAS: Record<CollectionName, Schema> = {
   zones: {

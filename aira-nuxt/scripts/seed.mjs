@@ -13,6 +13,7 @@
 //  - penelitian : koordinat yang tertulis di publikasi (hulu/hilir Sungai Marengan)
 //  - osm        : geometri jalan/sungai/desa OpenStreetMap (© kontributor OSM, ODbL)
 //  - direktori  : geocode alamat usaha terdaftar (idalamat.com) pada jalan yang disebut penelitian
+//  - lapangan   : 7 titik rawan banjir CCTV yang ditetapkan dan dikonfirmasi tim AIRA (14 Okt 2026)
 // Titik CCTV & sensor adalah TITIK PANTAU USULAN AIRA yang ditempatkan pada lokasi bersumber di atas.
 // Nilai sensor, status, kejadian terkini, dan notifikasi = SKENARIO SIMULASI hujan sangat lebat.
 import { writeFileSync, mkdirSync } from 'node:fs'
@@ -279,10 +280,9 @@ const IMG = {
   kota: '/images/sumenep/taman-bunga-jalan.jpg',
 }
 const CAMERA_IMAGE = {
-  'AIRA-001': IMG.jalan, 'AIRA-002': IMG.jalan, 'AIRA-003': IMG.perumahan, 'AIRA-004': IMG.perumahan, 'AIRA-005': IMG.perumahan,
-  'AIRA-006': IMG.jalan, 'AIRA-007': DRONE_B, 'AIRA-008': IMG.sungai, 'AIRA-009': IMG.jalan, 'AIRA-010': IMG.jalan,
-  'AIRA-011': DRONE_A, 'AIRA-012': DRONE_B, 'AIRA-013': DRONE_A, 'AIRA-014': IMG.desa, 'AIRA-015': IMG.kota,
-  'AIRA-016': IMG.sungai, 'AIRA-017': IMG.jalan, 'AIRA-018': IMG.jalan,
+  'AIRA-001': IMG.jalan, 'AIRA-002': IMG.jalan, 'AIRA-003': IMG.kota, 'AIRA-004': DRONE_B, 'AIRA-005': IMG.jalan,
+  'AIRA-006': IMG.perumahan, 'AIRA-007': DRONE_A, 'AIRA-008': IMG.sungai, 'AIRA-009': DRONE_A, 'AIRA-010': IMG.desa,
+  'AIRA-011': IMG.sungai,
 }
 
 const onRoad = (name, frac = 0.5, filter) => ({ p: pointAt(longest(road(name, filter)), frac), src: 'osm', note: `Titik pada ruas OSM "${name}".` })
@@ -291,26 +291,24 @@ const onRiver = (ref) => {
   return { p: n.point, src: 'osm', note: `Tepi Kali Marengan (geometri OSM), ${n.distance} m dari titik penelitian.` }
 }
 
+// Titik rawan banjir dari tim AIRA (14 Okt 2026) menggantikan titik usulan yang koordinatnya belum terkonfirmasi.
+// Zona = zona risiko terdekat (jarak ke jangkar/koridor zona), dicatat di catatan koordinat.
+const field = (n, lat, lng, zoneNote) => ({ p: [lat, lng], src: 'lapangan', note: `Titik ${n} rawan banjir — koordinat tim AIRA. ${zoneNote}` })
+
 // [kode, nama, lokasi, zona, status, online, titik]
 const cameraList = [
-  ['AIRA-001', 'Jl. Dr. Wahidin', 'Depan SDN Pajagalan I', 'KRT-01', 'siaga', true, REF.sdnPajagalan],
-  ['AIRA-002', 'Jl. Dr. Setiabudi', 'Koridor Setiabudi, Pajagalan', 'KRT-01', 'waspada', true, onRoad('Jalan Dokter Setiabudi')],
-  ['AIRA-003', 'Perum Bumi Sumekar Asri', 'Jl. Dewi Sartika, blok BSA', 'KRT-02', 'siaga', true, REF.bsa],
-  ['AIRA-004', 'Perum Satelit', 'Jl. Pesona Satelit', 'KRT-03', 'bahaya', true, onRoad('Pesona Satelit', 0.5, (g) => wayCenterLng(g) > 113.873)],
-  ['AIRA-005', 'Perum Asabri', 'Jl. Argopuro, Kolor', 'KRT-04', 'waspada', true, { ...mid(PATH.asabri), note: 'Ruas OSM "Pesona Satelit" sisi barat (Jl. Argopuro, Kolor).' }],
-  ['AIRA-006', 'Jl. Kartini', 'Jl. Kartini No. 50a', 'KRT-05', 'siaga', true, REF.kartini],
-  ['AIRA-007', 'Jl. Jati Emas', 'Pangarangan', 'KRT-05', 'waspada', true, REF.jatiEmas],
+  ['AIRA-001', 'Jalan 1 Arah', 'Titik 1 rawan banjir', 'KRT-01', 'waspada', true, field(1, -7.01196167186372, 113.86212576110316, 'Koridor Dr. Wahidin – Setiabudi ±3 m.')],
+  ['AIRA-002', 'Perempatan Jl. Wahidin', 'Titik 2 rawan banjir', 'KRT-01', 'siaga', true, field(2, -7.010734188892034, 113.86252661045165, 'Koridor Dr. Wahidin – Setiabudi ±6 m.')],
+  ['AIRA-003', 'MPP Taman Bunga', 'Titik 3 rawan banjir', 'OUT-01', 'waspada', true, field(3, -7.008141939920929, 113.86095760597476, 'Koridor Outlet 1 terdekat ±150 m.')],
+  ['AIRA-004', 'BRIDA – MR DIY', 'Titik 4 rawan banjir', 'OUT-06', 'waspada', true, field(4, -7.0154131280860135, 113.85806549039908, 'Koridor Outlet 6 ±12 m.')],
+  ['AIRA-005', 'Jl. Raya Sumenep – Pamekasan', 'Titik 5 rawan banjir', 'OUT-06', 'waspada', true, field(5, -7.02428838813472, 113.85571029297682, 'Zona terdekat Outlet 6, ±630 m.')],
+  ['AIRA-006', 'Bumi Sumekar', 'Titik 6 rawan banjir', 'KRT-02', 'siaga', true, field(6, -7.018869648847279, 113.86441454869444, 'Zona Perumahan Bumi Sumekar Asri ±40 m.')],
+  ['AIRA-007', 'Jl. Raya Sumenep', 'Titik 7 rawan banjir', 'OUT-05', 'siaga', true, field(7, -7.011901756688404, 113.86789029905772, 'Koridor Outlet 5 ±6 m.')],
+  // Titik Kali Marengan dipertahankan (koordinat penelitian dan OSM).
   ['AIRA-008', 'Hilir Kali Marengan', 'Muara Marengan', 'KRT-06', 'bahaya', true, REF.marenganHilir],
-  ['AIRA-009', 'Jl. Dr. Cipto', 'Depan PMI Kab. Sumenep', 'OUT-04', 'siaga', true, REF.pmi],
-  ['AIRA-010', 'Jl. Raung', 'Outlet 5, Pabian', 'OUT-05', 'siaga', true, onRoad('Jalan Raung')],
-  ['AIRA-011', 'Jl. KH Wahid Hasyim (CCTV-06A)', 'Hulu Outlet 6', 'OUT-06', 'waspada', true, onRoad('Jalan Kyai Haji Wahid Hasyim')],
-  ['AIRA-012', 'Pasar Anom Baru (CCTV-06B)', 'Jl. Trunojoyo, Kolor', 'OUT-06', 'waspada', true, REF.pasarAnom],
-  ['AIRA-013', "Kalimo'ok – Marengan Daya", 'Jl. Yos Sudarso', 'OUT-07', 'normal', false, onRoad('Jalan Yos Sudarso')],
-  ['AIRA-014', 'Desa Marengan Laok', 'Outlet 8', 'OUT-08', 'siaga', true, REF.marenganLaok],
-  ['AIRA-015', 'Jl. Panglima Besar Sudirman', 'Outlet 1, pusat kota', 'OUT-01', 'waspada', true, onRoad('Jalan Panglima Besar Sudirman')],
-  ['AIRA-016', 'Hulu Kali Marengan', 'Hulu Marengan', 'SGI-01', 'normal', true, REF.marenganHulu],
-  ['AIRA-017', 'Jl. Urip Sumoharjo', 'Outlet 5 hilir', 'OUT-05', 'siaga', true, onRoad('Jalan Jenderal Urip Sumoharjo')],
-  ['AIRA-018', 'Jl. KH Agus Salim', 'Outlet 2', 'KRT-05', 'waspada', true, onRoad('Jalan KH. Agus Salim')],
+  ['AIRA-009', "Kalimo'ok – Marengan Daya", 'Jl. Yos Sudarso', 'OUT-07', 'normal', false, onRoad('Jalan Yos Sudarso')],
+  ['AIRA-010', 'Desa Marengan Laok', 'Outlet 8', 'OUT-08', 'siaga', true, REF.marenganLaok],
+  ['AIRA-011', 'Hulu Kali Marengan', 'Hulu Marengan', 'SGI-01', 'normal', true, REF.marenganHulu],
 ]
 
 const cameras = cameraList.map(([code, name, location, zone, status, isOnline, pt], i) => ({
@@ -450,11 +448,11 @@ for (const c of cameras) {
 // [judul, tipe, zona|null, kecamatan, lokasi, deskripsi, tingkat, status, menitLalu|tanggal, pelapor]
 const incidentList = [
   ['Backwater Kali Marengan', 'backwater', 'OUT-04', null, 'Mulut Outlet 4 – Jl. Dr. Cipto', 'TMA sisi Kali Marengan 45 cm di atas TMA sisi saluran di mulut Outlet 4 — aliran saluran tertahan (pengaruh backwater ±318 m)', 'bahaya', 'aktif', 0, 'AIRA Risk Engine'],
-  ['Genangan Perum Satelit', 'peringatan', 'KRT-03', null, 'Jl. Pesona Satelit', 'CCTV AIRA-004 mendeteksi genangan ±40 cm; saluran mulut Outlet 6C meluap (TMA 160 cm pada kedalaman 120 cm) dan tertahan backwater Δ +8 cm', 'bahaya', 'aktif', 6, 'AIRA Risk Engine'],
+  ['Genangan Perum Satelit', 'peringatan', 'KRT-03', null, 'Jl. Pesona Satelit', 'Genangan ±40 cm; saluran mulut Outlet 6C meluap (TMA 160 cm pada kedalaman 120 cm) dan tertahan backwater Δ +8 cm', 'bahaya', 'aktif', 6, 'AIRA Risk Engine'],
   ['Hujan Sangat Lebat', 'hujan_tinggi', 'KRT-01', null, 'ARG Pajagalan', 'Intensitas 45 mm/jam (kategori BMKG: sangat lebat >20 mm/jam)', 'siaga', 'aktif', 12, 'Sistem AIRA'],
   ['Genangan Bergerak ke Hilir Outlet 6', 'peringatan', 'KRT-02', null, 'Perum Bumi Sumekar Asri', 'Kenaikan berurutan TMA 06A Wahid Hasyim → 06B BSA → 06C Satelit', 'siaga', 'aktif', 18, 'AIRA Risk Engine'],
   ['Verifikasi Lapangan', 'verifikasi', 'KRT-01', null, 'Jl. Dr. Wahidin', 'Petugas mengonfirmasi genangan ±30 cm di depan SDN Pajagalan I (saluran 80 cm meluap, TMA 110 cm)', 'siaga', 'ditangani', 25, 'Rizky Maulana'],
-  ['Kamera Offline', 'offline', 'OUT-07', null, 'Jl. Yos Sudarso', "CCTV AIRA-013 Kalimo'ok – Marengan Daya tidak merespons", 'waspada', 'aktif', 63, 'Sistem AIRA'],
+  ['Kamera Offline', 'offline', 'OUT-07', null, 'Jl. Yos Sudarso', "CCTV AIRA-009 Kalimo'ok – Marengan Daya tidak merespons", 'waspada', 'aktif', 63, 'Sistem AIRA'],
   ['Pasang Tinggi di Muara', 'backwater', 'KRT-06', null, 'Muara Kali Marengan', 'Pasang 132 cm bersamaan debit sungai tinggi — waspada arus balik outlet 4–7', 'siaga', 'ditangani', 75, 'AIRA Risk Engine'],
   ['Sensor Offline', 'offline', 'OUT-08', null, 'Desa Marengan Laok', 'Penakar hujan ARG Marengan Laok tidak mengirim data', 'waspada', 'aktif', 90, 'Sistem AIRA'],
   ['Luapan Saluran Jl. Kartini', 'peringatan', 'KRT-05', null, 'Jl. Kartini No. 50a', 'Saluran Outlet 2 meluap ke badan jalan', 'siaga', 'ditangani', 110, 'Dimas Pratama'],
@@ -510,7 +508,7 @@ const notifications = [
   ['Peringatan Dini – Perum Satelit', 'Genangan ±40 cm terdeteksi di Jl. Pesona Satelit (hilir Outlet 6). Warga diimbau memindahkan kendaraan & barang berharga.', 'darurat', ['Warga Perum Satelit', 'Warga Perum Asabri', 'Petugas Lapangan'], 'terkirim', 7],
   ['Hujan Sangat Lebat – Kota Sumenep', 'Intensitas 45 mm/jam di Pajagalan. Koridor Dr. Wahidin – Setiabudi dan Kartini – Jati Emas berpotensi tergenang 30–45 cm.', 'peringatan', ['Petugas Lapangan', 'Operator'], 'terkirim', 13],
   ['Waspada Perum Bumi Sumekar Asri', 'Kenaikan berurutan TMA Outlet 6A → 6B. Genangan diperkirakan mencapai blok BSA dalam 30–60 menit.', 'peringatan', ['Warga Perum Bumi Sumekar Asri'], 'gagal', 19],
-  ['Kamera AIRA-013 Offline', "CCTV Kalimo'ok – Marengan Daya (Jl. Yos Sudarso) tidak merespons. Mohon pengecekan perangkat.", 'informasi', ['Operator'], 'terkirim', 64],
+  ['Kamera AIRA-009 Offline', "CCTV Kalimo'ok – Marengan Daya (Jl. Yos Sudarso) tidak merespons. Mohon pengecekan perangkat.", 'informasi', ['Operator'], 'terkirim', 64],
   ['Jadwal Pengerukan Outlet 6', 'Pengerukan sedimen saluran Jl. KH Wahid Hasyim – Pasar Anom dijadwalkan pekan depan.', 'informasi', ['Dinas PU SDA', 'Pedagang Pasar Anom Baru'], 'draft', 30],
   ['Uji Coba Sirene Marengan', 'Uji coba sirene peringatan dini di Desa Marengan Daya & Marengan Laok Sabtu pukul 09.00 WIB.', 'informasi', ['Warga Marengan Daya', 'Warga Marengan Laok'], 'draft', 45],
   ['Laporan Harian Banjir', 'Rekap kondisi 13 zona risiko (6 titik kritis BRIDA–ITS + outlet drainase) tersedia di dashboard AIRA.', 'informasi', ['Administrator', 'Analis Data'], 'draft', 5],

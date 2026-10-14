@@ -2888,112 +2888,112 @@
     {
       "id": "cam-001",
       "code": "AIRA-001",
-      "name": "Jl. Dr. Wahidin",
-      "location": "Depan SDN Pajagalan I",
+      "name": "Jalan 1 Arah",
+      "location": "Titik 1 rawan banjir",
       "district": "Kota Sumenep",
       "zoneId": "zon-001",
       "status": "bahaya",
       "imageUrl": "/images/sumenep/banjir-jalan.jpg",
-      "lat": -7.010492,
-      "lng": 113.863241,
-      "coordAccuracy": "data_resmi",
-      "coordNote": "SDN Pajagalan I, Jl. Dr. Wahidin — koordinat Pusdatin Kemendikdasmen (NPSN 20530026).",
+      "lat": -7.01196167186372,
+      "lng": 113.86212576110316,
+      "coordAccuracy": "lapangan",
+      "coordNote": "Titik 1 rawan banjir — koordinat tim AIRA. Koridor Dr. Wahidin – Setiabudi ±3 m.",
       "lastUpdate": "2026-09-24T03:23:45.000Z",
       "isOnline": true
     },
     {
       "id": "cam-002",
       "code": "AIRA-002",
-      "name": "Jl. Dr. Setiabudi",
-      "location": "Koridor Setiabudi, Pajagalan",
+      "name": "Perempatan Jl. Wahidin",
+      "location": "Titik 2 rawan banjir",
       "district": "Kota Sumenep",
       "zoneId": "zon-001",
       "status": "bahaya",
       "imageUrl": "/images/sumenep/banjir-jalan.jpg",
-      "lat": -7.011874,
-      "lng": 113.862173,
-      "coordAccuracy": "osm",
-      "coordNote": "Titik pada ruas OSM \"Jalan Dokter Setiabudi\".",
+      "lat": -7.010734188892034,
+      "lng": 113.86252661045165,
+      "coordAccuracy": "lapangan",
+      "coordNote": "Titik 2 rawan banjir — koordinat tim AIRA. Koridor Dr. Wahidin – Setiabudi ±6 m.",
       "lastUpdate": "2026-09-24T03:23:38.000Z",
       "isOnline": true
     },
     {
       "id": "cam-003",
       "code": "AIRA-003",
-      "name": "Perum Bumi Sumekar Asri",
-      "location": "Jl. Dewi Sartika, blok BSA",
+      "name": "MPP Taman Bunga",
+      "location": "Titik 3 rawan banjir",
       "district": "Kota Sumenep",
-      "zoneId": "zon-002",
-      "status": "siaga",
-      "imageUrl": "/images/sumenep/banjir-perumahan.jpg",
-      "lat": -7.018064,
-      "lng": 113.865217,
-      "coordAccuracy": "osm",
-      "coordNote": "Perum Bumi Sumekar Asri (BSA), Kolor — objek OSM \"Warunk BSA\" di Jl. Dewi Sartika (blok BSA).",
+      "zoneId": "zon-007",
+      "status": "waspada",
+      "imageUrl": "/images/sumenep/taman-bunga-jalan.jpg",
+      "lat": -7.008141939920929,
+      "lng": 113.86095760597476,
+      "coordAccuracy": "lapangan",
+      "coordNote": "Titik 3 rawan banjir — koordinat tim AIRA. Koridor Outlet 1 terdekat ±150 m.",
       "lastUpdate": "2026-09-24T03:24:06.000Z",
       "isOnline": true
     },
     {
       "id": "cam-004",
       "code": "AIRA-004",
-      "name": "Perum Satelit",
-      "location": "Jl. Pesona Satelit",
+      "name": "BRIDA – MR DIY",
+      "location": "Titik 4 rawan banjir",
       "district": "Kota Sumenep",
-      "zoneId": "zon-003",
-      "status": "bahaya",
-      "imageUrl": "/images/sumenep/banjir-perumahan.jpg",
-      "lat": -7.019998,
-      "lng": 113.873575,
-      "coordAccuracy": "osm",
-      "coordNote": "Titik pada ruas OSM \"Pesona Satelit\".",
+      "zoneId": "zon-010",
+      "status": "waspada",
+      "imageUrl": "/images/hero/sumenep-drone-1.jpg",
+      "lat": -7.0154131280860135,
+      "lng": 113.85806549039908,
+      "coordAccuracy": "lapangan",
+      "coordNote": "Titik 4 rawan banjir — koordinat tim AIRA. Koridor Outlet 6 ±12 m.",
       "lastUpdate": "2026-09-24T03:23:46.000Z",
       "isOnline": true
     },
     {
       "id": "cam-005",
       "code": "AIRA-005",
-      "name": "Perum Asabri",
-      "location": "Jl. Argopuro, Kolor",
+      "name": "Jl. Raya Sumenep – Pamekasan",
+      "location": "Titik 5 rawan banjir",
       "district": "Kota Sumenep",
-      "zoneId": "zon-004",
+      "zoneId": "zon-010",
       "status": "waspada",
-      "imageUrl": "/images/sumenep/banjir-perumahan.jpg",
-      "lat": -7.021589,
-      "lng": 113.870158,
-      "coordAccuracy": "osm",
-      "coordNote": "Ruas OSM \"Pesona Satelit\" sisi barat (Jl. Argopuro, Kolor).",
+      "imageUrl": "/images/sumenep/banjir-jalan.jpg",
+      "lat": -7.02428838813472,
+      "lng": 113.85571029297682,
+      "coordAccuracy": "lapangan",
+      "coordNote": "Titik 5 rawan banjir — koordinat tim AIRA. Zona terdekat Outlet 6, ±630 m.",
       "lastUpdate": "2026-09-24T03:24:02.000Z",
       "isOnline": true
     },
     {
       "id": "cam-006",
       "code": "AIRA-006",
-      "name": "Jl. Kartini",
-      "location": "Jl. Kartini No. 50a",
+      "name": "Bumi Sumekar",
+      "location": "Titik 6 rawan banjir",
       "district": "Kota Sumenep",
-      "zoneId": "zon-005",
+      "zoneId": "zon-002",
       "status": "siaga",
-      "imageUrl": "/images/sumenep/banjir-jalan.jpg",
-      "lat": -7.0037371,
-      "lng": 113.8646808,
-      "coordAccuracy": "direktori",
-      "coordNote": "Jl. Kartini No. 50a, Pangarangan/Kepanjin — geocode alamat terdaftar (idalamat.com).",
+      "imageUrl": "/images/sumenep/banjir-perumahan.jpg",
+      "lat": -7.018869648847279,
+      "lng": 113.86441454869444,
+      "coordAccuracy": "lapangan",
+      "coordNote": "Titik 6 rawan banjir — koordinat tim AIRA. Zona Perumahan Bumi Sumekar Asri ±40 m.",
       "lastUpdate": "2026-09-24T03:24:08.000Z",
       "isOnline": true
     },
     {
       "id": "cam-007",
       "code": "AIRA-007",
-      "name": "Jl. Jati Emas",
-      "location": "Pangarangan",
+      "name": "Jl. Raya Sumenep",
+      "location": "Titik 7 rawan banjir",
       "district": "Kota Sumenep",
-      "zoneId": "zon-005",
-      "status": "siaga",
-      "imageUrl": "/images/hero/sumenep-drone-1.jpg",
-      "lat": -7.0037996,
-      "lng": 113.8706738,
-      "coordAccuracy": "direktori",
-      "coordNote": "Jl. Jati Emas, Pangarangan — geocode alamat terdaftar (idalamat.com).",
+      "zoneId": "zon-009",
+      "status": "waspada",
+      "imageUrl": "/images/hero/sumenep-drone.jpg",
+      "lat": -7.011901756688404,
+      "lng": 113.86789029905772,
+      "coordAccuracy": "lapangan",
+      "coordNote": "Titik 7 rawan banjir — koordinat tim AIRA. Koridor Outlet 5 ±6 m.",
       "lastUpdate": "2026-09-24T03:23:49.000Z",
       "isOnline": true
     },
@@ -3016,70 +3016,6 @@
     {
       "id": "cam-009",
       "code": "AIRA-009",
-      "name": "Jl. Dr. Cipto",
-      "location": "Depan PMI Kab. Sumenep",
-      "district": "Kota Sumenep",
-      "zoneId": "zon-008",
-      "status": "siaga",
-      "imageUrl": "/images/sumenep/banjir-jalan.jpg",
-      "lat": -7.01441,
-      "lng": 113.86216,
-      "coordAccuracy": "osm",
-      "coordNote": "Jl. Dr. Cipto No. 21 (PMI Kabupaten Sumenep) — objek OpenStreetMap.",
-      "lastUpdate": "2026-09-24T03:24:14.000Z",
-      "isOnline": true
-    },
-    {
-      "id": "cam-010",
-      "code": "AIRA-010",
-      "name": "Jl. Raung",
-      "location": "Outlet 5, Pabian",
-      "district": "Kota Sumenep",
-      "zoneId": "zon-009",
-      "status": "siaga",
-      "imageUrl": "/images/sumenep/banjir-jalan.jpg",
-      "lat": -7.017919,
-      "lng": 113.877178,
-      "coordAccuracy": "osm",
-      "coordNote": "Titik pada ruas OSM \"Jalan Raung\".",
-      "lastUpdate": "2026-09-24T03:24:17.000Z",
-      "isOnline": true
-    },
-    {
-      "id": "cam-011",
-      "code": "AIRA-011",
-      "name": "Jl. KH Wahid Hasyim (CCTV-06A)",
-      "location": "Hulu Outlet 6",
-      "district": "Kota Sumenep",
-      "zoneId": "zon-010",
-      "status": "waspada",
-      "imageUrl": "/images/hero/sumenep-drone.jpg",
-      "lat": -7.012103,
-      "lng": 113.855868,
-      "coordAccuracy": "osm",
-      "coordNote": "Titik pada ruas OSM \"Jalan Kyai Haji Wahid Hasyim\".",
-      "lastUpdate": "2026-09-24T03:24:06.000Z",
-      "isOnline": true
-    },
-    {
-      "id": "cam-012",
-      "code": "AIRA-012",
-      "name": "Pasar Anom Baru (CCTV-06B)",
-      "location": "Jl. Trunojoyo, Kolor",
-      "district": "Kota Sumenep",
-      "zoneId": "zon-010",
-      "status": "waspada",
-      "imageUrl": "/images/hero/sumenep-drone-1.jpg",
-      "lat": -7.0162642,
-      "lng": 113.8588113,
-      "coordAccuracy": "direktori",
-      "coordNote": "Kawasan Pasar Anom Baru, Jl. Trunojoyo, Kolor — geocode alamat terdaftar (idalamat.com).",
-      "lastUpdate": "2026-09-24T03:24:02.000Z",
-      "isOnline": true
-    },
-    {
-      "id": "cam-013",
-      "code": "AIRA-013",
       "name": "Kalimo'ok – Marengan Daya",
       "location": "Jl. Yos Sudarso",
       "district": "Kota Sumenep",
@@ -3094,8 +3030,8 @@
       "isOnline": false
     },
     {
-      "id": "cam-014",
-      "code": "AIRA-014",
+      "id": "cam-010",
+      "code": "AIRA-010",
       "name": "Desa Marengan Laok",
       "location": "Outlet 8",
       "district": "Kalianget",
@@ -3106,28 +3042,12 @@
       "lng": 113.896984,
       "coordAccuracy": "osm",
       "coordNote": "Desa Marengan Laok — node desa OpenStreetMap.",
-      "lastUpdate": "2026-09-24T03:23:52.000Z",
+      "lastUpdate": "2026-09-24T03:24:14.000Z",
       "isOnline": true
     },
     {
-      "id": "cam-015",
-      "code": "AIRA-015",
-      "name": "Jl. Panglima Besar Sudirman",
-      "location": "Outlet 1, pusat kota",
-      "district": "Kota Sumenep",
-      "zoneId": "zon-007",
-      "status": "waspada",
-      "imageUrl": "/images/sumenep/taman-bunga-jalan.jpg",
-      "lat": -7.006901,
-      "lng": 113.862009,
-      "coordAccuracy": "osm",
-      "coordNote": "Titik pada ruas OSM \"Jalan Panglima Besar Sudirman\".",
-      "lastUpdate": "2026-09-24T03:23:52.000Z",
-      "isOnline": true
-    },
-    {
-      "id": "cam-016",
-      "code": "AIRA-016",
+      "id": "cam-011",
+      "code": "AIRA-011",
       "name": "Hulu Kali Marengan",
       "location": "Hulu Marengan",
       "district": "Kota Sumenep",
@@ -3138,39 +3058,7 @@
       "lng": 113.87,
       "coordAccuracy": "penelitian",
       "coordNote": "Hulu Sungai Marengan 07°00'29\" LS, 113°52'12\" BT (Prosiding PSPK 3 UKWMS, 2024).",
-      "lastUpdate": "2026-09-24T03:23:43.000Z",
-      "isOnline": true
-    },
-    {
-      "id": "cam-017",
-      "code": "AIRA-017",
-      "name": "Jl. Urip Sumoharjo",
-      "location": "Outlet 5 hilir",
-      "district": "Kota Sumenep",
-      "zoneId": "zon-009",
-      "status": "siaga",
-      "imageUrl": "/images/sumenep/banjir-jalan.jpg",
-      "lat": -7.015738,
-      "lng": 113.871524,
-      "coordAccuracy": "osm",
-      "coordNote": "Titik pada ruas OSM \"Jalan Jenderal Urip Sumoharjo\".",
-      "lastUpdate": "2026-09-24T03:23:58.000Z",
-      "isOnline": true
-    },
-    {
-      "id": "cam-018",
-      "code": "AIRA-018",
-      "name": "Jl. KH Agus Salim",
-      "location": "Outlet 2",
-      "district": "Kota Sumenep",
-      "zoneId": "zon-005",
-      "status": "siaga",
-      "imageUrl": "/images/sumenep/banjir-jalan.jpg",
-      "lat": -7.002687,
-      "lng": 113.869191,
-      "coordAccuracy": "osm",
-      "coordNote": "Titik pada ruas OSM \"Jalan KH. Agus Salim\".",
-      "lastUpdate": "2026-09-24T03:23:50.000Z",
+      "lastUpdate": "2026-09-24T03:24:17.000Z",
       "isOnline": true
     }
   ],
@@ -3193,11 +3081,11 @@
       "coordAccuracy": "osm",
       "coordNote": "Titik pada ruas OSM \"Jalan Diponegoro\".",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:23:57.000Z",
+      "lastUpdate": "2026-09-24T03:24:05.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 63
+          "value": 65
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
@@ -3205,15 +3093,15 @@
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
-          "value": 68
+          "value": 70
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 72
+          "value": 71
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 72
+          "value": 74
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
@@ -3221,23 +3109,23 @@
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 78
+          "value": 77
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 76
+          "value": 75
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
-          "value": 78
+          "value": 79
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 83
+          "value": 80
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 82
+          "value": 84
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -3263,51 +3151,51 @@
       "coordAccuracy": "osm",
       "coordNote": "Titik pada ruas OSM \"Jalan KH. Agus Salim\".",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:23:59.000Z",
+      "lastUpdate": "2026-09-24T03:24:03.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 68
+          "value": 72
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 74
+          "value": 70
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
-          "value": 74
+          "value": 72
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 74
+          "value": 78
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 76
+          "value": 77
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 79
+          "value": 82
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 79
+          "value": 82
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 81
+          "value": 80
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
-          "value": 86
+          "value": 87
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 84
+          "value": 87
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 87
+          "value": 86
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -3333,11 +3221,11 @@
       "coordAccuracy": "data_resmi",
       "coordNote": "SDN Pajagalan I, Jl. Dr. Wahidin — koordinat Pusdatin Kemendikdasmen (NPSN 20530026).",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:23:51.000Z",
+      "lastUpdate": "2026-09-24T03:24:17.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 89
+          "value": 83
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
@@ -3345,15 +3233,15 @@
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
-          "value": 91
+          "value": 92
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 90
+          "value": 89
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 97
+          "value": 93
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
@@ -3361,23 +3249,23 @@
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 96
-        },
-        {
-          "time": "2026-09-23T23:24:18.000Z",
           "value": 100
         },
         {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 104
+        },
+        {
           "time": "2026-09-24T00:24:18.000Z",
-          "value": 102
+          "value": 100
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 105
+          "value": 106
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 109
+          "value": 105
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -3403,51 +3291,51 @@
       "coordAccuracy": "osm",
       "coordNote": "Mulut outlet: ujung ruas Jl. Dr. Cipto terdekat ke Kali Marengan (18 m) — geometri OSM.",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:24:07.000Z",
+      "lastUpdate": "2026-09-24T03:24:08.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 106
+          "value": 99
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 106
+          "value": 104
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
-          "value": 105
+          "value": 106
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 112
+          "value": 110
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 115
+          "value": 114
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 115
+          "value": 114
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 123
+          "value": 122
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 123
-        },
-        {
-          "time": "2026-09-24T00:24:18.000Z",
-          "value": 120
-        },
-        {
-          "time": "2026-09-24T01:24:18.000Z",
           "value": 125
         },
         {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 125
+        },
+        {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 123
+        },
+        {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 127
+          "value": 130
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -3473,51 +3361,51 @@
       "coordAccuracy": "osm",
       "coordNote": "Sisi Kali Marengan di mulut outlet Jl. Dr. Cipto — vertex sungai OSM terdekat.",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:23:56.000Z",
+      "lastUpdate": "2026-09-24T03:23:53.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 142
+          "value": 143
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 141
+          "value": 144
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
-          "value": 142
+          "value": 140
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 149
+          "value": 146
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 151
+          "value": 148
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 159
+          "value": 153
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 159
+          "value": 158
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 163
-        },
-        {
-          "time": "2026-09-24T00:24:18.000Z",
           "value": 167
         },
         {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 166
+        },
+        {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 173
+          "value": 167
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 174
+          "value": 173
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -3543,11 +3431,11 @@
       "coordAccuracy": "osm",
       "coordNote": "Mulut outlet: ujung ruas Jl. Urip Sumoharjo terdekat ke Kali Marengan (25 m) — geometri OSM.",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:24:00.000Z",
+      "lastUpdate": "2026-09-24T03:23:57.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 89
+          "value": 92
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
@@ -3563,31 +3451,31 @@
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 105
+          "value": 102
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 105
+          "value": 107
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 105
-        },
-        {
-          "time": "2026-09-23T23:24:18.000Z",
           "value": 108
         },
         {
-          "time": "2026-09-24T00:24:18.000Z",
-          "value": 109
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 106
         },
         {
-          "time": "2026-09-24T01:24:18.000Z",
+          "time": "2026-09-24T00:24:18.000Z",
           "value": 112
         },
         {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 114
+        },
+        {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 113
+          "value": 117
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -3613,51 +3501,51 @@
       "coordAccuracy": "osm",
       "coordNote": "Sisi Kali Marengan di mulut outlet Jl. Urip Sumoharjo — vertex sungai OSM terdekat.",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:23:58.000Z",
+      "lastUpdate": "2026-09-24T03:24:09.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 108
+          "value": 110
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 111
+          "value": 113
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
-          "value": 119
+          "value": 115
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 123
+          "value": 119
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 122
+          "value": 120
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 124
+          "value": 123
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 131
+          "value": 130
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 135
+          "value": 128
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
-          "value": 136
+          "value": 131
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 138
+          "value": 139
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 139
+          "value": 143
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -3683,7 +3571,7 @@
       "coordAccuracy": "osm",
       "coordNote": "Titik pada ruas OSM \"Jalan Kyai Haji Wahid Hasyim\".",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:23:56.000Z",
+      "lastUpdate": "2026-09-24T03:23:55.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
@@ -3691,15 +3579,15 @@
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 60
-        },
-        {
-          "time": "2026-09-23T18:24:18.000Z",
           "value": 59
         },
         {
+          "time": "2026-09-23T18:24:18.000Z",
+          "value": 60
+        },
+        {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 63
+          "value": 61
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
@@ -3707,15 +3595,15 @@
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 64
+          "value": 63
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 65
+          "value": 66
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 64
+          "value": 67
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
@@ -3723,11 +3611,11 @@
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 68
+          "value": 69
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 72
+          "value": 73
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -3757,11 +3645,11 @@
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 76
+          "value": 75
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 78
+          "value": 74
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
@@ -3773,31 +3661,31 @@
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 83
-        },
-        {
-          "time": "2026-09-23T21:24:18.000Z",
           "value": 85
         },
         {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 87
+        },
+        {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 84
+          "value": 88
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 86
+          "value": 89
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
-          "value": 93
+          "value": 91
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 94
+          "value": 95
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 95
+          "value": 93
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -3823,15 +3711,15 @@
       "coordAccuracy": "osm",
       "coordNote": "Mulut outlet: ujung ruas Jl. Pesona Satelit terdekat ke Kali Marengan (8 m) — geometri OSM.",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:24:04.000Z",
+      "lastUpdate": "2026-09-24T03:24:05.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 130
+          "value": 120
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 129
+          "value": 125
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
@@ -3839,35 +3727,35 @@
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 138
+          "value": 137
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 134
+          "value": 138
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 140
+          "value": 141
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 146
+          "value": 145
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 148
+          "value": 152
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
-          "value": 151
+          "value": 152
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 150
+          "value": 158
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 153
+          "value": 160
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -3893,23 +3781,23 @@
       "coordAccuracy": "osm",
       "coordNote": "Sisi Kali Marengan di mulut outlet Jl. Pesona Satelit — vertex sungai OSM terdekat.",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:24:15.000Z",
+      "lastUpdate": "2026-09-24T03:24:11.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 136
+          "value": 133
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 137
+          "value": 136
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
-          "value": 134
+          "value": 139
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 141
+          "value": 138
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
@@ -3917,11 +3805,11 @@
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 145
+          "value": 152
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 154
+          "value": 151
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
@@ -3933,11 +3821,11 @@
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 163
+          "value": 157
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 162
+          "value": 164
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -3963,23 +3851,23 @@
       "coordAccuracy": "osm",
       "coordNote": "Mulut outlet: ujung ruas Jl. Yos Sudarso (Marengan Daya) terdekat ke Kali Marengan (56 m) — geometri OSM.",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:24:07.000Z",
+      "lastUpdate": "2026-09-24T03:24:10.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 98
+          "value": 96
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 95
+          "value": 97
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
-          "value": 94
+          "value": 97
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 94
+          "value": 96
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
@@ -3987,27 +3875,27 @@
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 94
-        },
-        {
-          "time": "2026-09-23T22:24:18.000Z",
-          "value": 94
-        },
-        {
-          "time": "2026-09-23T23:24:18.000Z",
-          "value": 94
-        },
-        {
-          "time": "2026-09-24T00:24:18.000Z",
           "value": 96
         },
         {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 93
+        },
+        {
+          "time": "2026-09-23T23:24:18.000Z",
+          "value": 98
+        },
+        {
+          "time": "2026-09-24T00:24:18.000Z",
+          "value": 95
+        },
+        {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 97
+          "value": 94
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 97
+          "value": 94
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -4033,15 +3921,15 @@
       "coordAccuracy": "osm",
       "coordNote": "Sisi Kali Marengan di mulut outlet Jl. Yos Sudarso (Marengan Daya) — vertex sungai OSM terdekat.",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:24:10.000Z",
+      "lastUpdate": "2026-09-24T03:23:54.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 81
+          "value": 79
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 80
+          "value": 79
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
@@ -4049,7 +3937,7 @@
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 80
+          "value": 82
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
@@ -4057,19 +3945,19 @@
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 81
+          "value": 80
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 82
+          "value": 79
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 78
+          "value": 81
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
-          "value": 78
+          "value": 80
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
@@ -4077,7 +3965,7 @@
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 79
+          "value": 80
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -4107,11 +3995,11 @@
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 56
+          "value": 60
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 60
+          "value": 57
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
@@ -4119,35 +4007,35 @@
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 64
+          "value": 63
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 64
+          "value": 62
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 65
+          "value": 67
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 67
+          "value": 66
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 67
+          "value": 66
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
-          "value": 69
+          "value": 70
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 72
+          "value": 69
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 71
+          "value": 74
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -4173,15 +4061,15 @@
       "coordAccuracy": "osm",
       "coordNote": "Ruas OSM \"Pesona Satelit\" sisi barat (Jl. Argopuro, Kolor).",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:23:56.000Z",
+      "lastUpdate": "2026-09-24T03:24:09.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 48
+          "value": 49
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 50
+          "value": 49
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
@@ -4193,19 +4081,19 @@
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 49
+          "value": 48
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 48
+          "value": 49
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 48
+          "value": 49
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 49
+          "value": 48
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
@@ -4213,7 +4101,7 @@
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 50
+          "value": 49
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
@@ -4243,11 +4131,11 @@
       "coordAccuracy": "osm",
       "coordNote": "Tepi Kali Marengan (geometri OSM), 486 m dari titik penelitian.",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:24:08.000Z",
+      "lastUpdate": "2026-09-24T03:23:58.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 168
+          "value": 165
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
@@ -4255,39 +4143,39 @@
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
-          "value": 175
+          "value": 179
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 184
+          "value": 183
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 184
+          "value": 188
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 191
+          "value": 190
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 195
+          "value": 196
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 194
+          "value": 198
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
-          "value": 200
+          "value": 202
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 207
+          "value": 205
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 216
+          "value": 214
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -4313,23 +4201,23 @@
       "coordAccuracy": "penelitian",
       "coordNote": "Hilir Sungai Marengan 07°02'10\" LS, 113°53'23\" BT (Prosiding PSPK 3 UKWMS, 2024).",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:24:13.000Z",
+      "lastUpdate": "2026-09-24T03:24:17.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 222
+          "value": 224
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 230
+          "value": 224
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
-          "value": 238
+          "value": 231
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 236
+          "value": 241
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
@@ -4337,7 +4225,7 @@
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 243
+          "value": 252
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
@@ -4345,19 +4233,19 @@
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 256
+          "value": 262
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
-          "value": 268
-        },
-        {
-          "time": "2026-09-24T01:24:18.000Z",
           "value": 270
         },
         {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 278
+        },
+        {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 282
+          "value": 276
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -4383,11 +4271,11 @@
       "coordAccuracy": "osm",
       "coordNote": "Ujung hilir geometri OSM Kali Marengan (muara).",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:23:59.000Z",
+      "lastUpdate": "2026-09-24T03:23:49.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 106
+          "value": 102
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
@@ -4395,39 +4283,39 @@
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
-          "value": 105
+          "value": 108
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 113
+          "value": 109
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 116
+          "value": 115
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 120
+          "value": 119
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 122
+          "value": 116
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 122
+          "value": 125
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
-          "value": 122
+          "value": 121
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 130
+          "value": 123
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 127
+          "value": 131
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -4453,31 +4341,31 @@
       "coordAccuracy": "data_resmi",
       "coordNote": "SDN Pajagalan I, Jl. Dr. Wahidin — koordinat Pusdatin Kemendikdasmen (NPSN 20530026). (satu tiang dengan perangkat lain, offset ±4 m)",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:24:06.000Z",
+      "lastUpdate": "2026-09-24T03:24:03.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 34
+          "value": 36
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 35
+          "value": 36
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
-          "value": 38
+          "value": 36
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 38
+          "value": 39
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 40
+          "value": 38
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
-          "value": 40
+          "value": 39
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
@@ -4489,7 +4377,7 @@
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
-          "value": 41
+          "value": 42
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
@@ -4497,7 +4385,7 @@
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 44
+          "value": 45
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -4523,27 +4411,27 @@
       "coordAccuracy": "osm",
       "coordNote": "Kompleks Bandar Udara Trunojoyo (lokasi Stasiun Meteorologi Trunojoyo BMKG) — OpenStreetMap.",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:23:55.000Z",
+      "lastUpdate": "2026-09-24T03:24:17.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 29
+          "value": 30
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 29
+          "value": 30
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
-          "value": 32
+          "value": 30
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 31
+          "value": 33
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 33
+          "value": 32
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
@@ -4555,7 +4443,7 @@
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 35
+          "value": 34
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
@@ -4563,11 +4451,11 @@
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 35
+          "value": 37
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 37
+          "value": 36
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -4597,7 +4485,7 @@
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 23
+          "value": 24
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
@@ -4613,7 +4501,7 @@
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 23
+          "value": 24
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
@@ -4621,7 +4509,7 @@
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 23
+          "value": 24
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
@@ -4629,11 +4517,11 @@
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
-          "value": 25
+          "value": 24
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 24
+          "value": 23
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
@@ -4663,51 +4551,51 @@
       "coordAccuracy": "osm",
       "coordNote": "RSUD dr. H. Moh. Anwar — objek OpenStreetMap.",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:24:17.000Z",
+      "lastUpdate": "2026-09-24T03:23:52.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 28.6
+          "value": 27.7
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 27.8
+          "value": 27.4
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
-          "value": 28.7
+          "value": 27.2
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
-          "value": 27.8
+          "value": 28.8
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 27.9
-        },
-        {
-          "time": "2026-09-23T21:24:18.000Z",
-          "value": 28.6
-        },
-        {
-          "time": "2026-09-23T22:24:18.000Z",
           "value": 27.6
         },
         {
+          "time": "2026-09-23T21:24:18.000Z",
+          "value": 27.3
+        },
+        {
+          "time": "2026-09-23T22:24:18.000Z",
+          "value": 28.5
+        },
+        {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 27.5
+          "value": 28.6
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
-          "value": 27.5
-        },
-        {
-          "time": "2026-09-24T01:24:18.000Z",
           "value": 27.8
         },
         {
+          "time": "2026-09-24T01:24:18.000Z",
+          "value": 28.7
+        },
+        {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 27.2
+          "value": 27.8
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -4733,19 +4621,19 @@
       "coordAccuracy": "osm",
       "coordNote": "Kompleks Bandar Udara Trunojoyo (lokasi Stasiun Meteorologi Trunojoyo BMKG) — OpenStreetMap. (satu tiang dengan perangkat lain, offset ±4 m)",
       "isOnline": true,
-      "lastUpdate": "2026-09-24T03:24:13.000Z",
+      "lastUpdate": "2026-09-24T03:24:02.000Z",
       "history": [
         {
           "time": "2026-09-23T16:24:18.000Z",
-          "value": 22.1
+          "value": 22.2
         },
         {
           "time": "2026-09-23T17:24:18.000Z",
-          "value": 23.6
+          "value": 22.7
         },
         {
           "time": "2026-09-23T18:24:18.000Z",
-          "value": 24.4
+          "value": 23.2
         },
         {
           "time": "2026-09-23T19:24:18.000Z",
@@ -4753,7 +4641,7 @@
         },
         {
           "time": "2026-09-23T20:24:18.000Z",
-          "value": 25.4
+          "value": 24.2
         },
         {
           "time": "2026-09-23T21:24:18.000Z",
@@ -4761,23 +4649,23 @@
         },
         {
           "time": "2026-09-23T22:24:18.000Z",
-          "value": 25.5
+          "value": 25.4
         },
         {
           "time": "2026-09-23T23:24:18.000Z",
-          "value": 26.5
+          "value": 26.2
         },
         {
           "time": "2026-09-24T00:24:18.000Z",
-          "value": 27.2
+          "value": 27.7
         },
         {
           "time": "2026-09-24T01:24:18.000Z",
-          "value": 27.4
+          "value": 28.4
         },
         {
           "time": "2026-09-24T02:24:18.000Z",
-          "value": 28
+          "value": 28.1
         },
         {
           "time": "2026-09-24T03:24:18.000Z",
@@ -4807,7 +4695,7 @@
       "district": "Kota Sumenep",
       "zoneId": "zon-003",
       "location": "Jl. Pesona Satelit",
-      "description": "CCTV AIRA-004 mendeteksi genangan ±40 cm; saluran mulut Outlet 6C meluap (TMA 160 cm pada kedalaman 120 cm) dan tertahan backwater Δ +8 cm",
+      "description": "Genangan ±40 cm; saluran mulut Outlet 6C meluap (TMA 160 cm pada kedalaman 120 cm) dan tertahan backwater Δ +8 cm",
       "severity": "bahaya",
       "status": "aktif",
       "timestamp": "2026-09-24T03:18:18.000Z",
@@ -4859,7 +4747,7 @@
       "district": "Kota Sumenep",
       "zoneId": "zon-011",
       "location": "Jl. Yos Sudarso",
-      "description": "CCTV AIRA-013 Kalimo'ok – Marengan Daya tidak merespons",
+      "description": "CCTV AIRA-009 Kalimo'ok – Marengan Daya tidak merespons",
       "severity": "waspada",
       "status": "aktif",
       "timestamp": "2026-09-24T02:21:18.000Z",
@@ -5266,7 +5154,7 @@
     },
     {
       "id": "ntf-005",
-      "title": "Kamera AIRA-013 Offline",
+      "title": "Kamera AIRA-009 Offline",
       "message": "CCTV Kalimo'ok – Marengan Daya (Jl. Yos Sudarso) tidak merespons. Mohon pengecekan perangkat.",
       "type": "informasi",
       "recipients": [
