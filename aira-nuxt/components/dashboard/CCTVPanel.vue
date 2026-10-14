@@ -5,6 +5,7 @@ import { useDashboardStore } from '~/stores/dashboard'
 const props = defineProps<{ cameras: Camera[]; loading?: boolean }>()
 
 const clock = useDashboardStore()
+const modal = useCameraModal()
 
 // Kamera online diurutkan dari status paling kritis
 const ranked = computed(() =>
@@ -48,7 +49,9 @@ const stamp = computed(() => {
     <template v-else>
       <!-- Main Feed -->
       <div class="relative rounded-xl overflow-hidden flex-1 mb-3 bg-slate-200 min-h-0">
-        <DashboardCameraMedia :camera="main" play :alt="`CCTV ${main.name}`" class="w-full h-full object-cover" />
+        <button type="button" class="block w-full h-full cursor-zoom-in" :aria-label="`Buka rekaman CCTV ${main.name}`" @click="modal.open(main)">
+          <DashboardCameraMedia :camera="main" play :alt="`CCTV ${main.name}`" class="w-full h-full object-cover" />
+        </button>
         <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded">
           {{ main.code }} · {{ main.name }}<br /><span class="text-[8px] font-normal opacity-80 tabular-nums">{{ stamp }}</span>
         </div>
@@ -82,8 +85,8 @@ const stamp = computed(() => {
           :key="c.id"
           type="button"
           class="relative block w-full rounded-lg overflow-hidden h-20 bg-slate-200 cursor-pointer border border-transparent hover:border-primary transition"
-          :aria-label="`Tampilkan ${c.name}`"
-          @click="selectedId = c.id"
+          :aria-label="`Buka rekaman CCTV ${c.name}`"
+          @click="selectedId = c.id; modal.open(c)"
         >
           <img :src="c.imageUrl" class="w-full h-full object-cover" :alt="c.name" />
           <div class="absolute top-1 left-1 bg-black/60 text-white text-[8px] font-bold px-1.5 py-0.5 rounded">{{ c.code }} · {{ c.name }}</div>

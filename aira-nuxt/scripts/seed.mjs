@@ -318,7 +318,7 @@ const field = (n, lat, lng, zoneNote) => ({ p: [lat, lng], src: 'lapangan', note
 
 // [kode, nama, lokasi, zona, status, online, titik]
 const cameraList = [
-  ['AIRA-001', 'Jalan 1 Arah', 'Titik 1 rawan banjir', 'KRT-01', 'waspada', true, field(1, -7.01196167186372, 113.86212576110316, 'Koridor Dr. Wahidin – Setiabudi ±3 m.')],
+  ['AIRA-001', 'Masjid Bahaudin', 'Titik 1 rawan banjir', 'KRT-01', 'waspada', true, field(1, -7.01196167186372, 113.86212576110316, 'Koridor Dr. Wahidin – Setiabudi ±3 m.')],
   ['AIRA-002', 'Perempatan Jl. Wahidin', 'Titik 2 rawan banjir', 'KRT-01', 'siaga', true, field(2, -7.010734188892034, 113.86252661045165, 'Koridor Dr. Wahidin – Setiabudi ±6 m.')],
   ['AIRA-003', 'MPP Taman Bunga', 'Titik 3 rawan banjir', 'OUT-01', 'waspada', true, field(3, -7.008141939920929, 113.86095760597476, 'Koridor Outlet 1 terdekat ±150 m.')],
   ['AIRA-004', 'BRIDA – MR DIY', 'Titik 4 rawan banjir', 'OUT-06', 'waspada', true, field(4, -7.0154131280860135, 113.85806549039908, 'Koridor Outlet 6 ±12 m.')],

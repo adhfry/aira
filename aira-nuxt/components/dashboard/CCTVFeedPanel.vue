@@ -7,6 +7,7 @@ const props = defineProps<{ cameras: Camera[]; loading?: boolean; activeId?: str
 const emit = defineEmits<{ select: [camera: Camera]; close: [] }>()
 
 const clock = useDashboardStore()
+const modal = useCameraModal()
 const search = ref('')
 const status = ref<Status | 'semua'>('semua')
 const onlineOnly = ref(false)
@@ -113,15 +114,18 @@ const onlineCount = computed(() => props.cameras.filter((c) => c.isOnline).lengt
         <p class="text-xs">Tidak ada kamera yang cocok.</p>
       </div>
       <div v-else class="grid grid-cols-2 gap-3">
-        <button
+        <div
           v-for="c in visible"
           :key="c.id"
-          type="button"
-          class="text-left bg-slate-800 rounded-xl overflow-hidden border group cursor-pointer hover:border-primary transition"
+          class="text-left bg-slate-800 rounded-xl overflow-hidden border group hover:border-primary transition"
           :class="activeId === c.id ? 'border-primary ring-1 ring-primary' : 'border-slate-700'"
-          @click="emit('select', c)"
         >
-          <div class="relative h-28 overflow-hidden">
+          <button
+            type="button"
+            class="relative block w-full h-28 overflow-hidden cursor-zoom-in"
+            :aria-label="`Buka rekaman CCTV ${c.name}`"
+            @click="emit('select', c); modal.open(c)"
+          >
             <DashboardCameraMedia
               :camera="c"
               :play="activeId === c.id && c.isOnline"
@@ -136,8 +140,8 @@ const onlineCount = computed(() => props.cameras.filter((c) => c.isOnline).lengt
             <div v-if="!c.isOnline" class="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-slate-300">
               <i class="fa-solid fa-video-slash mr-1"></i> Offline
             </div>
-          </div>
-          <div class="p-2.5">
+          </button>
+          <button type="button" class="block w-full text-left p-2.5 cursor-pointer" :aria-label="`Tampilkan ${c.name} di peta`" @click="emit('select', c)">
             <div class="flex items-start gap-2 mb-1">
               <span class="w-1.5 h-1.5 rounded-full mt-1 flex-shrink-0" :class="c.isOnline ? 'bg-green-500' : 'bg-slate-500'"></span>
               <div class="text-[10px] font-bold text-white leading-tight">
@@ -151,8 +155,8 @@ const onlineCount = computed(() => props.cameras.filter((c) => c.isOnline).lengt
               <span v-if="c.recordedAt" v-tippy="`Rekaman ${recordedLabel(c.recordedAt)}`" class="tabular-nums">rekaman</span>
               <span v-else class="tabular-nums">{{ c.isOnline ? clock.timeLabel.replace(' WIB', '') : formatTime(c.lastUpdate) }}</span>
             </div>
-          </div>
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   </aside>

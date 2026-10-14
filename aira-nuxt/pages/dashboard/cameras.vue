@@ -48,6 +48,8 @@ const filters = computed<CrudFilter[]>(() => [
 
 const defaults = (): FormModel => ({ code: '', name: '', zoneId: '', location: '', status: 'normal', lat: '', lng: '', coordAccuracy: 'osm', coordNote: '', imageUrl: '', videoUrl: '', isOnline: true })
 // Galeri dokumentasi tidak diedit lewat form; tetap tersimpan saat update.
+const modal = useCameraModal()
+const openCam = (c: Camera) => modal.open(c)
 const toForm = ({ gallery: _gallery, ...c }: Camera): FormModel => ({ ...c })
 function toPayload(f: FormModel) {
   const zoneId = String(f.zoneId)
@@ -108,7 +110,17 @@ const summary = computed(() => {
 
     <template #cell-name="{ item }">
       <div class="flex items-center gap-3 min-w-[220px]">
-        <img :src="item.imageUrl" :alt="item.name" class="w-14 h-10 rounded-lg object-cover flex-shrink-0" loading="lazy" />
+        <button
+          type="button"
+          class="relative w-14 h-10 rounded-lg overflow-hidden flex-shrink-0 cursor-zoom-in group"
+          :aria-label="`Buka rekaman CCTV ${item.name}`"
+          @click="openCam(item)"
+        >
+          <img :src="item.imageUrl" alt="" class="w-full h-full object-cover" loading="lazy" />
+          <span v-if="item.videoUrl" class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/50 text-white text-[10px]">
+            <i class="fa-solid fa-play"></i>
+          </span>
+        </button>
         <div class="min-w-0">
           <div class="text-[10px] font-bold text-slate-400">{{ item.code }}</div>
           <div v-tippy="item.name" class="font-bold text-slate-800 truncate">{{ item.name }}</div>

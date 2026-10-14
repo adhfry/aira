@@ -4,5 +4,6 @@
       <NuxtPage />
     </NuxtLayout>
     <UiToastContainer />
+    <DashboardCameraModal />
   </div>
 </template>
