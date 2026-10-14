@@ -32,6 +32,13 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onShortcut))
 const placeholder = computed(() =>
   props.dark ? 'Cari lokasi, kecamatan, sungai, atau kamera...' : 'Cari lokasi, kamera, sensor, atau kejadian...',
 )
+const weatherTip = computed(() => {
+  const w = stats.value?.weather
+  if (!w) return 'Memuat cuaca'
+  if (w.source !== 'open-meteo') return 'Cuaca dari sensor skenario simulasi (data cuaca nyata sedang tidak tersedia).'
+  const jam = w.observedAt ? new Date(w.observedAt).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Jakarta' }) : ''
+  return `Cuaca nyata Kota Sumenep (Open-Meteo), kelembapan ${w.humidity}%, pukul ${jam} WIB. Nilai sensor banjir tetap skenario simulasi.`
+})
 </script>
 
 <template>
@@ -107,10 +114,12 @@ const placeholder = computed(() =>
 
       <!-- Weather -->
       <div
-        class="flex items-center rounded-xl px-3 sm:px-4 py-2"
+        v-tippy="weatherTip"
+        tabindex="0"
+        class="flex items-center rounded-xl px-3 sm:px-4 py-2 cursor-help"
         :class="dark ? 'gap-3 bg-slate-800/50 border border-borderdark' : 'gap-2 bg-blue-50 border border-blue-100'"
       >
-        <i class="fa-solid fa-cloud-sun text-orange-400 text-xl"></i>
+        <i class="fa-solid text-orange-400 text-xl" :class="stats?.weather.icon ?? 'fa-cloud-sun'"></i>
         <div>
           <div class="text-sm font-bold" :class="dark ? 'text-white' : 'text-slate-800'">{{ stats?.weather.temperature ?? 28 }}°C</div>
           <div class="text-[10px]" :class="dark ? 'text-slate-400' : 'text-slate-500'">{{ stats?.weather.condition ?? 'Berawan' }}</div>

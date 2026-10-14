@@ -10,7 +10,7 @@ const open = ref(false)
       <div class="flex-1">
         <b>Studi kasus Kota Sumenep.</b>
         Zona titik kritis &amp; outlet drainase berbasis kajian <b>BRIDA Sumenep × ITS (2026)</b> dan <b>Resmani dkk. (2017)</b>. Titik CCTV/sensor adalah
-        <i>usulan AIRA</i>; nilai sensor, status, dan kejadian adalah <b>skenario simulasi hujan lebat</b>.
+        <i>usulan AIRA</i>; nilai sensor, status, dan kejadian adalah <b>skenario simulasi hujan lebat</b>. Suhu dan kondisi cuaca di bagian atas adalah <b>cuaca nyata Kota Sumenep</b> (Open-Meteo).
         <button class="text-primary font-semibold hover:underline ml-1" :aria-expanded="open" @click="open = !open">
           {{ open ? 'Tutup' : 'Rincian sumber' }}
         </button>

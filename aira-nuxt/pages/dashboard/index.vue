@@ -34,6 +34,14 @@ const weatherSensor = computed(
   () => sensors.value.find((s) => s.type === 'weather' && s.isOnline && s.district === 'Kota Sumenep') ?? sensors.value.find((s) => s.type === 'weather'),
 )
 
+// Kartu suhu memakai cuaca nyata (Open-Meteo, 12 jam terakhir) bila tersedia; bila tidak, sensor skenario.
+const weatherCard = computed<Sensor | undefined>(() => {
+  const w = stats.value?.weather
+  const base = weatherSensor.value
+  if (!base || !w || w.source !== 'open-meteo' || !w.history.length) return base
+  return { ...base, name: 'Open-Meteo · Kota Sumenep', value: w.temperature, lastUpdate: w.observedAt ?? base.lastUpdate, history: w.history }
+})
+
 const backwaterCount = computed(() => stats.value?.backwater.readings.filter((r) => r.delta >= 0).length ?? 0)
 </script>
 
@@ -96,7 +104,7 @@ const backwaterCount = computed(() => stats.value?.backwater.readings.filter((r)
         <DashboardSensorChart :sensor="drainSensor" title="TMA Saluran Paling Kritis" icon="fa-water" icon-box="bg-blue-100 text-primary" color="#ef4444" />
         <DashboardSensorChart :sensor="rainSensor" title="Curah Hujan" icon="fa-cloud-rain" icon-box="bg-blue-100 text-primary" color="#3b82f6" chart="bar" />
         <DashboardSensorChart
-          :sensor="weatherSensor"
+          :sensor="weatherCard"
           title="Suhu & Cuaca"
           icon="fa-temperature-half"
           icon-box="bg-orange-100 text-orange-500"

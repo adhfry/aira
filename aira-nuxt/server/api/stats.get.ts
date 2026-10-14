@@ -9,6 +9,7 @@ function weatherCondition(avgRain: number): string {
 
 export default defineEventHandler(async (): Promise<DashboardStats> => {
   const db = await readDb()
+  const live = await liveWeather()
 
   const online = <T extends { isOnline: boolean }>(arr: T[]) => arr.filter((x) => x.isOnline)
   const avg = (arr: number[]) => (arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0)
@@ -31,7 +32,9 @@ export default defineEventHandler(async (): Promise<DashboardStats> => {
     cameras: { total: db.cameras.length, online: online(db.cameras).length },
     sensors: { total: db.sensors.length, online: online(db.sensors).length },
     activeIncidents: db.incidents.filter((i) => i.status === 'aktif').length,
-    weather: { temperature: Math.round(avg(weather) || 28), condition: weatherCondition(avg(rain)) },
+    weather: live
+      ? { ...live, source: 'open-meteo' }
+      : { temperature: Math.round(avg(weather) || 28), condition: weatherCondition(avg(rain)), icon: 'fa-cloud-sun', humidity: null, source: 'simulasi', observedAt: null, history: [] },
     rainfall: { max: rain.length ? Math.max(...rain) : 0, avg: Math.round(avg(rain)) },
     tide: tide?.value ?? null,
     lastUpdate: dates.sort().at(-1) ?? new Date().toISOString(),

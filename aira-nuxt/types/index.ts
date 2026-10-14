@@ -189,7 +189,8 @@ export interface DashboardStats {
   cameras: { total: number; online: number }
   sensors: { total: number; online: number }
   activeIncidents: number
-  weather: { temperature: number; condition: string }
+  /** source 'open-meteo' = cuaca nyata Kota Sumenep; 'simulasi' = cadangan dari sensor skenario. */
+  weather: { temperature: number; condition: string; icon: string; humidity: number | null; source: 'open-meteo' | 'simulasi'; observedAt: string | null; history: SensorPoint[] }
   rainfall: { max: number; avg: number }
   tide: number | null
   lastUpdate: string
@@ -197,4 +198,13 @@ export interface DashboardStats {
   backwater: { riverLevel: number | null; riverSensor: string | null; readings: BackwaterReading[] }
   predictions: { zone: string; values: number[] }[]
   weights: { structural: number; historical: number; realtime: number }
+}
+
+export interface LiveWeather {
+  temperature: number
+  condition: string
+  icon: string
+  humidity: number
+  observedAt: string
+  history: SensorPoint[]
 }
