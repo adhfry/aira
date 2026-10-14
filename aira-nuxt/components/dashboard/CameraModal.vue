@@ -68,16 +68,11 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
               class="w-full h-full object-contain"
             ></video>
             <img v-else :src="camera.imageUrl" :alt="camera.name" class="w-full h-full object-contain" />
-            <div v-if="camera.videoUrl" class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded flex items-center gap-1.5">
-              <span class="w-2 h-2 bg-white rounded-full"></span> REC
-            </div>
-            <div v-if="camera.recordedAt" class="absolute top-3 left-3 bg-black/60 text-white text-xs font-semibold px-2 py-1 rounded tabular-nums">
-              Rekaman {{ recordedLabel(camera.recordedAt) }}
-            </div>
           </div>
 
           <div class="px-4 py-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-300 overflow-y-auto">
             <UiStatusPill :status="camera.status" variant="solid" />
+            <span v-if="camera.recordedAt" class="tabular-nums"><i class="fa-solid fa-video text-red-500 mr-1"></i>Rekaman {{ recordedLabel(camera.recordedAt) }}</span>
             <span><i class="fa-solid fa-location-dot text-slate-500 mr-1"></i>{{ camera.location }} · {{ camera.district }}</span>
             <span class="tabular-nums text-slate-400">{{ camera.lat.toFixed(6) }}, {{ camera.lng.toFixed(6) }}</span>
             <div v-if="camera.gallery?.length" class="flex gap-2 ml-auto">

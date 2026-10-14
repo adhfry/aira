@@ -132,11 +132,10 @@ const onlineCount = computed(() => props.cameras.filter((c) => c.isOnline).lengt
               class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
               :class="{ 'opacity-40': !c.isOnline }"
             />
-            <div v-if="activeId === c.id && c.videoUrl" class="absolute bottom-1.5 left-1.5 bg-red-600 text-white text-[8px] font-bold px-1.5 py-0.5 rounded">REC</div>
-            <div class="absolute top-1.5 left-1.5 text-[9px] font-bold px-1.5 py-0.5 rounded" :class="statusMeta(c.status).solid">
+            <div class="absolute bottom-1.5 right-1.5 text-[9px] font-bold px-1.5 py-0.5 rounded" :class="statusMeta(c.status).solid">
               {{ statusMeta(c.status).label }}
             </div>
-            <div class="absolute top-1.5 right-1.5 bg-black/60 text-white text-[9px] p-1 rounded group-hover:bg-black"><i class="fa-solid fa-expand"></i></div>
+            <div v-if="!(activeId === c.id && c.videoUrl)" class="absolute top-1.5 right-1.5 bg-black/60 text-white text-[9px] p-1 rounded group-hover:bg-black"><i class="fa-solid fa-expand"></i></div>
             <div v-if="!c.isOnline" class="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-slate-300">
               <i class="fa-solid fa-video-slash mr-1"></i> Offline
             </div>

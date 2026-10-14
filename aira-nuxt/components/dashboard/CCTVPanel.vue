@@ -52,17 +52,15 @@ const stamp = computed(() => {
         <button type="button" class="block w-full h-full cursor-zoom-in" :aria-label="`Buka rekaman CCTV ${main.name}`" @click="modal.open(main)">
           <DashboardCameraMedia :camera="main" play :alt="`CCTV ${main.name}`" class="w-full h-full object-cover" />
         </button>
-        <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded">
+        <div v-if="!main.videoUrl" class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded">
           {{ main.code }} · {{ main.name }}<br /><span class="text-[8px] font-normal opacity-80 tabular-nums">{{ stamp }}</span>
         </div>
-        <div v-if="main.videoUrl" class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
-          <span class="w-1.5 h-1.5 bg-white rounded-full"></span> REC
-        </div>
-        <div class="absolute bottom-3 left-3">
+        <!-- Pojok kiri bawah dipakai jam OSD rekaman; status di kanan bawah. -->
+        <div class="absolute bottom-3 right-3">
           <UiStatusPill :status="main.status" variant="solid" />
         </div>
         <!-- Dokumentasi titik yang sama (mis. foto banjir di ruas ini), dibuka di tab baru -->
-        <div v-if="main.gallery?.length" class="absolute bottom-3 right-3 flex gap-1.5">
+        <div v-if="main.gallery?.length" class="absolute right-3 top-1/2 -translate-y-1/2 flex flex-col gap-1.5">
           <a
             v-for="g in main.gallery"
             :key="g.url"

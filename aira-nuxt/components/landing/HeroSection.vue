@@ -63,13 +63,6 @@ const bars = ['bg-slate-200 h-1/4', 'bg-slate-200 h-2/4', 'bg-slate-200 h-1/4', 
                 aria-label="Rekaman titik pantau MPP Taman Bunga Sumenep"
                 class="w-full h-full object-cover"
               ></video>
-              <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded">
-                <div class="flex items-center gap-1"><i class="fa-solid fa-video text-red-500"></i> AIRA-003 · MPP Taman Bunga</div>
-                <div class="text-[8px] font-normal opacity-80 tabular-nums">Rekaman 14 Okt 2026, 15.42 WIB</div>
-              </div>
-              <div class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
-                <span class="w-1.5 h-1.5 bg-white rounded-full"></span> REC
-              </div>
               <!-- Fungsi AI pada titik ini -->
               <div class="absolute bottom-3 right-3 bg-slate-900/80 backdrop-blur-md text-white text-xs font-bold px-3 py-2 rounded-lg flex items-center gap-2 shadow-lg">
                 <i class="fa-solid fa-eye text-blue-300"></i>
