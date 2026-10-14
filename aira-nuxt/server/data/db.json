@@ -3001,11 +3001,11 @@
       "gallery": [
         {
           "url": "/images/titik/bumi-sumekar-2.webp",
-          "caption": "Genangan di ruas Bumi Sumekar"
+          "caption": "Genangan saat cuaca cerah, akibat saluran tersumbat"
         },
         {
           "url": "/images/titik/bumi-sumekar-3.webp",
-          "caption": "Genangan di ruas Bumi Sumekar, sisi lain"
+          "caption": "Genangan yang sama memperlambat arus kendaraan"
         }
       ],
       "lat": -7.018869648847279,
@@ -4967,6 +4967,20 @@
       "status": "selesai",
       "timestamp": "2026-02-18T02:00:00.000Z",
       "reporter": "BRIDA Sumenep × ITS",
+      "dateFixed": true
+    },
+    {
+      "id": "inc-020",
+      "title": "Genangan Tanpa Hujan di Bumi Sumekar",
+      "type": "verifikasi",
+      "district": "Kota Sumenep",
+      "zoneId": "zon-002",
+      "location": "Bumi Sumekar (titik pantau AIRA-006)",
+      "description": "Rekaman titik pantau saat cuaca cerah: genangan di badan jalan akibat saluran tersumbat, arus kendaraan melambat. Genangan tidak selalu datang dari hujan.",
+      "severity": "waspada",
+      "status": "aktif",
+      "timestamp": "2026-10-14T09:06:00.000Z",
+      "reporter": "Tim AIRA",
       "dateFixed": true
     }
   ],

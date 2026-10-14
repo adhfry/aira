@@ -300,8 +300,8 @@ const CAMERA_GALLERY = {
   'AIRA-004': [{ url: TITIK('brida-mr-diy-2'), caption: 'Sudut lain ruas BRIDA – MR DIY' }],
   'AIRA-005': [{ url: IMG.jalan, caption: 'Dokumentasi banjir di Jl. Raya Sumenep – Pamekasan' }],
   'AIRA-006': [
-    { url: TITIK('bumi-sumekar-2'), caption: 'Genangan di ruas Bumi Sumekar' },
-    { url: TITIK('bumi-sumekar-3'), caption: 'Genangan di ruas Bumi Sumekar, sisi lain' },
+    { url: TITIK('bumi-sumekar-2'), caption: 'Genangan saat cuaca cerah, akibat saluran tersumbat' },
+    { url: TITIK('bumi-sumekar-3'), caption: 'Genangan yang sama memperlambat arus kendaraan' },
   ],
   'AIRA-007': [{ url: TITIK('raya-sumenep-2'), caption: 'Saluran di sisi Jl. Raya Sumenep' }],
 }
@@ -490,6 +490,8 @@ const incidentList = [
   ['Genangan Desa Nambakor & Muangan', 'peringatan', null, 'Saronggi', 'Desa Nambakor & Desa Muangan', 'Titik genangan hasil survei BRIDA–ITS di Kecamatan Saronggi', 'waspada', 'selesai', '2025-10-31T13:00:00+07:00', 'BRIDA Sumenep × ITS'],
   ['Genangan Desa Sendir', 'peringatan', null, 'Lenteng', 'Desa Sendir', 'Titik genangan hasil survei BRIDA–ITS di Kecamatan Lenteng', 'waspada', 'selesai', '2025-10-31T15:00:00+07:00', 'BRIDA Sumenep × ITS'],
   ['Rilis Hasil Kajian Banjir Perkotaan', 'normal', 'KRT-01', null, 'BRIDA Kabupaten Sumenep', 'Publikasi kajian faktor penyebab banjir perkotaan (Karaton Vol. 5 No. 1)', 'normal', 'selesai', '2026-02-18T09:00:00+07:00', 'BRIDA Sumenep × ITS'],
+  // Pengamatan nyata tim (rekaman titik AIRA-006): genangan tanpa hujan, sumbernya saluran tersumbat.
+  ['Genangan Tanpa Hujan di Bumi Sumekar', 'verifikasi', 'KRT-02', null, 'Bumi Sumekar (titik pantau AIRA-006)', 'Rekaman titik pantau saat cuaca cerah: genangan di badan jalan akibat saluran tersumbat, arus kendaraan melambat. Genangan tidak selalu datang dari hujan.', 'waspada', 'aktif', '2026-10-14T16:06:00+07:00', 'Tim AIRA'],
 ]
 const incidents = incidentList.map(([title, type, zone, district, location, description, severity, status, when, reporter], i) => ({
   id: `inc-${pad(i + 1)}`,
