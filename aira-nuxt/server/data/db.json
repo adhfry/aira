@@ -4738,7 +4738,7 @@
       "severity": "siaga",
       "status": "ditangani",
       "timestamp": "2026-09-24T02:59:18.000Z",
-      "reporter": "Rizky Maulana"
+      "reporter": "Danur Wenda"
     },
     {
       "id": "inc-006",
@@ -4790,7 +4790,7 @@
       "severity": "siaga",
       "status": "ditangani",
       "timestamp": "2026-09-24T01:34:18.000Z",
-      "reporter": "Dimas Pratama"
+      "reporter": "Ilham Maulana"
     },
     {
       "id": "inc-010",
@@ -4803,7 +4803,7 @@
       "severity": "waspada",
       "status": "ditangani",
       "timestamp": "2026-09-24T00:24:18.000Z",
-      "reporter": "Rizky Maulana"
+      "reporter": "Danur Wenda"
     },
     {
       "id": "inc-011",
@@ -4829,7 +4829,7 @@
       "severity": "waspada",
       "status": "selesai",
       "timestamp": "2026-09-23T03:24:18.000Z",
-      "reporter": "Dimas Pratama"
+      "reporter": "Ilham Maulana"
     },
     {
       "id": "inc-013",
@@ -4842,7 +4842,7 @@
       "severity": "siaga",
       "status": "selesai",
       "timestamp": "2026-09-22T03:24:18.000Z",
-      "reporter": "Siti Nurhaliza"
+      "reporter": "Abd. Rahman Siddik"
     },
     {
       "id": "inc-014",
@@ -4855,7 +4855,7 @@
       "severity": "bahaya",
       "status": "selesai",
       "timestamp": "2026-09-21T03:24:18.000Z",
-      "reporter": "Rizky Maulana"
+      "reporter": "Danur Wenda"
     },
     {
       "id": "inc-015",
@@ -5056,51 +5056,51 @@
       "id": "usr-001",
       "name": "Ahda Firly Barori",
       "role": "Administrator",
-      "email": "ahda.barori@sumenepkab.go.id",
-      "phone": "0812-3456-7890",
-      "avatarUrl": "/images/team/ahda-firly-barori.jpg",
+      "email": "admin@synvorateknologiindonesia.web.id",
+      "phone": "+62 812-3310-7475",
+      "avatarUrl": "/images/team/ahda-firly-barori-synvora.jpg",
       "district": "Kota Sumenep",
       "status": "aktif"
     },
     {
       "id": "usr-002",
-      "name": "Siti Nurhaliza",
-      "role": "Operator",
-      "email": "siti.nurhaliza@sumenepkab.go.id",
-      "phone": "0813-2211-4455",
-      "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop",
+      "name": "Ahmad Muqtafi",
+      "role": "Analis Data",
+      "email": "admin@synvorateknologiindonesia.web.id",
+      "phone": "",
+      "avatarUrl": "/images/team/ahmad-muqtafi.jpg",
       "district": "Kota Sumenep",
       "status": "aktif"
     },
     {
       "id": "usr-003",
-      "name": "Rizky Maulana",
-      "role": "Petugas Lapangan",
-      "email": "rizky.maulana@sumenepkab.go.id",
-      "phone": "0857-3344-1122",
-      "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
+      "name": "Abd. Rahman Siddik",
+      "role": "Operator",
+      "email": "admin@synvorateknologiindonesia.web.id",
+      "phone": "",
+      "avatarUrl": "/images/team/abd-rahman-siddik.jpg",
       "district": "Kota Sumenep",
       "status": "aktif"
     },
     {
       "id": "usr-004",
-      "name": "Dimas Pratama",
+      "name": "Danur Wenda",
       "role": "Petugas Lapangan",
-      "email": "dimas.pratama@sumenepkab.go.id",
-      "phone": "0821-7788-9900",
-      "avatarUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
-      "district": "Kalianget",
+      "email": "admin@synvorateknologiindonesia.web.id",
+      "phone": "",
+      "avatarUrl": "/images/team/danur-wenda.jpg",
+      "district": "Kota Sumenep",
       "status": "aktif"
     },
     {
       "id": "usr-005",
-      "name": "Nabila Putri",
-      "role": "Analis Data",
-      "email": "nabila.putri@sumenepkab.go.id",
-      "phone": "0838-5566-7788",
-      "avatarUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
+      "name": "Ilham Maulana",
+      "role": "Petugas Lapangan",
+      "email": "admin@synvorateknologiindonesia.web.id",
+      "phone": "",
+      "avatarUrl": "/images/team/ilham-maulana.jpg",
       "district": "Kota Sumenep",
-      "status": "nonaktif"
+      "status": "aktif"
     }
   ],
   "notifications": [

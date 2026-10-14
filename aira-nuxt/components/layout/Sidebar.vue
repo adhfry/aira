@@ -208,7 +208,7 @@ const cardBorder = computed(() => (props.dark ? 'border-borderdark' : 'border-sl
         >
           <div class="flex items-center gap-3 min-w-0">
             <img
-              :src="profile?.avatarUrl ?? '/images/team/ahda-firly-barori.jpg'"
+              :src="profile?.avatarUrl ?? '/images/team/ahda-firly-barori-synvora.jpg'"
               :alt="profile?.name ?? 'Ahda Firly Barori'"
               class="w-10 h-10 rounded-lg object-cover flex-shrink-0"
             />

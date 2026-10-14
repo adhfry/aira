@@ -451,16 +451,16 @@ const incidentList = [
   ['Genangan Perum Satelit', 'peringatan', 'KRT-03', null, 'Jl. Pesona Satelit', 'Genangan ±40 cm; saluran mulut Outlet 6C meluap (TMA 160 cm pada kedalaman 120 cm) dan tertahan backwater Δ +8 cm', 'bahaya', 'aktif', 6, 'AIRA Risk Engine'],
   ['Hujan Sangat Lebat', 'hujan_tinggi', 'KRT-01', null, 'ARG Pajagalan', 'Intensitas 45 mm/jam (kategori BMKG: sangat lebat >20 mm/jam)', 'siaga', 'aktif', 12, 'Sistem AIRA'],
   ['Genangan Bergerak ke Hilir Outlet 6', 'peringatan', 'KRT-02', null, 'Perum Bumi Sumekar Asri', 'Kenaikan berurutan TMA 06A Wahid Hasyim → 06B BSA → 06C Satelit', 'siaga', 'aktif', 18, 'AIRA Risk Engine'],
-  ['Verifikasi Lapangan', 'verifikasi', 'KRT-01', null, 'Jl. Dr. Wahidin', 'Petugas mengonfirmasi genangan ±30 cm di depan SDN Pajagalan I (saluran 80 cm meluap, TMA 110 cm)', 'siaga', 'ditangani', 25, 'Rizky Maulana'],
+  ['Verifikasi Lapangan', 'verifikasi', 'KRT-01', null, 'Jl. Dr. Wahidin', 'Petugas mengonfirmasi genangan ±30 cm di depan SDN Pajagalan I (saluran 80 cm meluap, TMA 110 cm)', 'siaga', 'ditangani', 25, 'Danur Wenda'],
   ['Kamera Offline', 'offline', 'OUT-07', null, 'Jl. Yos Sudarso', "CCTV AIRA-009 Kalimo'ok – Marengan Daya tidak merespons", 'waspada', 'aktif', 63, 'Sistem AIRA'],
   ['Pasang Tinggi di Muara', 'backwater', 'KRT-06', null, 'Muara Kali Marengan', 'Pasang 132 cm bersamaan debit sungai tinggi — waspada arus balik outlet 4–7', 'siaga', 'ditangani', 75, 'AIRA Risk Engine'],
   ['Sensor Offline', 'offline', 'OUT-08', null, 'Desa Marengan Laok', 'Penakar hujan ARG Marengan Laok tidak mengirim data', 'waspada', 'aktif', 90, 'Sistem AIRA'],
-  ['Luapan Saluran Jl. Kartini', 'peringatan', 'KRT-05', null, 'Jl. Kartini No. 50a', 'Saluran Outlet 2 meluap ke badan jalan', 'siaga', 'ditangani', 110, 'Dimas Pratama'],
-  ['Kebocoran Saluran Irigasi Asabri', 'verifikasi', 'KRT-04', null, 'Jl. Argopuro Gg. 1, Kolor', 'Pemeriksaan kebocoran saluran irigasi (temuan BRIDA–ITS) — rembesan ke permukiman', 'waspada', 'ditangani', 180, 'Rizky Maulana'],
+  ['Luapan Saluran Jl. Kartini', 'peringatan', 'KRT-05', null, 'Jl. Kartini No. 50a', 'Saluran Outlet 2 meluap ke badan jalan', 'siaga', 'ditangani', 110, 'Ilham Maulana'],
+  ['Kebocoran Saluran Irigasi Asabri', 'verifikasi', 'KRT-04', null, 'Jl. Argopuro Gg. 1, Kolor', 'Pemeriksaan kebocoran saluran irigasi (temuan BRIDA–ITS) — rembesan ke permukiman', 'waspada', 'ditangani', 180, 'Danur Wenda'],
   ['Status Normal', 'normal', 'SGI-01', null, 'Hulu Kali Marengan', 'Debit hulu stabil', 'normal', 'selesai', 260, 'Sistem AIRA'],
-  ['Pembersihan Sedimentasi Outlet 6', 'verifikasi', 'OUT-06', null, 'Jl. KH Wahid Hasyim', 'Pengerukan sedimen saluran (faktor penyebab menurut BRIDA–ITS)', 'waspada', 'selesai', 1_440, 'Dimas Pratama'],
-  ['Genangan Desa Marengan Laok', 'peringatan', 'OUT-08', null, 'Desa Marengan Laok', 'Genangan akibat pasang & kapasitas Outlet 8 yang hanya 0,60 m³/s', 'siaga', 'selesai', 2_880, 'Siti Nurhaliza'],
-  ['Genangan Jl. Dr. Cipto', 'peringatan', 'OUT-04', null, 'Jl. Dr. Cipto', 'Backwater menyebabkan saluran tidak dapat mengalir ke sungai', 'bahaya', 'selesai', 4_320, 'Rizky Maulana'],
+  ['Pembersihan Sedimentasi Outlet 6', 'verifikasi', 'OUT-06', null, 'Jl. KH Wahid Hasyim', 'Pengerukan sedimen saluran (faktor penyebab menurut BRIDA–ITS)', 'waspada', 'selesai', 1_440, 'Ilham Maulana'],
+  ['Genangan Desa Marengan Laok', 'peringatan', 'OUT-08', null, 'Desa Marengan Laok', 'Genangan akibat pasang & kapasitas Outlet 8 yang hanya 0,60 m³/s', 'siaga', 'selesai', 2_880, 'Abd. Rahman Siddik'],
+  ['Genangan Jl. Dr. Cipto', 'peringatan', 'OUT-04', null, 'Jl. Dr. Cipto', 'Backwater menyebabkan saluran tidak dapat mengalir ke sungai', 'bahaya', 'selesai', 4_320, 'Danur Wenda'],
   // Kejadian nyata (tanggal tetap) — survei & publikasi kajian
   ['Survei Lapangan Titik Rawan Banjir BRIDA–ITS', 'verifikasi', 'KRT-06', null, 'Kota Sumenep & sekitarnya', '15 titik genangan 30–45 cm selama beberapa jam, antara lain Jl. Dr. Wahidin, Jl. Setiabudi, Jl. Dr. Cipto, Jl. Trunojoyo, Jl. Urip Sumoharjo, Jl. Agus Salim, Perum BSA, Satelit, Asabri, dan hilir Sungai Marengan', 'siaga', 'selesai', '2025-10-31T09:00:00+07:00', 'BRIDA Sumenep × ITS'],
   ['Genangan Desa Patean', 'peringatan', null, 'Batuan', 'Desa Patean', 'Salah satu dari 15 titik genangan hasil survei BRIDA–ITS (luar kota)', 'waspada', 'selesai', '2025-10-31T11:00:00+07:00', 'BRIDA Sumenep × ITS'],
@@ -485,12 +485,15 @@ const incidents = incidentList.map(([title, type, zone, district, location, desc
 
 // ---------- Petugas ----------
 const avatar = (id) => (id.startsWith('/') ? id : `https://images.unsplash.com/photo-${id}?q=80&w=100&auto=format&fit=crop`)
+// Tim SYNVORA (nama dan foto dari synvorateknologiindonesia.web.id). Kontak pribadi tidak dipublikasikan,
+// jadi email memakai alamat resmi Synvora dan telepon hanya nomor resmi Synvora.
+const SYNVORA_EMAIL = 'admin@synvorateknologiindonesia.web.id'
 const users = [
-  ['Ahda Firly Barori', 'Administrator', 'ahda.barori@sumenepkab.go.id', '0812-3456-7890', '/images/team/ahda-firly-barori.jpg', 'Kota Sumenep', 'aktif'],
-  ['Siti Nurhaliza', 'Operator', 'siti.nurhaliza@sumenepkab.go.id', '0813-2211-4455', '1494790108377-be9c29b29330', 'Kota Sumenep', 'aktif'],
-  ['Rizky Maulana', 'Petugas Lapangan', 'rizky.maulana@sumenepkab.go.id', '0857-3344-1122', '1500648767791-00dcc994a43e', 'Kota Sumenep', 'aktif'],
-  ['Dimas Pratama', 'Petugas Lapangan', 'dimas.pratama@sumenepkab.go.id', '0821-7788-9900', '1472099645785-5658abf4ff4e', 'Kalianget', 'aktif'],
-  ['Nabila Putri', 'Analis Data', 'nabila.putri@sumenepkab.go.id', '0838-5566-7788', '1438761681033-6461ffad8d80', 'Kota Sumenep', 'nonaktif'],
+  ['Ahda Firly Barori', 'Administrator', SYNVORA_EMAIL, '+62 812-3310-7475', '/images/team/ahda-firly-barori-synvora.jpg', 'Kota Sumenep', 'aktif'],
+  ['Ahmad Muqtafi', 'Analis Data', SYNVORA_EMAIL, '', '/images/team/ahmad-muqtafi.jpg', 'Kota Sumenep', 'aktif'],
+  ['Abd. Rahman Siddik', 'Operator', SYNVORA_EMAIL, '', '/images/team/abd-rahman-siddik.jpg', 'Kota Sumenep', 'aktif'],
+  ['Danur Wenda', 'Petugas Lapangan', SYNVORA_EMAIL, '', '/images/team/danur-wenda.jpg', 'Kota Sumenep', 'aktif'],
+  ['Ilham Maulana', 'Petugas Lapangan', SYNVORA_EMAIL, '', '/images/team/ilham-maulana.jpg', 'Kota Sumenep', 'aktif'],
 ].map(([name, role, email, phone, img, district, status], i) => ({
   id: `usr-${pad(i + 1)}`,
   name,
