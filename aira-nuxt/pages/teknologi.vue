@@ -102,7 +102,7 @@ const IOT_IMG = (w: number) => `https://images.unsplash.com/photo-1581091226825-
 
           <!-- Right Visuals -->
           <div class="relative h-96 hidden lg:block">
-            <img :src="IOT_IMG(800)" alt="IoT Pole" class="absolute right-0 bottom-0 h-full object-cover opacity-80 image-grayscale rounded-2xl" />
+            <img :src="IOT_IMG(800)" alt="IoT Pole" class="absolute right-0 bottom-0 h-full object-cover opacity-80 rounded-2xl" />
             <div
               v-for="c in heroCards"
               :key="c.title"
@@ -208,7 +208,7 @@ const IOT_IMG = (w: number) => `https://images.unsplash.com/photo-1581091226825-
           <div class="flex-1 bg-slate-50 border border-slate-200 rounded-xl p-4 flex flex-col">
             <div class="text-xs font-bold text-slate-800 mb-4 text-center">2. Edge/IoT Layer</div>
             <div class="flex-1 flex flex-col items-center justify-center">
-              <img :src="IOT_IMG(200)" alt="IoT Device" class="w-24 h-24 object-cover rounded-lg mb-3 image-grayscale shadow-md" />
+              <img :src="IOT_IMG(200)" alt="IoT Device" class="w-24 h-24 object-cover rounded-lg mb-3 shadow-md" />
               <div class="space-y-2 w-full">
                 <div v-for="t in layer2" :key="t" class="flex items-center gap-2 text-[10px] text-slate-600">
                   <i class="fa-solid fa-check-circle text-blue-500"></i> {{ t }}

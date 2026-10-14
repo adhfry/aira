@@ -74,9 +74,9 @@ const sideIcons = [
             <!-- Map Area -->
             <div class="flex-1 relative bg-slate-800">
               <img
-                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800&auto=format&fit=crop"
-                alt="Map"
-                class="w-full h-full object-cover opacity-50 image-grayscale"
+                src="/images/titik/kota-taman-bunga.webp"
+                alt="Kota Sumenep dari udara, kawasan Taman Bunga"
+                class="w-full h-full object-cover opacity-60"
               />
               <!-- Map Pins -->
               <div class="absolute top-1/3 left-1/4 w-3 h-3 bg-red-500 rounded-full border-2 border-white animate-pulse"></div>
@@ -103,18 +103,17 @@ const sideIcons = [
               <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Informasi Lokasi</div>
               <div class="bg-slate-800 rounded-lg p-2 border border-slate-700">
                 <img
-                  src="/images/sumenep/sungai-meluap.jpg"
+                  src="/images/titik/bumi-sumekar.webp"
                   class="w-full h-16 object-cover rounded mb-2"
-                  alt="Kali Marengan meluap"
+                  alt="Genangan di Bumi Sumekar, rekaman 14 Oktober 2026"
                 />
-                <div class="text-xs font-bold text-white mb-1">Hilir Kali Marengan</div>
-                <div class="text-[9px] text-slate-400 mb-2">Desa Marengan Laok, Kalianget</div>
+                <div class="text-xs font-bold text-white mb-1">Bumi Sumekar</div>
+                <div class="text-[9px] text-slate-400 mb-2">Kolor, Kota Sumenep</div>
                 <div class="flex items-center gap-1 text-[9px] text-red-400 bg-red-400/10 px-2 py-1 rounded w-max mb-2">
                   <i class="fa-solid fa-triangle-exclamation"></i> Risiko Tinggi
                 </div>
-                <div class="text-xs font-bold text-white">285 cm</div>
-                <div class="text-[9px] text-slate-400">Tinggi Muka Air</div>
-                <div class="text-[9px] text-red-400 mt-1"><i class="fa-solid fa-arrow-up"></i> +45 cm</div>
+                <div class="text-xs font-bold text-white">Genangan terekam</div>
+                <div class="text-[9px] text-slate-400">Rekaman titik pantau, 14 Okt 2026</div>
                 <NuxtLink
                   to="/peta"
                   class="block text-center w-full mt-3 bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-semibold py-1.5 rounded transition"

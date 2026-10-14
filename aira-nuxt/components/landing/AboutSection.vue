@@ -28,7 +28,7 @@ const facts = [
           <img
             src="/images/sumenep/masjid-jamik.jpg"
             alt="Masjid Jamik Sumenep"
-            class="rounded-2xl shadow-xl w-full h-96 object-cover image-grayscale"
+            class="rounded-2xl shadow-xl w-full h-96 object-cover"
           />
           <!-- Floating Cards -->
           <div class="absolute top-8 right-2 sm:-right-8 bg-white p-4 rounded-xl shadow-lg border border-slate-100 flex flex-col gap-4 w-48">

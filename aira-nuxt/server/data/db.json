@@ -2893,7 +2893,9 @@
       "district": "Kota Sumenep",
       "zoneId": "zon-001",
       "status": "bahaya",
-      "imageUrl": "/images/sumenep/banjir-jalan.jpg",
+      "imageUrl": "/images/titik/jalan-1-arah.webp",
+      "videoUrl": "/videos/titik/jalan-1-arah.mp4",
+      "recordedAt": "2026-10-14T08:57:34Z",
       "lat": -7.01196167186372,
       "lng": 113.86212576110316,
       "coordAccuracy": "lapangan",
@@ -2909,7 +2911,9 @@
       "district": "Kota Sumenep",
       "zoneId": "zon-001",
       "status": "bahaya",
-      "imageUrl": "/images/sumenep/banjir-jalan.jpg",
+      "imageUrl": "/images/titik/perempatan-wahidin.webp",
+      "videoUrl": "/videos/titik/perempatan-wahidin.mp4",
+      "recordedAt": "2026-10-14T08:49:40Z",
       "lat": -7.010734188892034,
       "lng": 113.86252661045165,
       "coordAccuracy": "lapangan",
@@ -2925,7 +2929,9 @@
       "district": "Kota Sumenep",
       "zoneId": "zon-007",
       "status": "waspada",
-      "imageUrl": "/images/sumenep/taman-bunga-jalan.jpg",
+      "imageUrl": "/images/titik/mpp-taman-bunga.webp",
+      "videoUrl": "/videos/titik/mpp-taman-bunga.mp4",
+      "recordedAt": "2026-10-14T08:42:18Z",
       "lat": -7.008141939920929,
       "lng": 113.86095760597476,
       "coordAccuracy": "lapangan",
@@ -2941,7 +2947,15 @@
       "district": "Kota Sumenep",
       "zoneId": "zon-010",
       "status": "waspada",
-      "imageUrl": "/images/hero/sumenep-drone-1.jpg",
+      "imageUrl": "/images/titik/brida-mr-diy.webp",
+      "videoUrl": "/videos/titik/brida-mr-diy.mp4",
+      "recordedAt": "2026-10-14T09:17:25Z",
+      "gallery": [
+        {
+          "url": "/images/titik/brida-mr-diy-2.webp",
+          "caption": "Sudut lain ruas BRIDA – MR DIY"
+        }
+      ],
       "lat": -7.0154131280860135,
       "lng": 113.85806549039908,
       "coordAccuracy": "lapangan",
@@ -2957,7 +2971,15 @@
       "district": "Kota Sumenep",
       "zoneId": "zon-010",
       "status": "waspada",
-      "imageUrl": "/images/sumenep/banjir-jalan.jpg",
+      "imageUrl": "/images/titik/raya-sumenep-pamekasan.webp",
+      "videoUrl": "/videos/titik/raya-sumenep-pamekasan.mp4",
+      "recordedAt": "2026-10-14T09:37:45Z",
+      "gallery": [
+        {
+          "url": "/images/sumenep/banjir-jalan.jpg",
+          "caption": "Dokumentasi banjir di Jl. Raya Sumenep – Pamekasan"
+        }
+      ],
       "lat": -7.02428838813472,
       "lng": 113.85571029297682,
       "coordAccuracy": "lapangan",
@@ -2973,7 +2995,19 @@
       "district": "Kota Sumenep",
       "zoneId": "zon-002",
       "status": "siaga",
-      "imageUrl": "/images/sumenep/banjir-perumahan.jpg",
+      "imageUrl": "/images/titik/bumi-sumekar.webp",
+      "videoUrl": "/videos/titik/bumi-sumekar.mp4",
+      "recordedAt": "2026-10-14T09:06:23Z",
+      "gallery": [
+        {
+          "url": "/images/titik/bumi-sumekar-2.webp",
+          "caption": "Genangan di ruas Bumi Sumekar"
+        },
+        {
+          "url": "/images/titik/bumi-sumekar-3.webp",
+          "caption": "Genangan di ruas Bumi Sumekar, sisi lain"
+        }
+      ],
       "lat": -7.018869648847279,
       "lng": 113.86441454869444,
       "coordAccuracy": "lapangan",
@@ -2989,7 +3023,15 @@
       "district": "Kota Sumenep",
       "zoneId": "zon-009",
       "status": "waspada",
-      "imageUrl": "/images/hero/sumenep-drone.jpg",
+      "imageUrl": "/images/titik/raya-sumenep.webp",
+      "videoUrl": "/videos/titik/raya-sumenep.mp4",
+      "recordedAt": "2026-10-14T08:33:15Z",
+      "gallery": [
+        {
+          "url": "/images/titik/raya-sumenep-2.webp",
+          "caption": "Saluran di sisi Jl. Raya Sumenep"
+        }
+      ],
       "lat": -7.011901756688404,
       "lng": 113.86789029905772,
       "coordAccuracy": "lapangan",

@@ -64,3 +64,12 @@ export const COORD_ACCURACY_META: Record<CoordAccuracy, { label: string; tone: '
   direktori: { label: 'Direktori alamat', tone: 'slate', icon: 'fa-address-book', hint: 'Geocode alamat terdaftar pada jalan yang disebut penelitian' },
   lapangan: { label: 'Titik tim AIRA', tone: 'green', icon: 'fa-location-crosshairs', hint: 'Titik rawan banjir yang ditetapkan dan dikonfirmasi tim AIRA' },
 }
+
+/** "14 Okt 2026, 16.06 WIB" untuk waktu perekaman titik pantau. */
+export function recordedLabel(iso?: string): string {
+  if (!iso) return ''
+  const d = new Date(iso)
+  const tgl = d.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Asia/Jakarta' })
+  const jam = d.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Jakarta' })
+  return `${tgl}, ${jam} WIB`
+}

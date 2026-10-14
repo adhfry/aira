@@ -122,13 +122,13 @@ const onlineCount = computed(() => props.cameras.filter((c) => c.isOnline).lengt
           @click="emit('select', c)"
         >
           <div class="relative h-28 overflow-hidden">
-            <img
-              :src="c.imageUrl"
+            <DashboardCameraMedia
+              :camera="c"
+              :play="activeId === c.id && c.isOnline"
               class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
               :class="{ 'opacity-40': !c.isOnline }"
-              :alt="c.name"
-              loading="lazy"
             />
+            <div v-if="activeId === c.id && c.videoUrl" class="absolute bottom-1.5 left-1.5 bg-red-600 text-white text-[8px] font-bold px-1.5 py-0.5 rounded">REC</div>
             <div class="absolute top-1.5 left-1.5 text-[9px] font-bold px-1.5 py-0.5 rounded" :class="statusMeta(c.status).solid">
               {{ statusMeta(c.status).label }}
             </div>
@@ -148,7 +148,8 @@ const onlineCount = computed(() => props.cameras.filter((c) => c.isOnline).lengt
               <span v-tippy="c.coordNote || COORD_ACCURACY_META[c.coordAccuracy].hint" class="truncate">
                 <i class="fa-solid text-[8px]" :class="COORD_ACCURACY_META[c.coordAccuracy].icon"></i> {{ COORD_ACCURACY_META[c.coordAccuracy].label }}
               </span>
-              <span class="tabular-nums">{{ c.isOnline ? clock.timeLabel.replace(' WIB', '') : formatTime(c.lastUpdate) }}</span>
+              <span v-if="c.recordedAt" v-tippy="`Rekaman ${recordedLabel(c.recordedAt)}`" class="tabular-nums">rekaman</span>
+              <span v-else class="tabular-nums">{{ c.isOnline ? clock.timeLabel.replace(' WIB', '') : formatTime(c.lastUpdate) }}</span>
             </div>
           </div>
         </button>

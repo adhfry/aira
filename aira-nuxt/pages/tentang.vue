@@ -49,7 +49,7 @@ const teknologi = [
       <img
         src="/images/sumenep/tugu-selamat-datang.jpg"
         alt="Tugu Selamat Datang Kabupaten Sumenep"
-        class="rounded-2xl shadow-xl w-full h-[400px] object-cover image-grayscale"
+        class="rounded-2xl shadow-xl w-full h-[400px] object-cover"
       />
       <!-- Floating Card -->
       <div class="absolute bottom-8 left-2 sm:-left-8 bg-white p-5 rounded-2xl shadow-xl border border-slate-100 max-w-xs animate-float">
@@ -129,7 +129,7 @@ const teknologi = [
             <img
               src="/images/sumenep/banjir-jalan.jpg"
               alt="Genangan di jalan Kota Sumenep"
-              class="w-full h-[400px] object-cover image-grayscale"
+              class="w-full h-[400px] object-cover"
             />
             <div class="absolute inset-0 bg-slate-900/70 p-6 sm:p-8 flex flex-col justify-center">
               <h3 class="text-white text-xl font-bold mb-6 border-b border-slate-600 pb-4">Tantangan yang Dihadapi</h3>

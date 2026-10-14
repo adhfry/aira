@@ -92,7 +92,7 @@ const metrics = computed(() => [
       <img
         src="/images/sumenep/banjir-perumahan.jpg"
         alt="Banjir di permukiman Sumenep"
-        class="rounded-2xl shadow-xl w-full h-[400px] object-cover image-grayscale"
+        class="rounded-2xl shadow-xl w-full h-[400px] object-cover"
       />
       <div class="absolute bottom-8 left-2 sm:-left-8 bg-white p-5 rounded-2xl shadow-xl border border-slate-100 w-64 animate-float">
         <div class="text-[10px] text-slate-500 font-semibold mb-3">Ringkasan Manfaat</div>
@@ -171,7 +171,7 @@ const metrics = computed(() => [
             <img
               src="/images/sumenep/sungai-meluap.jpg"
               alt="Air sungai meluap — indikator banjir"
-              class="rounded-2xl shadow-xl w-full h-96 object-cover image-grayscale"
+              class="rounded-2xl shadow-xl w-full h-96 object-cover"
             />
             <div class="absolute bottom-6 right-6 bg-white p-4 rounded-xl shadow-lg border border-slate-100 max-w-xs flex gap-3 items-start">
               <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0">

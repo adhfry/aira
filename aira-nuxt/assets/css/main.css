@@ -8,9 +8,6 @@ html {
 }
 
 /* ===== Aturan gambar: saturasi 0 (kecuali logo AIRA) ===== */
-.image-grayscale {
-  filter: grayscale(100%);
-}
 
 /* ===== Background section =====
  * Foto latar + overlay navy ditaruh di pseudo-element (::before/::after),

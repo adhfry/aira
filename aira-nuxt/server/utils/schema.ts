@@ -45,6 +45,7 @@ export const SCHEMAS: Record<CollectionName, Schema> = {
     district: { type: 'string', required: true, label: 'Kecamatan' },
     status: { type: 'enum', values: STATUS, required: true, label: 'Status' },
     imageUrl: { type: 'string', max: 500, label: 'URL gambar' },
+    videoUrl: { type: 'string', max: 500, label: 'URL rekaman' },
     lat: { type: 'number', required: true, min: -90, max: 90, label: 'Latitude' },
     lng: { type: 'number', required: true, min: -180, max: 180, label: 'Longitude' },
     isOnline: { type: 'boolean', label: 'Status online' },

@@ -14,7 +14,9 @@ const selectedId = ref<string | null>(null)
 const main = computed(() => ranked.value.find((c) => c.id === selectedId.value) ?? ranked.value[0])
 const thumbs = computed(() => ranked.value.filter((c) => c.id !== main.value?.id).slice(0, 3))
 
+// Rekaman menampilkan waktu perekamannya sendiri; kamera tanpa rekaman menampilkan jam dashboard.
 const stamp = computed(() => {
+  if (main.value?.recordedAt) return `Rekaman ${recordedLabel(main.value.recordedAt)}`
   const d = clock.now
   if (!d) return ''
   return `${d.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' })} ${clock.timeLabel.replace(' WIB', '')}`
@@ -23,7 +25,7 @@ const stamp = computed(() => {
 
 <template>
   <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4 flex flex-col h-[500px]">
-    <DashboardPanelHeader title="CCTV Live" link-to="/dashboard/cameras">
+    <DashboardPanelHeader title="CCTV Titik Pantau" link-to="/dashboard/cameras">
       <template #badge>
         <span class="bg-green-100 text-green-700 text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 whitespace-nowrap">
           <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> {{ ranked.length }} Kamera Online
@@ -46,15 +48,30 @@ const stamp = computed(() => {
     <template v-else>
       <!-- Main Feed -->
       <div class="relative rounded-xl overflow-hidden flex-1 mb-3 bg-slate-200 min-h-0">
-        <img :src="main.imageUrl" :alt="`CCTV ${main.name}`" class="w-full h-full object-cover" />
+        <DashboardCameraMedia :camera="main" play :alt="`CCTV ${main.name}`" class="w-full h-full object-cover" />
         <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded">
           {{ main.code }} · {{ main.name }}<br /><span class="text-[8px] font-normal opacity-80 tabular-nums">{{ stamp }}</span>
         </div>
-        <div class="absolute top-3 right-3 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
-          <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> Live
+        <div v-if="main.videoUrl" class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
+          <span class="w-1.5 h-1.5 bg-white rounded-full"></span> REC
         </div>
         <div class="absolute bottom-3 left-3">
           <UiStatusPill :status="main.status" variant="solid" />
+        </div>
+        <!-- Dokumentasi titik yang sama (mis. foto banjir di ruas ini), dibuka di tab baru -->
+        <div v-if="main.gallery?.length" class="absolute bottom-3 right-3 flex gap-1.5">
+          <a
+            v-for="g in main.gallery"
+            :key="g.url"
+            v-tippy="g.caption"
+            :href="g.url"
+            target="_blank"
+            rel="noopener"
+            class="block w-14 h-10 rounded overflow-hidden border-2 border-white/80 shadow"
+            :aria-label="g.caption"
+          >
+            <img :src="g.url" alt="" class="w-full h-full object-cover" loading="lazy" />
+          </a>
         </div>
       </div>
 

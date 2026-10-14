@@ -36,7 +36,7 @@ const benefits = [
           <img
             src="/images/sumenep/taman-bunga.jpg"
             alt="Taman Bunga Sumenep"
-            class="rounded-2xl shadow-xl w-full h-80 object-cover image-grayscale"
+            class="rounded-2xl shadow-xl w-full h-80 object-cover"
           />
           <div class="absolute bottom-6 right-6 bg-white p-4 rounded-xl shadow-lg border border-slate-100 max-w-xs flex gap-3 items-start">
             <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0">

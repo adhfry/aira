@@ -2,7 +2,7 @@ import seed from '../data/db.json'
 import type { Camera, District, Incident, Notification, Sensor, User, Zone } from '~/types'
 
 /** Versi skema data — bila berbeda dengan data tersimpan, database dibuat ulang dari seed. */
-export const DB_VERSION = 5
+export const DB_VERSION = 6
 
 export interface Database {
   meta: { anchor: string; version: number; geoSource?: string; geoFetchedAt?: string }

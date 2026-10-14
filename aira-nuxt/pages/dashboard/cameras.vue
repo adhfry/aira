@@ -28,6 +28,7 @@ const fields = computed<CrudField[]>(() => [
   { key: 'coordAccuracy', label: 'Sumber Koordinat', type: 'select', required: true, options: COORD_ACCURACY_OPTIONS },
   { key: 'coordNote', label: 'Keterangan Sumber', type: 'text', placeholder: 'mis. Titik pada ruas OSM "Jalan Raung"' },
   { key: 'imageUrl', label: 'URL Gambar / Snapshot', type: 'url', full: true, placeholder: 'https://…' },
+  { key: 'videoUrl', label: 'URL Rekaman (mp4)', type: 'text', full: true, placeholder: '/videos/titik/nama.mp4' },
   { key: 'isOnline', label: 'Kamera online', type: 'checkbox', full: true },
 ])
 
@@ -45,8 +46,9 @@ const filters = computed<CrudFilter[]>(() => [
   },
 ])
 
-const defaults = (): FormModel => ({ code: '', name: '', zoneId: '', location: '', status: 'normal', lat: '', lng: '', coordAccuracy: 'osm', coordNote: '', imageUrl: '', isOnline: true })
-const toForm = (c: Camera): FormModel => ({ ...c })
+const defaults = (): FormModel => ({ code: '', name: '', zoneId: '', location: '', status: 'normal', lat: '', lng: '', coordAccuracy: 'osm', coordNote: '', imageUrl: '', videoUrl: '', isOnline: true })
+// Galeri dokumentasi tidak diedit lewat form; tetap tersimpan saat update.
+const toForm = ({ gallery: _gallery, ...c }: Camera): FormModel => ({ ...c })
 function toPayload(f: FormModel) {
   const zoneId = String(f.zoneId)
   const lat = optionalNumber(f.lat)
@@ -62,6 +64,7 @@ function toPayload(f: FormModel) {
     coordAccuracy: fallback ? fallback.accuracy : f.coordAccuracy,
     coordNote: fallback ? 'Mengikuti titik jangkar zona.' : f.coordNote || '',
     imageUrl: f.imageUrl || undefined,
+    videoUrl: f.videoUrl || undefined,
     isOnline: Boolean(f.isOnline),
     lat: lat ?? fallback!.lat,
     lng: lng ?? fallback!.lng,

@@ -51,19 +51,31 @@ const bars = ['bg-slate-200 h-1/4', 'bg-slate-200 h-2/4', 'bg-slate-200 h-1/4', 
           <div class="bg-white rounded-2xl shadow-2xl p-4 w-full max-w-lg ml-auto border border-slate-200">
             <!-- CCTV Feed -->
             <div class="relative rounded-xl overflow-hidden mb-4 h-56 bg-slate-200">
-              <img src="/images/sumenep/taman-bunga-jalan.jpg" alt="CCTV Taman Bunga Sumenep" class="w-full h-full object-cover" />
-              <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
-                <i class="fa-solid fa-video text-red-500"></i> CCTV - Taman Bunga
+              <video
+                src="/videos/titik/mpp-taman-bunga.mp4"
+                poster="/images/titik/mpp-taman-bunga.webp"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                disablepictureinpicture
+                aria-label="Rekaman titik pantau MPP Taman Bunga Sumenep"
+                class="w-full h-full object-cover"
+              ></video>
+              <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded">
+                <div class="flex items-center gap-1"><i class="fa-solid fa-video text-red-500"></i> AIRA-003 · MPP Taman Bunga</div>
+                <div class="text-[8px] font-normal opacity-80 tabular-nums">Rekaman 14 Okt 2026, 15.42 WIB</div>
               </div>
-              <div class="absolute top-3 right-3 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
-                <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> Live
+              <div class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
+                <span class="w-1.5 h-1.5 bg-white rounded-full"></span> REC
               </div>
-              <!-- Alert Overlay -->
-              <div class="absolute bottom-3 right-3 bg-red-500 text-white text-xs font-bold px-3 py-2 rounded-lg flex items-center gap-2 shadow-lg">
-                <i class="fa-solid fa-triangle-exclamation"></i>
+              <!-- Fungsi AI pada titik ini -->
+              <div class="absolute bottom-3 right-3 bg-slate-900/80 backdrop-blur-md text-white text-xs font-bold px-3 py-2 rounded-lg flex items-center gap-2 shadow-lg">
+                <i class="fa-solid fa-eye text-blue-300"></i>
                 <div>
-                  <div class="text-[10px] opacity-80">Peringatan Dini</div>
-                  <div>Hujan sangat lebat 45 mm/jam</div>
+                  <div class="text-[10px] opacity-80">AIRA Vision</div>
+                  <div>Memantau genangan di titik ini</div>
                 </div>
               </div>
             </div>

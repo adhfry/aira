@@ -20,6 +20,12 @@ export interface Camera {
   zoneId: string
   status: Status
   imageUrl: string
+  /** Rekaman titik pantau (mp4 bisu, berulang). Kosong bila belum ada rekaman. */
+  videoUrl?: string
+  /** Waktu perekaman (ISO). Ditampilkan apa adanya, bukan jam sekarang. */
+  recordedAt?: string
+  /** Foto tambahan titik, mis. dokumentasi genangan di ruas yang sama. */
+  gallery?: { url: string; caption: string }[]
   lat: number
   lng: number
   coordAccuracy: CoordAccuracy

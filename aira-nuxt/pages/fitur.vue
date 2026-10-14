@@ -69,7 +69,7 @@ const periode = ref('Harian')
 
           <!-- Map Area -->
           <div class="flex-1 relative bg-slate-800 overflow-hidden">
-            <img :src="MAP" alt="Map" class="w-full h-full object-cover opacity-40 image-grayscale" />
+            <img :src="MAP" alt="Map" class="w-full h-full object-cover opacity-40" />
             <div class="absolute top-1/4 left-1/3 w-3 h-3 bg-red-500 rounded-full border-2 border-white animate-pulse z-10"></div>
             <div class="absolute top-1/2 left-1/2 w-3 h-3 bg-orange-500 rounded-full border-2 border-white z-10"></div>
             <div class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-green-500 rounded-full border-2 border-white z-10"></div>
@@ -89,12 +89,12 @@ const periode = ref('Harian')
           <!-- Right Panel (CCTV & Water Level) -->
           <div class="w-56 border-l border-slate-700 p-3 bg-slate-900 hidden sm:flex flex-col gap-3 z-20">
             <div class="relative rounded-lg overflow-hidden h-28 bg-slate-800">
-              <img src="/images/sumenep/taman-bunga-jalan.jpg" alt="CCTV Taman Bunga" class="w-full h-full object-cover image-grayscale" />
+              <img src="/images/sumenep/taman-bunga-jalan.jpg" alt="CCTV Taman Bunga" class="w-full h-full object-cover" />
               <div class="absolute top-1 left-1 bg-black/60 backdrop-blur-md text-white text-[8px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1">
                 <i class="fa-solid fa-video text-red-500"></i> CCTV - Taman Bunga
               </div>
               <div class="absolute top-1 right-1 bg-green-500 text-white text-[8px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1">
-                <span class="w-1 h-1 bg-white rounded-full animate-pulse"></span> Live
+                <span class="w-1 h-1 bg-white rounded-full animate-pulse"></span> REC
               </div>
             </div>
             <div class="bg-slate-800 rounded-lg p-2 border border-slate-700">
@@ -140,7 +140,7 @@ const periode = ref('Harian')
       <div class="bg-slate-100 rounded-2xl p-4 border border-slate-200">
         <div class="flex gap-4">
           <div class="flex-1 relative rounded-xl overflow-hidden h-64 bg-slate-300">
-            <img src="/images/sumenep/banjir-jalan.jpg" alt="CCTV Taman Bunga — genangan jalan" class="w-full h-full object-cover image-grayscale" />
+            <img src="/images/sumenep/banjir-jalan.jpg" alt="CCTV Taman Bunga — genangan jalan" class="w-full h-full object-cover" />
             <div class="absolute top-1/2 left-1/4 w-1/3 h-1/3 border-2 border-red-500 bg-red-500/20 rounded flex items-end p-1">
               <span class="text-[10px] font-bold text-red-600 bg-white/80 px-1 rounded">Genangan Terdeteksi</span>
             </div>
@@ -148,13 +148,13 @@ const periode = ref('Harian')
               <i class="fa-solid fa-video text-red-500"></i> CCTV - Taman Bunga
             </div>
             <div class="absolute top-3 right-3 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1">
-              <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> Live
+              <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> REC
             </div>
             <div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded">Genangan: ±35 cm</div>
           </div>
           <div class="w-24 hidden sm:flex flex-col gap-2">
             <div v-for="t in thumbs" :key="t.time" class="relative rounded-lg overflow-hidden h-20 bg-slate-300 border-2 border-transparent hover:border-primary cursor-pointer">
-              <img :src="CCTV(200)" class="w-full h-full object-cover image-grayscale" alt="Thumb" />
+              <img :src="CCTV(200)" class="w-full h-full object-cover" alt="Thumb" />
               <div class="absolute top-1 left-1 text-white text-[8px] font-bold px-1 py-0.5 rounded" :class="t.color">{{ t.time }}</div>
               <div class="absolute bottom-1 left-1 text-white text-[8px] font-bold px-1 py-0.5 rounded" :class="t.color">{{ t.label }}</div>
             </div>
@@ -177,7 +177,7 @@ const periode = ref('Harian')
         <img
           src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
           alt="IoT Sensor"
-          class="rounded-2xl shadow-xl w-full h-80 object-cover image-grayscale"
+          class="rounded-2xl shadow-xl w-full h-80 object-cover"
         />
         <div class="absolute top-8 right-2 sm:-right-8 bg-white p-5 rounded-2xl shadow-xl border border-slate-100 w-64">
           <div class="flex items-center gap-2 mb-3">
@@ -211,7 +211,7 @@ const periode = ref('Harian')
           <img
             src="https://images.unsplash.com/photo-1561484930-998b6a7b22e8?q=80&w=800&auto=format&fit=crop"
             alt="Weather Map"
-            class="w-full h-full object-cover opacity-60 image-grayscale"
+            class="w-full h-full object-cover opacity-60"
           />
           <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded">Prediksi Curah Hujan</div>
           <div class="absolute top-1/2 right-4 -translate-y-1/2 bg-white rounded-xl shadow-2xl p-4 w-56 border border-slate-200">
@@ -258,7 +258,7 @@ const periode = ref('Harian')
       tinted
     >
       <div class="bg-slate-200 rounded-2xl p-4 border border-slate-300 relative h-80 overflow-hidden">
-        <img :src="MAP" alt="Map" class="absolute inset-0 w-full h-full object-cover opacity-50 image-grayscale" />
+        <img :src="MAP" alt="Map" class="absolute inset-0 w-full h-full object-cover opacity-50" />
         <div class="absolute top-4 left-4 bg-white rounded-lg shadow-md px-3 py-2 flex items-center gap-2 w-40 sm:w-48 z-10">
           <i class="fa-solid fa-magnifying-glass text-slate-400 text-xs"></i>
           <input type="text" placeholder="Cari lokasi..." aria-label="Cari lokasi" class="text-xs outline-none w-full text-slate-600" />

@@ -279,10 +279,31 @@ const IMG = {
   desa: '/images/sumenep/banjir-desa-aerial.jpg',
   kota: '/images/sumenep/taman-bunga-jalan.jpg',
 }
+// Tujuh titik tim: foto dan rekaman lokasi asli (14 Okt 2026). Titik Marengan memakai foto kondisi Sumenep.
+const TITIK = (slug) => `/images/titik/${slug}.webp`
 const CAMERA_IMAGE = {
-  'AIRA-001': IMG.jalan, 'AIRA-002': IMG.jalan, 'AIRA-003': IMG.kota, 'AIRA-004': DRONE_B, 'AIRA-005': IMG.jalan,
-  'AIRA-006': IMG.perumahan, 'AIRA-007': DRONE_A, 'AIRA-008': IMG.sungai, 'AIRA-009': DRONE_A, 'AIRA-010': IMG.desa,
-  'AIRA-011': IMG.sungai,
+  'AIRA-001': TITIK('jalan-1-arah'), 'AIRA-002': TITIK('perempatan-wahidin'), 'AIRA-003': TITIK('mpp-taman-bunga'),
+  'AIRA-004': TITIK('brida-mr-diy'), 'AIRA-005': TITIK('raya-sumenep-pamekasan'), 'AIRA-006': TITIK('bumi-sumekar'),
+  'AIRA-007': TITIK('raya-sumenep'), 'AIRA-008': IMG.sungai, 'AIRA-009': DRONE_A, 'AIRA-010': IMG.desa, 'AIRA-011': IMG.sungai,
+}
+// [slug rekaman, waktu perekaman UTC]
+const CAMERA_VIDEO = {
+  'AIRA-001': ['jalan-1-arah', '2026-10-14T08:57:34Z'],
+  'AIRA-002': ['perempatan-wahidin', '2026-10-14T08:49:40Z'],
+  'AIRA-003': ['mpp-taman-bunga', '2026-10-14T08:42:18Z'],
+  'AIRA-004': ['brida-mr-diy', '2026-10-14T09:17:25Z'],
+  'AIRA-005': ['raya-sumenep-pamekasan', '2026-10-14T09:37:45Z'],
+  'AIRA-006': ['bumi-sumekar', '2026-10-14T09:06:23Z'],
+  'AIRA-007': ['raya-sumenep', '2026-10-14T08:33:15Z'],
+}
+const CAMERA_GALLERY = {
+  'AIRA-004': [{ url: TITIK('brida-mr-diy-2'), caption: 'Sudut lain ruas BRIDA – MR DIY' }],
+  'AIRA-005': [{ url: IMG.jalan, caption: 'Dokumentasi banjir di Jl. Raya Sumenep – Pamekasan' }],
+  'AIRA-006': [
+    { url: TITIK('bumi-sumekar-2'), caption: 'Genangan di ruas Bumi Sumekar' },
+    { url: TITIK('bumi-sumekar-3'), caption: 'Genangan di ruas Bumi Sumekar, sisi lain' },
+  ],
+  'AIRA-007': [{ url: TITIK('raya-sumenep-2'), caption: 'Saluran di sisi Jl. Raya Sumenep' }],
 }
 
 const onRoad = (name, frac = 0.5, filter) => ({ p: pointAt(longest(road(name, filter)), frac), src: 'osm', note: `Titik pada ruas OSM "${name}".` })
@@ -320,6 +341,8 @@ const cameras = cameraList.map(([code, name, location, zone, status, isOnline, p
   zoneId: Z[zone].id,
   status,
   imageUrl: CAMERA_IMAGE[code] ?? CCTV_IMG,
+  ...(CAMERA_VIDEO[code] ? { videoUrl: `/videos/titik/${CAMERA_VIDEO[code][0]}.mp4`, recordedAt: CAMERA_VIDEO[code][1] } : {}),
+  ...(CAMERA_GALLERY[code] ? { gallery: CAMERA_GALLERY[code] } : {}),
   lat: pt.p[0],
   lng: pt.p[1],
   coordAccuracy: pt.src,
