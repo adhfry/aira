@@ -67,11 +67,11 @@ const rows = computed<Row[]>(() => {
         </div>
         <div class="flex-1 min-w-0">
           <div class="grid grid-cols-[1fr_auto_2.5rem] gap-2 text-[10px] font-semibold">
-            <span class="text-slate-700 truncate">{{ r.label }}</span>
+            <span v-tippy="r.label" class="text-slate-700 truncate">{{ r.label }}</span>
             <span :class="statusMeta(r.level).text">{{ statusMeta(r.level).label }}</span>
             <span class="text-slate-800 font-bold text-right">{{ r.pct }}%</span>
           </div>
-          <div class="text-[8px] text-slate-400 mb-1 truncate">{{ r.sub }}<span v-if="r.backwater" class="text-sky-600 font-bold"> · backwater</span></div>
+          <div v-tippy="r.backwater ? `${r.sub} · backwater` : r.sub || undefined" class="text-[8px] text-slate-400 mb-1 truncate">{{ r.sub }}<span v-if="r.backwater" class="text-sky-600 font-bold"> · backwater</span></div>
           <div class="w-full bg-slate-100 rounded-full h-1.5">
             <div class="h-1.5 rounded-full transition-all duration-500" :class="statusMeta(r.level).bar" :style="{ width: `${r.pct}%` }"></div>
           </div>

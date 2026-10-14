@@ -97,7 +97,7 @@ const summary = computed(() => {
     <template #cell-title="{ item }">
       <div class="min-w-[260px] max-w-md">
         <div class="font-bold text-slate-800">{{ item.title }}</div>
-        <div class="text-[11px] text-slate-500 line-clamp-2">{{ item.message }}</div>
+        <div v-tippy="item.message || undefined" class="text-[11px] text-slate-500 line-clamp-2">{{ item.message }}</div>
       </div>
     </template>
     <template #cell-type="{ item }">

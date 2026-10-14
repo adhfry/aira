@@ -6,7 +6,7 @@ const meta = computed(() => COORD_ACCURACY_META[props.value] ?? COORD_ACCURACY_M
 </script>
 
 <template>
-  <span :title="meta.hint">
+  <span v-tippy="meta.hint" tabindex="0" class="inline-block cursor-help">
     <UiBadge :tone="meta.tone"><i class="fa-solid text-[8px]" :class="meta.icon"></i> {{ meta.label }}</UiBadge>
   </span>
 </template>

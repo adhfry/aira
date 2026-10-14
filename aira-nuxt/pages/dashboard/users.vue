@@ -89,8 +89,8 @@ const summary = computed(() => {
       <div class="flex items-center gap-3 min-w-[220px]">
         <img :src="item.avatarUrl" :alt="item.name" class="w-10 h-10 rounded-lg object-cover flex-shrink-0" loading="lazy" />
         <div class="min-w-0">
-          <div class="font-bold text-slate-800 truncate">{{ item.name }}</div>
-          <div class="text-[11px] text-slate-500 truncate">{{ item.email }}</div>
+          <div v-tippy="item.name" class="font-bold text-slate-800 truncate">{{ item.name }}</div>
+          <div v-tippy="item.email" class="text-[11px] text-slate-500 truncate">{{ item.email }}</div>
         </div>
       </div>
     </template>

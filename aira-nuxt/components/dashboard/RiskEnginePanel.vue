@@ -69,7 +69,7 @@ const layers = computed(() => [
         <i class="fa-solid fa-equals text-xs opacity-60"></i>
         <div class="flex-1 min-w-0">
           <div class="text-[9px] font-semibold opacity-80">Risiko dinamis tertinggi · {{ top.code }}</div>
-          <div class="text-sm font-extrabold truncate">{{ top.name }}</div>
+          <div v-tippy="top.name" class="text-sm font-extrabold truncate">{{ top.name }}</div>
         </div>
         <div class="text-2xl font-extrabold tabular-nums">{{ top.dynamic }}</div>
       </div>

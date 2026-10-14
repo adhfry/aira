@@ -9,7 +9,7 @@ defineProps<{ cards: { label: string; value: number | string; icon: string; box:
         <i class="fa-solid" :class="c.icon"></i>
       </div>
       <div class="min-w-0">
-        <div class="text-[10px] text-slate-500 font-semibold truncate">{{ c.label }}</div>
+        <div v-tippy="c.label" class="text-[10px] text-slate-500 font-semibold truncate">{{ c.label }}</div>
         <div class="text-xl font-extrabold text-slate-900">{{ c.value }}</div>
       </div>
     </div>

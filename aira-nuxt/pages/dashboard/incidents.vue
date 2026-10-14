@@ -111,7 +111,7 @@ const summary = computed(() => {
         </div>
         <div class="min-w-0">
           <div class="font-bold text-slate-800">{{ item.title }}</div>
-          <div class="text-[11px] text-slate-500 line-clamp-1">{{ item.description }}</div>
+          <div v-tippy="item.description || undefined" class="text-[11px] text-slate-500 line-clamp-1">{{ item.description }}</div>
         </div>
       </div>
     </template>

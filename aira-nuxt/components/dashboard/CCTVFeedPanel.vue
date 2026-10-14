@@ -145,7 +145,7 @@ const onlineCount = computed(() => props.cameras.filter((c) => c.isOnline).lengt
               </div>
             </div>
             <div class="flex justify-between items-center text-[9px] text-slate-400 gap-2">
-              <span class="truncate" :title="c.coordNote || COORD_ACCURACY_META[c.coordAccuracy].hint">
+              <span v-tippy="c.coordNote || COORD_ACCURACY_META[c.coordAccuracy].hint" class="truncate">
                 <i class="fa-solid text-[8px]" :class="COORD_ACCURACY_META[c.coordAccuracy].icon"></i> {{ COORD_ACCURACY_META[c.coordAccuracy].label }}
               </span>
               <span class="tabular-nums">{{ c.isOnline ? clock.timeLabel.replace(' WIB', '') : formatTime(c.lastUpdate) }}</span>

@@ -25,14 +25,14 @@ const pctOf = (v: number) => `${Math.round((v / maxLevel.value) * 100)}%`
         <div class="bg-sky-50 border border-sky-100 rounded-xl p-3 flex items-center gap-3">
           <div class="w-9 h-9 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-bridge-water"></i></div>
           <div class="min-w-0">
-            <div class="text-[10px] text-slate-500 font-semibold truncate">{{ backwater.riverSensor }}</div>
+            <div v-tippy="backwater.riverSensor || undefined" class="text-[10px] text-slate-500 font-semibold truncate">{{ backwater.riverSensor }}</div>
             <div class="text-lg font-extrabold text-slate-900">{{ backwater.riverLevel }} cm</div>
           </div>
         </div>
         <div class="bg-teal-50 border border-teal-100 rounded-xl p-3 flex items-center gap-3">
           <div class="w-9 h-9 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-wave-square"></i></div>
           <div class="min-w-0">
-            <div class="text-[10px] text-slate-500 font-semibold truncate">Pasang muara Kali Marengan</div>
+            <div v-tippy="'Pasang muara Kali Marengan'" class="text-[10px] text-slate-500 font-semibold truncate">Pasang muara Kali Marengan</div>
             <div class="text-lg font-extrabold text-slate-900">{{ tide ?? '-' }}<span v-if="tide !== null"> cm</span></div>
           </div>
         </div>
@@ -42,7 +42,7 @@ const pctOf = (v: number) => `${Math.round((v / maxLevel.value) * 100)}%`
         <div v-for="r in readings" :key="r.zoneId + r.name" class="rounded-xl border p-3" :class="r.delta >= 0 ? 'border-red-100 bg-red-50/40' : 'border-slate-100 bg-slate-50/60'">
           <div class="flex items-start justify-between gap-2 mb-2">
             <div class="min-w-0">
-              <div class="text-xs font-bold text-slate-800 truncate">{{ r.name }}</div>
+              <div v-tippy="r.name" class="text-xs font-bold text-slate-800 truncate">{{ r.name }}</div>
               <div class="text-[9px] text-slate-500">
                 Pengaruh backwater (kajian 2017): <b>±{{ r.backwaterLength?.toLocaleString('id-ID') ?? '-' }} m</b>
               </div>

@@ -213,7 +213,7 @@ const cardBorder = computed(() => (props.dark ? 'border-borderdark' : 'border-sl
               class="w-10 h-10 rounded-lg object-cover flex-shrink-0"
             />
             <div class="min-w-0">
-              <div class="text-xs font-bold text-white truncate">{{ profile?.name ?? 'Ahda Firly Barori' }}</div>
+              <div v-tippy="profile?.name ?? 'Ahda Firly Barori'" class="text-xs font-bold text-white truncate">{{ profile?.name ?? 'Ahda Firly Barori' }}</div>
               <div class="text-[10px] text-slate-400">{{ profile?.role ?? 'Administrator' }}</div>
             </div>
           </div>

@@ -102,7 +102,10 @@ const sparkOptions = computed(() => ({
           >
             <i class="fa-solid" :class="delta > 0 ? 'fa-arrow-up' : delta < 0 ? 'fa-arrow-down' : 'fa-minus'"></i> {{ deltaLabel }}
           </div>
-          <div class="text-[9px] text-slate-400 truncate">
+          <div
+            v-tippy="sensor.channelDepth ? `${sensor.name} · isi ${Math.round((sensor.value / sensor.channelDepth) * 100)}% dari ${sensor.channelDepth} cm` : sensor.name"
+            class="text-[9px] text-slate-400 truncate"
+          >
             {{ sensor.name }}<span v-if="sensor.channelDepth"> · isi {{ Math.round((sensor.value / sensor.channelDepth) * 100) }}% dari {{ sensor.channelDepth }} cm</span>
           </div>
         </template>

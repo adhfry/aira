@@ -108,8 +108,8 @@ const summary = computed(() => {
         <img :src="item.imageUrl" :alt="item.name" class="w-14 h-10 rounded-lg object-cover flex-shrink-0" loading="lazy" />
         <div class="min-w-0">
           <div class="text-[10px] font-bold text-slate-400">{{ item.code }}</div>
-          <div class="font-bold text-slate-800 truncate">{{ item.name }}</div>
-          <div class="text-[11px] text-slate-500 truncate">{{ item.location }}</div>
+          <div v-tippy="item.name" class="font-bold text-slate-800 truncate">{{ item.name }}</div>
+          <div v-tippy="item.location || undefined" class="text-[11px] text-slate-500 truncate">{{ item.location }}</div>
         </div>
       </div>
     </template>
@@ -124,7 +124,7 @@ const summary = computed(() => {
       <div class="whitespace-nowrap">
         <CrudAccuracyBadge :value="item.coordAccuracy" />
         <div class="text-[10px] text-slate-400 tabular-nums mt-0.5">{{ item.lat.toFixed(6) }}, {{ item.lng.toFixed(6) }}</div>
-        <div class="text-[10px] text-slate-500 max-w-[220px] whitespace-normal line-clamp-2" :title="item.coordNote">{{ item.coordNote }}</div>
+        <div v-tippy="item.coordNote || undefined" class="text-[10px] text-slate-500 max-w-[220px] whitespace-normal line-clamp-2">{{ item.coordNote }}</div>
       </div>
     </template>
     <template #cell-lastUpdate="{ item }"><span class="text-[11px] text-slate-500 whitespace-nowrap">{{ formatDateTime(item.lastUpdate) }}</span></template>

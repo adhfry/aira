@@ -153,13 +153,13 @@ const summary = computed(() => {
 
       <template #cell-name="{ item }">
         <div class="flex items-start gap-3 min-w-[240px] max-w-xs">
-          <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" :class="ZONE_TYPE_META[item.type].box">
+          <div v-tippy="ZONE_TYPE_META[item.type].label" class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" :class="ZONE_TYPE_META[item.type].box">
             <i class="fa-solid text-sm" :class="ZONE_TYPE_META[item.type].icon"></i>
           </div>
           <div class="min-w-0">
             <div class="text-[10px] font-bold text-slate-400">{{ item.code }} · {{ ZONE_TYPE_META[item.type].label }}</div>
             <div class="font-bold text-slate-800">{{ item.name }}</div>
-            <div class="text-[11px] text-slate-500 line-clamp-2">{{ item.network }}</div>
+            <div v-tippy="item.network || undefined" class="text-[11px] text-slate-500 line-clamp-2">{{ item.network }}</div>
           </div>
         </div>
       </template>
@@ -167,10 +167,17 @@ const summary = computed(() => {
       <template #cell-drainage="{ item }">
         <div class="text-xs space-y-1 whitespace-nowrap">
           <div class="text-slate-700 font-semibold">
-            {{ item.outlet ? `Outlet ${item.outlet}` : '—' }}<span v-if="item.capacity" class="text-slate-500 font-normal"> · {{ item.capacity }} m³/s</span>
+            <span v-if="item.outlet" v-tippy="GLOSSARY.outlet(item.outlet)" tabindex="0" class="cursor-help">Outlet {{ item.outlet }}</span><span v-else>—</span><span
+              v-if="item.capacity"
+              v-tippy="GLOSSARY.capacity(item.capacity)"
+              tabindex="0"
+              class="text-slate-500 font-normal cursor-help"
+            > · {{ item.capacity }} m³/s</span>
           </div>
-          <UiBadge :tone="DRAINAGE_STATUS_META[item.drainageStatus].tone">{{ DRAINAGE_STATUS_META[item.drainageStatus].label }}</UiBadge>
-          <div v-if="item.backwaterLength" class="text-[10px] text-sky-600 font-semibold">
+          <span v-tippy="GLOSSARY.drainage[item.drainageStatus]" tabindex="0" class="inline-block cursor-help">
+            <UiBadge :tone="DRAINAGE_STATUS_META[item.drainageStatus].tone">{{ DRAINAGE_STATUS_META[item.drainageStatus].label }}</UiBadge>
+          </span>
+          <div v-if="item.backwaterLength" v-tippy="GLOSSARY.backwaterLength(item.backwaterLength)" tabindex="0" class="text-[10px] text-sky-600 font-semibold cursor-help">
             <i class="fa-solid fa-arrow-rotate-left"></i> backwater ±{{ item.backwaterLength.toLocaleString('id-ID') }} m
           </div>
         </div>
@@ -180,15 +187,17 @@ const summary = computed(() => {
         <div class="min-w-[170px]">
           <template v-if="riskById.get(item.id)">
             <div class="flex items-center justify-between mb-1">
-              <UiStatusPill :status="riskById.get(item.id)!.level" :label="`Dinamis ${riskById.get(item.id)!.dynamic}`" />
-              <span v-if="riskById.get(item.id)!.backwater" class="text-[9px] font-bold text-sky-600">BACKWATER</span>
+              <span v-tippy="GLOSSARY.dynamic" tabindex="0" class="cursor-help">
+                <UiStatusPill :status="riskById.get(item.id)!.level" :label="`Dinamis ${riskById.get(item.id)!.dynamic}`" />
+              </span>
+              <span v-if="riskById.get(item.id)!.backwater" v-tippy="GLOSSARY.backwaterActive" tabindex="0" class="text-[9px] font-bold text-sky-600 cursor-help">BACKWATER</span>
             </div>
             <div class="space-y-0.5 text-[9px] text-slate-500">
               <div v-for="l in [
-                { k: 'S', v: riskById.get(item.id)!.structural, c: 'bg-primary' },
-                { k: 'H', v: riskById.get(item.id)!.historical, c: 'bg-purple-500' },
-                { k: 'R', v: riskById.get(item.id)!.realtime, c: 'bg-orange-500' },
-              ]" :key="l.k" class="flex items-center gap-1.5">
+                { k: 'S', v: riskById.get(item.id)!.structural, c: 'bg-primary', tip: GLOSSARY.structural },
+                { k: 'H', v: riskById.get(item.id)!.historical, c: 'bg-purple-500', tip: GLOSSARY.historical },
+                { k: 'R', v: riskById.get(item.id)!.realtime, c: 'bg-orange-500', tip: GLOSSARY.realtime },
+              ]" :key="l.k" v-tippy="l.tip" tabindex="0" class="flex items-center gap-1.5 cursor-help">
                 <span class="w-2 font-bold">{{ l.k }}</span>
                 <div class="flex-1 bg-slate-100 rounded-full h-1"><div class="h-1 rounded-full" :class="l.c" :style="{ width: `${l.v}%` }"></div></div>
                 <span class="w-5 text-right tabular-nums">{{ l.v }}</span>
@@ -209,7 +218,7 @@ const summary = computed(() => {
         <div class="max-w-[200px]">
           <CrudAccuracyBadge :value="item.coordAccuracy" />
           <div class="text-[10px] text-slate-400 tabular-nums mt-0.5">{{ item.lat.toFixed(6) }}, {{ item.lng.toFixed(6) }}<span v-if="item.elevation !== null" class="whitespace-nowrap"> · elev. {{ item.elevation }} m</span></div>
-          <div class="text-[10px] text-slate-500 leading-snug line-clamp-2" :title="item.coordNote">{{ item.coordNote }}</div>
+          <div v-tippy="item.coordNote || undefined" class="text-[10px] text-slate-500 leading-snug line-clamp-2">{{ item.coordNote }}</div>
         </div>
       </template>
     </CrudPage>
@@ -219,7 +228,7 @@ const summary = computed(() => {
       <h2 class="font-bold text-slate-800 text-sm mb-1">Rujukan Penelitian</h2>
       <p class="text-[11px] text-slate-500 mb-4">
         Setiap koordinat memiliki sumber yang dapat ditelusuri: data resmi (Pusdatin Kemendikdasmen), koordinat penelitian (Sungai Marengan),
-        geometri jalan/sungai OpenStreetMap, atau alamat terdaftar pada jalan yang disebut penelitian. Elevasi tanah dari SRTM 30 m.
+        geometri jalan/sungai OpenStreetMap, alamat terdaftar pada jalan yang disebut penelitian, atau titik rawan banjir tim AIRA. Elevasi tanah dari SRTM 30 m.
         Penelitian tidak mempublikasikan titik CCTV — kamera &amp; sensor adalah titik pantau usulan AIRA pada lokasi bersumber tersebut.
       </p>
       <div class="grid md:grid-cols-2 gap-3">
